@@ -1,24 +1,226 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Hugo-HT</title><link>https://example.com/</link><description>Recent content in Home on Hugo-HT</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 07 Jan 2021 13:42:27 -0500</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown 试水</title><link>https://example.com/cn/2021/01/07/first-post-cn/</link><pubDate>Thu, 07 Jan 2021 13:42:27 -0500</pubDate><guid>https://example.com/cn/2021/01/07/first-post-cn/</guid><description>如果好奇以下的内容是如何实现的，请参考本页源代码 。 第一级标题 第二级标题 第三级标题 第四级标题 第五级标题 第六级标题 列表 Water Water Water Water Water Water Water Water Water Water Water Water 表格 Water Water Water Water Water Water Water Water1 Water Water Water Water 引语 知之为知之，不知为不知，是知也2。 — 孔子
-数学公式 最简单的如，$1 + 1 = 3$
-你可以加入索引:
-$$p(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp \left(-\frac{1}{2}\left[\frac{x-\mu}{\sigma}\right]^2\right)\tag{1.1}\label{eq1.1}$$
-多行3,
-\begin{align} \sqrt{37} &amp;amp; = \sqrt{\frac{73^2-1}{12^2}} \\ &amp;amp; = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \\ &amp;amp; = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \\ &amp;amp; = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \\ &amp;amp; \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right) \end{align}</description></item><item><title>Markdown Testing</title><link>https://example.com/en/2021/01/07/second-post/</link><pubDate>Thu, 07 Jan 2021 13:37:57 -0500</pubDate><guid>https://example.com/en/2021/01/07/second-post/</guid><description>See the source code of this page if you are interested.
-H1 H2 H3 H4 H5 H6 List Water Water Water Water Water Water Water Water Water Water Water Water Table Water Water Water Water Water Water Water Water1 Water Water Water Water Quotes What I cannot create, I do not understand2. — Richard Feynman
-Math For example,
-$1 + 1 = 3$
-You can add Tags &amp;amp; References:</description></item><item><title>背影</title><link>https://example.com/cn/1925/10/01/beiying/</link><pubDate>Thu, 01 Oct 1925 00:00:00 +0000</pubDate><guid>https://example.com/cn/1925/10/01/beiying/</guid><description>我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说，“事已如此，不必难过，好在天无绝人之路！”
-回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。
-到南京时，有朋友约去游逛，勾留了一日；第二日上午便须渡江到浦口，下午上车北去。父亲因为事忙，本已说定不送我，叫旅馆里一个熟识的茶房陪我同去。他再三嘱咐茶房，甚是仔细。但他终于不放心，怕茶房不妥帖；颇踌躇了一会。其实我那年已二十岁，北京已来往过两三次，是没有甚么要紧的了。他踌躇了一会，终于决定还是自己送我去。我两三回劝他不必去；他只说，“不要紧，他们去不好！”
-我们过了江，进了车站。我买票，他忙着照看行李。行李太多了，得向脚夫行些小费，才可过去。他便又忙着和他们讲价钱。我那时真是聪明过分，总觉他说话不大漂亮，非自己插嘴不可。但他终于讲定了价钱；就送我上车。他给我拣定了靠车门的一张椅子；我将他给我做的紫毛大衣铺好坐位。他嘱我路上小心，夜里警醒些，不要受凉。又嘱托茶房好好照应我。我心里暗笑他的迂；他们只认得钱，托他们直是白托！而且我这样大年纪的人，难道还不能料理自己么？唉，我现在想想，那时真是太聪明了！
-我说道，“爸爸，你走吧。”他望车外看了看，说，“我买几个橘子去。你就在此地，不要走动。”我看那边月台的栅栏外有几个卖东西的等着顾客。走到那边月台，须穿过铁道，须跳下去又爬上去。父亲是一个胖子，走过去自然要费事些。我本来要去的，他不肯，只好让他去。我看见他戴着黑布小帽，穿着黑布大马褂，深青布棉袍，蹒跚地走到铁道边，慢慢探身下去，尚不大难。可是他穿过铁道，要爬上那边月台，就不容易了。他用两手攀着上面，两脚再向上缩；他肥胖的身子向左微倾，显出努力的样子。这时我看见他的背影，我的泪很快地流下来了。我赶紧拭干了泪，怕他看见，也怕别人看见。我再向外看时，他已抱了朱红的橘子望回走了。过铁道时，他先将橘子散放在地上，自己慢慢爬下，再抱起橘子走。到这边时，我赶紧去搀他。他和我走到车上，将橘子一股脑儿放在我的皮大衣上。于是扑扑衣上的泥土，心里很轻松似的，过一会说，“我走了；到那边来信！”我望着他走出去。他走了几步，回过头看见我，说，“进去吧，里边没人。”等他的背影混入来来往往的人里，再找不着了，我便进来坐下，我的眼泪又来了。
-近几年来，父亲和我都是东奔西走，家中光景是一日不如一日。他少年出外谋生，独力支持，做了许多大事。那知老境却如此颓唐！他触目伤怀，自然情不能自已。情郁于中，自然要发之于外；家庭琐屑便往往触他之怒。他待我渐渐不同往日。但最近两年的不见，他终于忘却我的不好，只是惦记着我，惦记着我的儿子。我北来后，他写了一信给我，信中说道，“我身体平安，惟膀子疼痛利害，举箸提笔，诸多不便，大约大去之期不远矣。”我读到此处，在晶莹的泪光中，又看见那肥胖的，青布棉袍，黑布马褂的背影。唉！我不知何时再能与他相见！</description></item><item><title>The Road Not Taken</title><link>https://example.com/en/1915/01/01/road-not-taken/</link><pubDate>Fri, 01 Jan 1915 00:00:00 +0000</pubDate><guid>https://example.com/en/1915/01/01/road-not-taken/</guid><description>Two roads diverged in a yellow wood,
-And sorry I could not travel both
-And be one traveler, long I stood
-And looked down one as far as I could
-To where it bent in the undergrowth;
-Then took the other, as just as fair,
-And having perhaps the better claim,
-Because it was grassy and wanted wear;
-Though as for that the passing there
-Had worn them really about the same,</description></item></channel></rss>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>http://example.org/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>嘉樹 2023.</copyright><lastBuildDate>Thu, 14 Nov 2019 11:25:05 -0400</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>中文文本测试</title><link>http://example.org/posts/chinese/</link><pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate><guid>http://example.org/posts/chinese/</guid><description>嘉樹的世界 http://example.org/posts/chinese/ -&lt;p>　　这样看来， 邓拓在不经意间这样说过，越是没有本领的就越加自命不凡。这不禁令我深思。 我们不得不面对一个非常尴尬的事实，那就是， 一般来说， 所谓中午吃什么，关键是中午吃什么需要如何写。 伏尔泰说过一句富有哲理的话，坚持意志伟大的事业需要始终不渝的精神。这启发了我， 那么， 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。 这样看来， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 一般来讲，我们都必须务必慎重的考虑考虑。 黑格尔说过一句富有哲理的话，只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我， 我们不得不面对一个非常尴尬的事实，那就是， 既然如何， 在这种困难的抉择下，本人思来想去，寝食难安。&lt;/p>
+&lt;p>　　我认为， 而这些并不是完全重要，更加重要的问题是， 了解清楚中午吃什么到底是一种怎么样的存在，是解决一切问题的关键。 中午吃什么因何而发生？ 而这些并不是完全重要，更加重要的问题是， 卢梭在不经意间这样说过，浪费时间是一桩大罪过。这启发了我， 既然如此， 从这个角度来看， 歌德在不经意间这样说过，意志坚强的人能把世界放在手中像泥块一样任意揉捏。我希望诸位也能好好地体会这句话。 我认为， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 莎士比亚在不经意间这样说过，人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话，我们还要更加慎重的审视这个问题： 带着这些问题，我们来审视一下中午吃什么。 中午吃什么因何而发生？ 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 布尔沃曾经说过，要掌握书，莫被书掌握；要为生而读，莫为读而生。这似乎解答了我的疑惑。 而这些并不是完全重要，更加重要的问题是， 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 带着这些问题，我们来审视一下中午吃什么。 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 我认为， 一般来说， 中午吃什么，到底应该如何实现。 我们不得不面对一个非常尴尬的事实，那就是， 所谓中午吃什么，关键是中午吃什么需要如何写。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 现在，解决中午吃什么的问题，是非常非常重要的。&lt;/p>
+&lt;p>　　我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 可是，即使是这样，中午吃什么的出现仍然代表了一定的意义。 带着这些问题，我们来审视一下中午吃什么。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 我认为， 问题的关键究竟为何？ 非洲曾经提到过，最灵繁的人也看不见自己的背脊。这启发了我， 易卜生说过一句富有哲理的话，伟大的事业，需要决心，能力，组织和责任感。这似乎解答了我的疑惑。 一般来说， 在这种困难的抉择下，本人思来想去，寝食难安。 中午吃什么，到底应该如何实现。 经过上述讨论， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 中午吃什么因何而发生？
+带着这些问题，我们来审视一下中午吃什么。 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。&lt;/p>
+- http://example.org/posts/chinese/ - 嘉樹 2023.</description></item><item><title>Typography - Test for features</title><link>http://example.org/posts/post-5/</link><pubDate>Sun, 18 Mar 2018 12:13:38 +0530</pubDate><guid>http://example.org/posts/post-5/</guid><description>嘉樹的世界 http://example.org/posts/post-5/ -&lt;p>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p>
+&lt;h1 id="heading-1">Heading 1&lt;/h1>
+&lt;p>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p>
+&lt;h2 id="heading-2">Heading 2&lt;/h2>
+&lt;p>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p>
+&lt;h3 id="heading-3">Heading 3&lt;/h3>
+&lt;p>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p>
+&lt;h4 id="heading-4">Heading 4&lt;/h4>
+&lt;p>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p>
+&lt;h5 id="heading-5">Heading 5&lt;/h5>
+&lt;p>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p>
+&lt;h6 id="heading-6">Heading 6&lt;/h6>
+&lt;p>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p>
+&lt;h2 id="typography">Typography&lt;/h2>
+&lt;p>Lid est laborum et dolorum fuga, This is &lt;a href="http://example.com/" title="Title">an example&lt;/a> inline link. Et harum quidem rerum facilis, &lt;strong>This is bold&lt;/strong> and &lt;em>emphasis&lt;/em> cumque nihilse impedit quo minus id quod amets untra dolor amet sad. While this is &lt;code>code block()&lt;/code> and following is a &lt;code>pre&lt;/code> tag&lt;/p>
+&lt;pre>&lt;code>print 'this is pre tag'
+&lt;/code>&lt;/pre>
+&lt;p>Following is the syntax highlighted code block&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8b008b;font-weight:bold">func&lt;/span> &lt;span style="color:#008b45">getCookie&lt;/span>(name &lt;span style="color:#00688b;font-weight:bold">string&lt;/span>, r &lt;span style="color:#8b008b;font-weight:bold">interface&lt;/span>{}) (*http.Cookie, &lt;span style="color:#00688b;font-weight:bold">error&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rd := r.(*http.Request)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cookie, err := rd.&lt;span style="color:#008b45">Cookie&lt;/span>(name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8b008b;font-weight:bold">if&lt;/span> err != &lt;span style="color:#8b008b;font-weight:bold">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8b008b;font-weight:bold">return&lt;/span> &lt;span style="color:#8b008b;font-weight:bold">nil&lt;/span>, err
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8b008b;font-weight:bold">return&lt;/span> cookie, &lt;span style="color:#8b008b;font-weight:bold">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8b008b;font-weight:bold">func&lt;/span> &lt;span style="color:#008b45">setCookie&lt;/span>(cookie *http.Cookie, w &lt;span style="color:#8b008b;font-weight:bold">interface&lt;/span>{}) &lt;span style="color:#00688b;font-weight:bold">error&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#228b22">// Get write interface registered using `Acquire` method in handlers.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#228b22">&lt;/span> wr := w.(http.ResponseWriter)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> http.&lt;span style="color:#008b45">SetCookie&lt;/span>(wr, cookie)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8b008b;font-weight:bold">return&lt;/span> &lt;span style="color:#8b008b;font-weight:bold">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is blockquote, Will make it &lt;em>better now&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;lsquo;I want to do with you what spring does with the cherry trees.&amp;rsquo; &lt;!-- raw HTML omitted -->cited ~Pablo Neruda&lt;!-- raw HTML omitted -->*&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Et harum quidem &lt;em>rerum facilis&lt;/em> est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit&lt;/p>
+&lt;/blockquote>
+&lt;p>Unordered list&lt;/p>
+&lt;ul>
+&lt;li>Red&lt;/li>
+&lt;li>Green&lt;/li>
+&lt;li>Blue&lt;/li>
+&lt;/ul>
+&lt;p>Ordered list&lt;/p>
+&lt;ol>
+&lt;li>Red&lt;/li>
+&lt;li>Green&lt;/li>
+&lt;li>Blue&lt;/li>
+&lt;/ol>
+- http://example.org/posts/post-5/ - 嘉樹 2023.</description></item><item><title>(No comment) When You Have Too Much to Do</title><link>http://example.org/posts/post-1/</link><pubDate>Sun, 18 Mar 2018 02:01:58 +0530</pubDate><guid>http://example.org/posts/post-1/</guid><description>嘉樹的世界 http://example.org/posts/post-1/ -&lt;p>You have a to-do list that scrolls on for days. You are managing multiple projects, getting lots of email and messages on different messaging systems, managing finances and personal health habits and so much more.&lt;/p>
+&lt;p>It all keeps piling up, and it can feel overwhelming.&lt;/p>
+&lt;p>How do you keep up with it all? How do you find focus and peace and get stuff accomplished when you have too much on your plate?&lt;/p>
+&lt;p>In this primer, I’ll look at some key strategies and tactics for taking on an overloaded life with an open heart, lots of energy, and a smile on your face.&lt;/p>
+&lt;h2 id="the-first-step-triage">The First Step: Triage&lt;/h2>
+&lt;p>Whether you’re just starting your day, or you’re in the middle of the chaos and just need to find some sanity … the first step is to get into triage mode.&lt;/p>
+&lt;p>Triage, as you probably know, is sorting through the chaos to prioritize: what needs to be done now, what needs to be done today, what needs to be done this week, and what can wait? You’re looking at urgency, but also what’s meaningful and important.&lt;/p>
+&lt;p>Here’s what you might do:&lt;/p>
+&lt;ul>
+&lt;li>Pick out the things that need to be done today. Start a Short List for things you’re going to do today. That might be important tasks for big projects, urgent tasks that could result in damage if you don’t act, smaller admin tasks that you really should take care of today, and responding to important messages. I would recommend being ruthless and cutting out as much as you can, having just 5 things on your plate if that’s at all possible. Not everything needs to be done today, and not every email needs to be responded to.&lt;/li>
+&lt;li>Push some things to tomorrow and the rest of the week. If you have deadlines that can be pushed back (or renegotiated), do that. Spread the work out over the week, even into next week. What needs to be done tomorrow? What can wait a day or two longer?&lt;/li>
+&lt;li>Eliminate what you can. That might mean just not replying to some messages that aren’t that important and don’t really require a reply. It might mean telling some people that you can’t take on this project after all, or that you need to get out of the commitment that you said you’d do. Yes, this is uncomfortable. For now, just put them on a list called, “To Not Do,” and plan to figure out how to get out of them later.&lt;/li>
+&lt;/ul>
+&lt;p>OK, you have some breathing room and a manageable list now! Let’s shrink that down even further and just pick one thing.&lt;/p>
+&lt;h2 id="next-focus-on-one-thing">Next: Focus on One Thing&lt;/h2>
+&lt;p>With a lot on your plate, it’s hard to pick one thing to focus on. But that’s exactly what I’m going to ask you to do.&lt;/p>
+&lt;p>Pick one thing, and give it your focus. Yes, there are a lot of other things you can focus on. Yes, they’re stressing you out and making it hard to focus. But think about it this way: if you allow it all to be in your head all the time, that will always be your mode of being. You’ll always be thinking about everything, stressing out about it all, with a frazzled mind … unless you start shifting.&lt;/p>
+&lt;p>The shift:&lt;/p>
+&lt;ul>
+&lt;li>Pick something to focus on. Look at the triaged list from the first section … if you have 5-6 things on this Short List, you can assess whether there’s any super urgent, time-sensitive things you need to take care of. If there are, pick one of them. If not, pick the most important one — probably the one you have been putting off doing.&lt;/li>
+&lt;li>Clear everything else away. Just for a little bit. Close all browser tabs, turn off notifications, close open applications, put your phone away.&lt;/li>
+&lt;li>Put that one task before you, and allow yourself to be with it completely. Pour yourself into it. Think of it as a practice, of letting go (of everything else), of focus, of radical simplicity.&lt;/li>
+&lt;/ul>
+&lt;p>When you’re done (or after 15-20 minutes have gone by at least), you can switch to something else. But don’t allow yourself to switch until then.&lt;/p>
+&lt;p>By closing off all exits, by choosing one thing, by giving yourself completely to that thing … you’re now in a different mode that isn’t so stressful or spread thin. You’ve started a shift that will lead to focus and sanity.&lt;/p>
+&lt;h2 id="third-schedule-time-to-simplify">Third: Schedule Time to Simplify&lt;/h2>
+&lt;p>Remember the To Not Do list above? Schedule some time this week to start reducing your projects, saying no to people, getting out of commitments, crossing stuff off your task list … so that you can have some sanity back.&lt;/p>
+&lt;p>There are lots of little things that you’ve said “yes” to that you probably shouldn’t have. That’s why you’re overloaded. Protect your more important work, and your time off, and your peace of mind, by saying “no” to things that aren’t as important.&lt;/p>
+&lt;p>Schedule the time to simplify — you don’t have to do it today, but sometime soon — and you can then not have to worry about the things on your To Not Do list until then.&lt;/p>
+&lt;h2 id="fourth-practice-mindful-focus">Fourth: Practice Mindful Focus&lt;/h2>
+&lt;p>Go through the rest of the day with an attitude of “mindful focus.” That means that you are doing one thing at a time, being as present as you can, switching as little as you can.&lt;/p>
+&lt;p>Think of it as a settling of the mind. A new mode of being. A mindfulness practice (which means you won’t be perfect at it).&lt;/p>
+&lt;p>As you practice mindful focus, you’ll learn to practice doing things with an open heart, with curiosity and gratitude, and even joy. Try these one at a time as you get to do each task on your Short List.&lt;/p>
+&lt;p>You’ll find that you’re not so overloaded, but that each task is just perfect for that moment. And that’s a completely new relationship with the work that you do, and a new relationship with life.&lt;/p>
+- http://example.org/posts/post-1/ - 嘉樹 2023.</description></item><item><title>Chapter VI: Esmeralda</title><link>http://example.org/posts/chapter-6/</link><pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate><guid>http://example.org/posts/chapter-6/</guid><description>嘉樹的世界 http://example.org/posts/chapter-6/ -&lt;p>We are delighted to be able to inform the reader, that during the whole of
+this scene, Gringoire and his piece had stood firm. His actors, spurred on
+by him, had not ceased to spout his comedy, and he had not ceased to
+listen to it. He had made up his mind about the tumult, and was determined
+to proceed to the end, not giving up the hope of a return of attention on
+the part of the public. This gleam of hope acquired fresh life, when he
+saw Quasimodo, Coppenole, and the deafening escort of the pope of the
+procession of fools quit the hall amid great uproar. The throng rushed
+eagerly after them. “Good,” he said to himself, “there go all the
+mischief-makers.” Unfortunately, all the mischief-makers constituted the
+entire audience. In the twinkling of an eye, the grand hall was empty.&lt;/p>
+&lt;p>To tell the truth, a few spectators still remained, some scattered, others
+in groups around the pillars, women, old men, or children, who had had
+enough of the uproar and tumult. Some scholars were still perched astride
+of the window-sills, engaged in gazing into the Place.&lt;/p>
+&lt;p>“Well,” thought Gringoire, “here are still as many as are required to hear
+the end of my mystery. They are few in number, but it is a choice
+audience, a lettered audience.”&lt;/p>
+&lt;p>An instant later, a symphony which had been intended to produce the
+greatest effect on the arrival of the Virgin, was lacking. Gringoire
+perceived that his music had been carried off by the procession of the
+Pope of the Fools. “Skip it,” said he, stoically.&lt;/p>
+&lt;p>He approached a group of bourgeois, who seemed to him to be discussing his
+piece. This is the fragment of conversation which he caught,—&lt;/p>
+&lt;p>“You know, Master Cheneteau, the Hôtel de Navarre, which belonged to
+Monsieur de Nemours?”&lt;/p>
+&lt;p>“Yes, opposite the Chapelle de Braque.”&lt;/p>
+&lt;p>“Well, the treasury has just let it to Guillaume Alixandre, historian, for
+six hivres, eight sols, parisian, a year.”&lt;/p>
+&lt;p>“How rents are going up!”&lt;/p>
+&lt;p>“Come,” said Gringoire to himself, with a sigh, “the others are
+listening.”&lt;/p>
+&lt;p>“Comrades,” suddenly shouted one of the young scamps from the window, “La
+Esmeralda! La Esmeralda in the Place!”&lt;/p>
+&lt;p>This word produced a magical effect. Every one who was left in the hall
+flew to the windows, climbing the walls in order to see, and repeating,
+“La Esmeralda! La Esmeralda?” At the same time, a great sound of applause
+was heard from without.&lt;/p>
+&lt;p>“What’s the meaning of this, of the Esmeralda?” said Gringoire, wringing
+his hands in despair. “Ah, good heavens! it seems to be the turn of the
+windows now.”&lt;/p>
+&lt;p>He returned towards the marble table, and saw that the representation had
+been interrupted. It was precisely at the instant when Jupiter should have
+appeared with his thunder. But Jupiter was standing motionless at the foot
+of the stage.&lt;/p>
+&lt;p>“Michel Giborne!” cried the irritated poet, “what are you doing there? Is
+that your part? Come up!”&lt;/p>
+&lt;p>“Alas!” said Jupiter, “a scholar has just seized the ladder.”&lt;/p>
+&lt;p>Gringoire looked. It was but too true. All communication between his plot
+and its solution was intercepted.&lt;/p>
+&lt;p>“The rascal,” he murmured. “And why did he take that ladder?”&lt;/p>
+&lt;p>“In order to go and see the Esmeralda,” replied Jupiter piteously. “He
+said, ‘Come, here’s a ladder that’s of no use!’ and he took it.”&lt;/p>
+&lt;p>This was the last blow. Gringoire received it with resignation.&lt;/p>
+&lt;p>“May the devil fly away with you!” he said to the comedian, “and if I get
+my pay, you shall receive yours.”&lt;/p>
+&lt;p>Then he beat a retreat, with drooping head, but the last in the field,
+like a general who has fought well.&lt;/p>
+&lt;p>And as he descended the winding stairs of the courts: “A fine rabble of
+asses and dolts these Parisians!” he muttered between his teeth; “they
+come to hear a mystery and don’t listen to it at all! They are engrossed
+by every one, by Chopin Trouillefou, by the cardinal, by Coppenole, by
+Quasimodo, by the devil! but by Madame the Virgin Mary, not at all. If I
+had known, I’d have given you Virgin Mary; you ninnies! And I! to come to
+see faces and behold only backs! to be a poet, and to reap the success of
+an apothecary! It is true that Homerus begged through the Greek towns, and
+that Naso died in exile among the Muscovites. But may the devil flay me if
+I understand what they mean with their Esmeralda! What is that word, in
+the first place?—‘tis Egyptian!”&lt;/p>
+- http://example.org/posts/chapter-6/ - 嘉樹 2023.</description></item><item><title>Chapter I: The Grand Hall</title><link>http://example.org/posts/chapter-1/</link><pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate><guid>http://example.org/posts/chapter-1/</guid><description>嘉樹的世界 http://example.org/posts/chapter-1/ -&lt;p>Three hundred and forty-eight years, six months, and nineteen days ago
+to-day, the Parisians awoke to the sound of all the bells in the triple
+circuit of the city, the university, and the town ringing a full peal.&lt;/p>
+&lt;p>The sixth of January, 1482, is not, however, a day of which history has
+preserved the memory. There was nothing notable in the event which thus
+set the bells and the bourgeois of Paris in a ferment from early morning.
+It was neither an assault by the Picards nor the Burgundians, nor a hunt
+led along in procession, nor a revolt of scholars in the town of Laas, nor
+an entry of “our much dread lord, monsieur the king,” nor even a pretty
+hanging of male and female thieves by the courts of Paris. Neither was it
+the arrival, so frequent in the fifteenth century, of some plumed and
+bedizened embassy. It was barely two days since the last cavalcade of that
+nature, that of the Flemish ambassadors charged with concluding the
+marriage between the dauphin and Marguerite of Flanders, had made its
+entry into Paris, to the great annoyance of M. le Cardinal de Bourbon,
+who, for the sake of pleasing the king, had been obliged to assume an
+amiable mien towards this whole rustic rabble of Flemish burgomasters, and
+to regale them at his Hôtel de Bourbon, with a very “pretty morality,
+allegorical satire, and farce,” while a driving rain drenched the
+magnificent tapestries at his door.&lt;/p>
+&lt;p>What put the “whole population of Paris in commotion,” as Jehan de Troyes
+expresses it, on the sixth of January, was the double solemnity, united
+from time immemorial, of the Epiphany and the Feast of Fools.&lt;/p>
+&lt;p>On that day, there was to be a bonfire on the Place de Grève, a maypole at
+the Chapelle de Braque, and a mystery at the Palais de Justice. It had
+been cried, to the sound of the trumpet, the preceding evening at all the
+cross roads, by the provost’s men, clad in handsome, short, sleeveless
+coats of violet camelot, with large white crosses upon their breasts.&lt;/p>
+&lt;p>So the crowd of citizens, male and female, having closed their houses and
+shops, thronged from every direction, at early morn, towards some one of
+the three spots designated.&lt;/p>
+&lt;p>Each had made his choice; one, the bonfire; another, the maypole; another,
+the mystery play. It must be stated, in honor of the good sense of the
+loungers of Paris, that the greater part of this crowd directed their
+steps towards the bonfire, which was quite in season, or towards the
+mystery play, which was to be presented in the grand hall of the Palais de
+Justice (the courts of law), which was well roofed and walled; and that
+the curious left the poor, scantily flowered maypole to shiver all alone
+beneath the sky of January, in the cemetery of the Chapel of Braque.&lt;/p>
+&lt;p>The populace thronged the avenues of the law courts in particular, because
+they knew that the Flemish ambassadors, who had arrived two days
+previously, intended to be present at the representation of the mystery,
+and at the election of the Pope of the Fools, which was also to take place
+in the grand hall.&lt;/p>
+&lt;p>It was no easy matter on that day, to force one’s way into that grand
+hall, although it was then reputed to be the largest covered enclosure in
+the world (it is true that Sauval had not yet measured the grand hall of
+the Château of Montargis). The palace place, encumbered with people,
+offered to the curious gazers at the windows the aspect of a sea; into
+which five or six streets, like so many mouths of rivers, discharged every
+moment fresh floods of heads. The waves of this crowd, augmented
+incessantly, dashed against the angles of the houses which projected here
+and there, like so many promontories, into the irregular basin of the
+place. In the centre of the lofty Gothic* façade of the palace, the grand
+staircase, incessantly ascended and descended by a double current, which,
+after parting on the intermediate landing-place, flowed in broad waves
+along its lateral slopes,—the grand staircase, I say, trickled
+incessantly into the place, like a cascade into a lake. The cries, the
+laughter, the trampling of those thousands of feet, produced a great noise
+and a great clamor. From time to time, this noise and clamor redoubled;
+the current which drove the crowd towards the grand staircase flowed
+backwards, became troubled, formed whirlpools. This was produced by the
+buffet of an archer, or the horse of one of the provost’s sergeants, which
+kicked to restore order; an admirable tradition which the provostship has
+bequeathed to the constablery, the constablery to the &lt;em>maréchaussée&lt;/em>,
+the &lt;em>maréchaussée&lt;/em> to our &lt;em>gendarmeri&lt;/em> of Paris.&lt;/p>
+- http://example.org/posts/chapter-1/ - 嘉樹 2023.</description></item></channel></rss>
