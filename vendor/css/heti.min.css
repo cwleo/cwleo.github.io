@@ -263,7 +263,8 @@
 }
 
 .heti p:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)), .heti p:not(:lang(zh)) {
-    text-align:start
+    /*text-align:start*/
+    -webkit-hyphens: auto;
 }
 
 .heti pre {
@@ -899,11 +900,17 @@
 }
 
 .heti .heti-spacing-start {
-    margin-inline-end:.25em
+    /*margin-inline-end:.25em*/
 }
 
 .heti .heti-spacing-end {
-    margin-inline-start:.25em
+    /*margin-inline-start:.25em*/
+}
+
+.heti .heti-spacing-start::after,
+.heti .heti-spacing-end::before {
+    content: " ";
+    font:.89em serif;
 }
 
 .heti heti-adjacent {
@@ -917,3 +924,29 @@
 .heti .heti-adjacent-quarter {
     margin-inline-end: -0.25em
 }
+
+.heti heti-punct {
+    display: inline;
+}
+
+.heti .heti-punct-left {
+    margin-left: -.5em;
+}
+
+.heti .heti-punct-right {
+    letter-spacing: -.5em;
+}
+
+.heti heti-ws {
+    visibility: hidden;
+    letter-spacing: 0.2em;
+    white-space: normal;
+    font: serif;
+}
+
+/*.heti .heti-punct-left::after,
+.heti .heti-punct-right::after {
+    content: " ";
+    line-height: 0;
+    font: serif;
+}*/
