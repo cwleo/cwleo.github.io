@@ -780,7 +780,7 @@
 
         // 替换成对或成多出现的标点，将他们分为一组，插入后置空格
         findAndReplaceDOMText($$elm, Object.assign({}, commonConfig, {
-          find: new RegExp(`([${REG_BD_STOP}])([${REG_BD_CLOSE}])|([${REG_BD_OPEN}]+)([${REG_BD_OPEN}])|([${REG_BD_CLOSE}]+)([${REG_BD_END}])`,'g'),
+          find: new RegExp(`([${REG_BD_STOP}])([${REG_BD_CLOSE}])|([${REG_BD_OPEN}]+)([${REG_BD_OPEN}])|([${REG_BD_CLOSE}]+)([${REG_BD_CLOSE}${REG_BD_STOP}])`,'g'),
           replace: portion => addSpaceAfterPlain(portion.text),
           // replace: portion => getWrapper('heti-adjacent', 'heti-adjacent-half', portion.text),
           // offset: this.offsetWidth,

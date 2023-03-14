@@ -360,7 +360,7 @@
 
 .heti ul, .heti ol, .heti dl {
     margin-block-start: 12px;
-    margin-block-end:24px
+    margin-block-end: 16px
 }
 
 .heti ul, .heti ol {
@@ -473,7 +473,7 @@
 }
 
 .heti em {
-    font-weight:600
+    font-weight:500
 }
 
 .heti figcaption {
@@ -892,7 +892,8 @@
 }
 
 .heti heti-spacing {
-    display:inline
+    display:inline;
+    color: inherit !important;
 }
 
 .heti heti-spacing + sup, .heti heti-spacing + sub {
