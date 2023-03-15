@@ -12,7 +12,7 @@
 &lt;li>State space $\Omega$ 是一个有限集；&lt;/li>
 &lt;li>接收者的 action space $A$ 是一个紧集；&lt;/li>
 &lt;li>发送者有定义在 $A\times\Omega$ 上的（关于 $a$）连续效用函数 $v(a,\omega)$；&lt;/li>
-&lt;li>接收者有定义在 $A\times\Omega$ 上的（关于 $a$）连续效用函数 $v(a,\omega)$；&lt;/li>
+&lt;li>接收者有定义在 $A\times\Omega$ 上的（关于 $a$）连续效用函数 $u(a,\omega)$；&lt;/li>
 &lt;li>发送者和接收者具有共同的关于 state 的先验信念 $\mu_0$，它是 $\Omega$ 上的概率测度，且严格为正（为了应用 Bayes 法则）；&lt;/li>
 &lt;li>一个信号 $\pi$ 是条件于 $\omega$ 的概率测度的集合：$\{\pi(\cdot|\omega)\}_{\omega\in\Omega}$，每个概率测度都定义在同一 realization space $S$ 上，$S$ 由发送者内生决定。&lt;/li>
 &lt;/ul>
@@ -22,7 +22,7 @@
 &lt;ol>
 &lt;li>Nature 从分布 $\mu_0$ 中选择一个 state；&lt;/li>
 &lt;li>发送者选择一个信号；&lt;/li>
-&lt;li>接收者观察到信号结构和信号的 realization，选择一个行动；&lt;/li>
+&lt;li>接收者观察到信号结构和信号的 realization，选择一个行动。&lt;/li>
 &lt;/ol>
 &lt;p>整个 timing 和普通的信号模型本质上并无不同，本质上不同的还是信号结构的内生以及发送者 informed 的程度。&lt;/p>
 &lt;h3 id="均衡的定义">均衡的定义&lt;/h3>
@@ -126,7 +126,7 @@ Concave Closure (Source: Kamenica and Gentzkow, 2011, Fig.2)
 &lt;p>$$V(\mu) \equiv \sup\{y\colon (\mu,y)\in\text{conv}(\hat{v})\}$$&lt;/p>
 &lt;p>这里 $\text{conv}(\hat{v})$ 表示 $\hat{v}$ 图像的凸包络集。$V(\mu)$ 必定是凹函数（因而称为凹闭包），并且是处处大于等于 $\hat{v}$ 的最小凹函数；它衡量了，当 state 的先验为 $\mu$ 时，发送者所能实现的最大价值，如 &lt;a href='#fig%3aconc'>上图&lt;/a> Panel C 所示。&lt;/p>
 &lt;div class="notice note" >
-&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>即便 action space 是无限集，我们也许只需要两个 realization，前提是它们与 $\mu = \mu_0$ 的交点位于 $V(a)$ 之上。&lt;/p>&lt;/div>
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>即便 action space 是无限集，我们也许只需要两个 realization，前提是它们与 $\mu = \mu_0$ 的交点位于 $V(\mu)$ 图像上。&lt;/p>&lt;/div>
 &lt;h3 id="一个例子">一个例子&lt;/h3>
 &lt;p>现在用一个简单例子阐述求解过程。假设在一例案件中，检方（发送者）想要说服法官（接收者）对被告作出有罪判决，具体设定如下：&lt;/p>
 &lt;ul>
