@@ -71,6 +71,16 @@ $$&lt;/p>
 &lt;p>其中 $\bm{\Omega} = \bm{B}^{-1}(\sigma^2\bm{Q}+\lambda^2\bm{D})\bm{B}^{-1}$。&lt;/p>
 &lt;div class="notice note" >
 &lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>值得一提，Knight and Fu (2000) 也给出了岭回归估计量的渐进分布，但其做法根本上是不同的，且不适用于我们这里的情形。由于他们并未在 $(*)$ 中第一项前添加 $1/n$，所以按照其文中定义，$\lambda_n = n\lambda$ 并非 $O(\sqrt{n})$，故其 Theorem 2 不能适用。&lt;/p>&lt;/div>
+&lt;h2 id="延伸思考">延伸思考&lt;/h2>
+&lt;p>如果我们想构造渐进方差 $\bm{\Omega}$ 的一致估计，则需要构造 $\bm{B},\bm{Q},\bm{D}$ 的一致估计，前两者容易，而 $\bm{D}$ 较为困难。目前我能想到的最好方式如下：&lt;/p>
+&lt;ul>
+&lt;li>记 $\bm{A} = \bm{B}^{-1}\bm{\beta\beta}^\prime\bm{B}^{-1}$。&lt;/li>
+&lt;li>$\bm{\beta}$ 的一致估计 $\bar{\bm{\beta}} = (\bm{I}_p - \lambda\bar{\bm{B}}_n^{-1})^{-1}\hat{\bm{\beta}}$。&lt;/li>
+&lt;li>$\bm{A}$ 的一致估计 $\bar{\bm{A}} = \bar{\bm{B}}_n^{-1}\bar{\bm{\beta}}\bar{\bm{\beta}}^\prime\bar{\bm{B}}_n^{-1}$。&lt;/li>
+&lt;li>$\bm{B}_i\bar{\bm{A}}\bm{B}_i$ 的第 $(k,\ell)$ 元素是 $\bm{b}_{ik}^\prime\bar{\bm{A}}\bm{b}_{ip}$，$\bm{b}_{ik}^{\prime}$ 是 $\bm{B}_i$ 的第 $k$ 行，注意 $\bm{B}_i$ 是对称矩阵。&lt;/li>
+&lt;li>$n^{-1}\sum_i\text{trace}(\bm{b}_{ik}^\prime\bar{\bm{A}}\bm{b}_{ip}) = \text{trace}(n^{-1}\sum_i\bm{b}_{ip}\bm{b}_{ik}^\prime\bar{\bm{A}})$ 依概率收敛到 $\mathbb{E}(\bm{B}_i\bm{A}\bm{B}_i)$ 的第 $(k,\ell)$ 元素，也就是 $\mathbb{E}(\bm{b}_{ik}^\prime\bm{A}\bm{b}_{ip}) = \text{trace}(\mathbb{E}[\bm{b}_{ip}\bm{b}_{ik}^\prime\bm{A}])$。&lt;/li>
+&lt;/ul>
+&lt;p>本质上，这和 OLS 中异方差时对渐进方差的估计是一个问题，就是两个随机矩阵中间夹一个非随机矩阵，期望不好估计。异方差稳健估计量将 $\sigma_i^2$ 替换为残差的平方，那是一个特殊情况故而可行，但我们这里似乎无法做这种替换，只能用上面这种不太优雅的方式构造一致估计量，实权宜之计。&lt;/p>
 &lt;h2 id="参考">参考&lt;/h2>
 &lt;ol>
 &lt;li>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/Ridge_regression">Ridge regression&lt;/a>.&amp;rdquo; &lt;em>Wikipedia&lt;/em>, accessed March 17, 2023.&lt;/li>
