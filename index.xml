@@ -80,7 +80,7 @@ $$&lt;/p>
 &lt;li>$\bm{B}_i\bar{\bm{A}}\bm{B}_i$ 的第 $(k,\ell)$ 元素是 $\bm{b}_{ik}^\prime\bar{\bm{A}}\bm{b}_{ip}$，$\bm{b}_{ik}^{\prime}$ 是 $\bm{B}_i$ 的第 $k$ 行，注意 $\bm{B}_i$ 是对称矩阵。&lt;/li>
 &lt;li>$n^{-1}\sum_i\text{trace}(\bm{b}_{ik}^\prime\bar{\bm{A}}\bm{b}_{ip}) = \text{trace}(n^{-1}\sum_i\bm{b}_{ip}\bm{b}_{ik}^\prime\bar{\bm{A}})$ 依概率收敛到 $\mathbb{E}(\bm{B}_i\bm{A}\bm{B}_i)$ 的第 $(k,\ell)$ 元素，也就是 $\mathbb{E}(\bm{b}_{ik}^\prime\bm{A}\bm{b}_{ip}) = \text{trace}(\mathbb{E}[\bm{b}_{ip}\bm{b}_{ik}^\prime\bm{A}])$。&lt;/li>
 &lt;/ul>
-&lt;p>本质上，这和 OLS 中异方差时对渐进方差的估计是一个问题，就是两个随机矩阵中间夹一个非随机矩阵，期望不好估计。异方差稳健估计量将 $\sigma_i^2$ 替换为残差的平方，那是一个特殊情况故而可行，但我们这里似乎无法做这种替换，只能用上面这种不太优雅的方式构造一致估计量，实权宜之计。&lt;/p>
+&lt;p>本质上，这和 OLS 中异方差时对渐进方差的估计很相似，就是两个随机矩阵中间夹一个非随机矩阵，期望不好估计。异方差稳健估计量将 $\sigma_i^2$ 替换为残差的平方，那是一个特殊情况故而可行，但我们这里似乎无法做这种替换，只能用上面这种不太优雅的方式构造一致估计量，实权宜之计。另外需要注意，我们不能用 $n^{-1}\sum_i\bm{B}_i\bar{\bm{A}}\bm{B}_i$ 作为 $\mathbb{E}(\bm{B}_i\bm{A}\bm{B}_i)$ 的一致估计，因为 $\bar{\bm{A}}$ 本身就是一个估计量，$\bm{B}_i\bar{\bm{A}}\bm{B}_i$ 将不是一列独立随机矩阵，也就无法引用大数定律得到一致性。&lt;/p>
 &lt;h2 id="参考">参考&lt;/h2>
 &lt;ol>
 &lt;li>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/Ridge_regression">Ridge regression&lt;/a>.&amp;rdquo; &lt;em>Wikipedia&lt;/em>, accessed March 17, 2023.&lt;/li>
