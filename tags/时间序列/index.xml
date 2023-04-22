@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>时间序列 on 嘉樹的世界</title><link>https://cwleo.github.io/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/</link><description>Recent content in 时间序列 on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Sat, 22 Apr 2023 00:58:32 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (I)：严格平稳性</title><link>https://cwleo.github.io/posts/ecmt-notes-stationarity/</link><pubDate>Sat, 22 Apr 2023 00:58:32 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-stationarity/</guid><description>Info
+本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
+内容提要 介绍了时间序列中的一个重要概念：严格平稳性（如无特别说明，平稳性均指代严格平稳），并证明了对平稳序列的任意（可测）变换所得序列仍是平稳的（原书定理 14.2）。
+平稳时间序列 对于构建时间序列的严格且正式的理论而言，我们需要的是严格平稳性，弱平稳（宽平稳、协方差平稳）是不足够的。平稳性对于一列随机变量序列，即随机过程，施加了特别的结构，从而使我们在离开独立性世界后依然能发展出类似大数定律、中心极限定理的重要理论。
+首先给出严格平稳时间序列的定义：
+Definition 1.
+随机过程 $\{Y_t\}_{t\in\mathbb{Z}}$ 若满足：给定任意的 $r\in\mathbb{Z}$，$(Y_t,\dots,Y_{t+r})$ 的联合分布与 $t$ 无关，则称之为平稳过程。 以随机过程的术语来说，平稳时间序列的分布具有 位移不变 (shift-invariant) 的性质。如果我们采用测度论的严格表述，就是：对于 $\mathbb{R}$ 的任意 Borel 子集 $B_0,B_2,\dots,B_r+1$，以及任意的 $t$ 和 $\tau$，都有
+$$ \mathbb{P}\{\omega\colon Y_t(\omega)\in B_0,\dots,Y_{t+r}(\omega)\in B_r\} = \mathbb{P}\{\omega\colon Y_\tau(\omega)\in B_0,\dots,Y_{\tau+r}(\omega)\in B_r\} $$
+这就是在表述 $(Y_t,\dots,Y_{t+r})$ 和 $(Y_{\tau},\dots,Y_{\tau+r})$ 具有相同分布。
+值得一提，有时我们会看到略有不同的定义：
+若对任意的 $t_1,t_2,\dots,t_r$，$(Y_{t_1},\dots,Y_{t_r})$ 的联合分布与 $(Y_{t_1+k},\dots,Y_{t_r+k})$ 相同，而与 $k$ 无关，则称 ${Y_t}$ 是平稳序列。
+乍一看，这个定义似乎更一般，但它和上面的定义是等价的。要从前述定义推出此定义，只需注意到联合分布相同，则边缘分布必定相同，而 $(Y_{t_1},\dots,Y_{t_r})$ 的分布实际上就是 $(Y_t)_{t=t_1}^{t_r}$ 的边缘分布（不失一般性，假设 $t_1,\dots,t_r$ 由小到大排列）。
+平稳时间序列的变换 现在给出一个很强大的定理，它表明了平稳时间序列在任意可测变换下仍可保留平稳性。
+Theorem 2.</description></item></channel></rss>

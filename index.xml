@@ -1,4 +1,116 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Sat, 08 Apr 2023 16:06:52 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>矩阵的秩、核范数与矩阵补全</title><link>https://cwleo.github.io/posts/nuclear-norm-min/</link><pubDate>Sat, 08 Apr 2023 16:06:52 +0800</pubDate><guid>https://cwleo.github.io/posts/nuclear-norm-min/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/nuclear-norm-min/ -&lt;p>大约三周以前，听了一个presentation，讲到了 network 研究中度量关系网络的矩阵的 &lt;em>「低秩」(low rank)&lt;/em> 性质。之后我在浏览一些高维计量文章时，又见到了这个概念，以及 &lt;em>「核范数」(nuclear norm, aka trace norm)&lt;/em>。我印象里应该见过它们很多次，有些模糊的记忆片段，突然想起和硕士期间导师的交流中他提到过，遂从聊天记录中找到一些珍贵文件，当时他让我学习一下关于 &lt;em>「矩阵补全」(matrix recovery, or matrix completion)&lt;/em> 的内容，我没来得及看。那么这几天就学习学习，说不定以后能派上用场。&lt;/p>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Sat, 22 Apr 2023 00:58:32 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (I)：严格平稳性</title><link>https://cwleo.github.io/posts/ecmt-notes-stationarity/</link><pubDate>Sat, 22 Apr 2023 00:58:32 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-stationarity/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-stationarity/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
+&lt;h2 id="内容提要">内容提要&lt;/h2>
+&lt;p>介绍了时间序列中的一个重要概念：严格平稳性（如无特别说明，平稳性均指代严格平稳），并证明了对平稳序列的任意（可测）变换所得序列仍是平稳的（原书定理 14.2）。&lt;/p>
+&lt;h2 id="平稳时间序列">平稳时间序列&lt;/h2>
+&lt;p>对于构建时间序列的严格且正式的理论而言，我们需要的是严格平稳性，弱平稳（宽平稳、协方差平稳）是不足够的。平稳性对于一列随机变量序列，即随机过程，施加了特别的结构，从而使我们在离开独立性世界后依然能发展出类似大数定律、中心极限定理的重要理论。&lt;/p>
+&lt;p>首先给出严格平稳时间序列的定义：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:stationary" class="thm-title thm-definition">Definition 1.&lt;/p>
+&lt;div class="thm-inner thm-definition">
+随机过程 $\{Y_t\}_{t\in\mathbb{Z}}$ 若满足：给定任意的 $r\in\mathbb{Z}$，$(Y_t,\dots,Y_{t+r})$ 的联合分布与 $t$ 无关，则称之为平稳过程。
+&lt;/div>
+&lt;/div>
+&lt;p>以随机过程的术语来说，平稳时间序列的分布具有 &lt;em>位移不变 (shift-invariant)&lt;/em> 的性质。如果我们采用测度论的严格表述，就是：对于 $\mathbb{R}$ 的任意 Borel 子集 $B_0,B_2,\dots,B_r+1$，以及任意的 $t$ 和 $\tau$，都有&lt;/p>
+&lt;p>$$
+\mathbb{P}\{\omega\colon Y_t(\omega)\in B_0,\dots,Y_{t+r}(\omega)\in B_r\} = \mathbb{P}\{\omega\colon Y_\tau(\omega)\in B_0,\dots,Y_{\tau+r}(\omega)\in B_r\}
+$$&lt;/p>
+&lt;p>这就是在表述 $(Y_t,\dots,Y_{t+r})$ 和 $(Y_{\tau},\dots,Y_{\tau+r})$ 具有相同分布。&lt;/p>
+&lt;p>值得一提，有时我们会看到略有不同的定义：&lt;/p>
+&lt;blockquote>
+&lt;p>若对任意的 $t_1,t_2,\dots,t_r$，$(Y_{t_1},\dots,Y_{t_r})$ 的联合分布与 $(Y_{t_1+k},\dots,Y_{t_r+k})$ 相同，而与 $k$ 无关，则称 ${Y_t}$ 是平稳序列。&lt;/p>
+&lt;/blockquote>
+&lt;p>乍一看，这个定义似乎更一般，但它和上面的定义是等价的。要从前述定义推出此定义，只需注意到联合分布相同，则边缘分布必定相同，而 $(Y_{t_1},\dots,Y_{t_r})$ 的分布实际上就是 $(Y_t)_{t=t_1}^{t_r}$ 的边缘分布（不失一般性，假设 $t_1,\dots,t_r$ 由小到大排列）。&lt;/p>
+&lt;h3 id="平稳时间序列的变换">平稳时间序列的变换&lt;/h3>
+&lt;p>现在给出一个很强大的定理，它表明了平稳时间序列在任意可测变换下仍可保留平稳性。&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:trans" class="thm-title thm-Theorem">Theorem 2.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+若 $\{Y_t\}$ 是平稳序列，则对任意可测变换 $\phi\colon\mathbb{R}^{\mathbb{Z}}\to \mathbb{R}$，$X_t := \phi(Y_t,Y_{t-1},\dots)$ 仍是平稳的。
+&lt;/div>
+&lt;/div>
+&lt;div class="thm">
+&lt;button type="button" class="collapsible">&lt;div id="thm-proof-1" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
+&lt;div class="proof-content">
+&lt;div class="thm-inner-proof">
+&lt;p>此证明是以测度论表述的严格证明，因为涉及到无穷维的情况。&lt;/p>
+&lt;p>我们先定义整个随机过程 $\{Y_t\}$ 的分布。设 $T\colon\Omega\to\mathbb{R}^{\mathbb{Z}}$ 以 $(T\omega)_t = Y_t(\omega)$ 作为定义，换言之，$T\omega$ 是一个无穷维向量。设 $\mu$ 是 $\mathbb{P}$ 在 $T$ 下的像测度，即有&lt;/p>
+&lt;p>$$
+\mu(E) = \mathbb{P}(T^{-1}E) \quad\text{for each } E\in\mathcal{B}(\mathbb{R}^{\mathbb{Z}})
+$$&lt;/p>
+&lt;p>$\mu$ 描述了 $\{Y_t\}$ 的分布。&lt;/p>
+&lt;p>现在，我们在无穷维空间 $\mathbb{R}^{\mathbb{Z}}$ 上定义一个 &lt;em>位移变换&lt;/em> $\delta\colon\mathbb{R}^{\mathbb{Z}}\to\mathbb{R}^{\mathbb{Z}}$：&lt;/p>
+&lt;p>$$
+(\delta x)_t = x_{t+r}
+$$&lt;/p>
+&lt;p>也就是说，$\delta$ 将给定的坐标移位 $r$ 个维度。这在时间序列中便是滞后算子。&lt;/p>
+&lt;p>我们要证明 $\delta$ 是一个 $\mu$-&lt;em>&lt;a href="https://en.wikipedia.org/wiki/Measure-preserving_dynamical_system">保测变换&lt;/a>&lt;/em>（或称 $\mu$ 在 $\delta$ 下是 invariant）：&lt;/p>
+&lt;p>$$
+\mu(\delta^{-1}E) = \mu(E) \quad\text{for each } E\in\mathcal{B}(\mathbb{R}^{\mathbb{Z}})
+$$&lt;/p>
+&lt;p>根据 &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Carath%C3%A9odory%27s_extension_theorem">Carathéodory 扩张定理&lt;/a>&lt;/em>，我们不需要证明上式对任意 Borel 子集成立，而只需证明对某个能生成 $\mathcal{B}(\mathbb{R}^{\mathbb{Z}})$ 的代数（对有限交、并、补封闭）的所有子集成立。我们选取的这个代数就是所有 $\mathbb{R}^{\mathbb{Z}}$ 的 &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Cylinder_set">圆柱&lt;/a>&lt;/em> 子集构成的集族，记作 $\mathcal{C}$。&lt;/p>
+&lt;p>$\mathbb{R}^{\mathbb{Z}}$ 的一个圆柱子集定义为如下形式：&lt;/p>
+&lt;p>$$
+C = \{(\dots,x_{-1},x_0,x_1,\dots)\in\mathbb{R}^{\mathbb{Z}}\colon (x_{t_1},x_{t_2},\dots,x_{t_n})\in B\}
+$$&lt;/p>
+&lt;p>其中 $B\in\mathbb{R}^n$ 是一个 Borel 子集。&lt;/p>
+&lt;p>容易证明，$\mathcal{C}$ 是一个代数，并且其生成的 $\sigma$ 域 $\sigma(\mathcal{C})$ 正好是 $\mathcal{B}(\mathbb{R}^{\mathbb{Z}})$。这样，我们只需证明 $\delta$ 在 $\mathcal{C}$ 上保测，而根据 $Y_t$ 的平稳性，这显然成立。于是，$\delta$ 是一个保测变换。&lt;/p>
+&lt;p>上面的证明立即表明，无穷维向量 $\widetilde{Y}_t:=(Y_t, Y_{t-1},\dots)$ 和其任意移位变换 $(Y_{t+r},Y_{t+r-1},\dots)$ 具有相同分布，进而 $x_t = \phi(\widetilde{Y}_t)$ 是平稳的。&lt;/p>
+&lt;/div>
+&lt;div class="thm-end-proof">
+&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-1">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>在时间序列中，我们经常用到的一个特殊变换就是移动平均，即 $Y_t,Y_{t-1},\dots$ 的线性组合：&lt;/p>
+&lt;p>$$
+X_t = \sum_{j=0}^\infty a_jY_{t-j}
+$$&lt;/p>
+&lt;p>当然，我们要求这个级数是几乎确定收敛的，一般情况下，我们省略限定语「几乎确定」。毫无疑问，根据上面的定理，$X_t$ 是平稳的。现在给出 $X_t$ 收敛的充分条件：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:conv" class="thm-title thm-Theorem">Theorem 3.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+若 $\{Y_t\}$ 平稳，$\mathbb{E}|Y|&amp;lt;\infty$，且 $\sum_{j=0}^\infty|a_j| &amp;lt; \infty$，则 $X_t$ 收敛且平稳。
+&lt;/div>
+&lt;/div>
+&lt;div class="thm">
+&lt;button type="button" class="collapsible">&lt;div id="thm-proof-2" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
+&lt;div class="proof-content">
+&lt;div class="thm-inner-proof">
+&lt;p>记 $S_n = \sum_{j=0}^n a_jY_{t-j}$ 为部分和序列。&lt;/p>
+&lt;p>根据 Cauchy 收敛准则，$X_t$ 收敛的充要条件是：对于任意的 $\varepsilon&amp;gt;0$，存在 $N$，当 $n&amp;gt;N$ 时，我们有&lt;/p>
+&lt;p>$$
+\sup_{p\geq1}|S_{n+p}-S_n| &amp;lt; \varepsilon
+$$&lt;/p>
+&lt;p>我们要证明这个条件几乎处处成立。这等价于证明以下事件&lt;/p>
+&lt;p>$$
+A_{\varepsilon} := \bigcap_{n=1}^\infty A_{\varepsilon,n} = \bigcap_{n=1}^\infty\left\{\omega\colon\sup_{p\geq1}\left|\sum_{j=n+1}^{n+p}a_jY_{t-j}\right|\geq\varepsilon\right\}
+$$&lt;/p>
+&lt;p>总是零测集（而不论 $\varepsilon&amp;gt;0$ 的取值）。&lt;/p>
+&lt;p>有如下关系成立：&lt;/p>
+&lt;p>$$
+\begin{align*}
+\mathbb{P}(A_\varepsilon) &amp;amp;\leq \mathbb{P}(A_{\varepsilon,n}) \\
+&amp;amp;\leq \frac{1}{\varepsilon}\mathbb{E}\left[\sup_{p\geq1}\left|\sum_{j=n+1}^{n+p}a_jY_{t-j}\right|\right] \\
+&amp;amp;\leq \frac{1}{\varepsilon}\mathbb{E}\left[\sup_{p\geq1}\sum_{j=n+1}^{n+p}|a_j||Y_{t-j}|\right] \\
+&amp;amp;= \frac{1}{\varepsilon}\mathbb{E}\left[\lim_{p\to\infty}\sum_{j=n+1}^{n+p}|a_j||Y_{t-j}|\right] \\
+&amp;amp;= \frac{1}{\varepsilon}\lim_{p\to\infty}\mathbb{E}\left[\sum_{j=n+1}^{n+p}|a_j||Y_{t-j}|\right] \\
+&amp;amp;= \frac{1}{\varepsilon}\lim_{p\to\infty}\sum_{j=n+1}^{n+p}|a_j|\mathbb{E}|Y|
+\end{align*}
+$$&lt;/p>
+&lt;p>第二行来自 Markov 不等式；第三行来自三角不等式；第五行是单调收敛定理；第六行是积分的线性性。现在，再令 $n\to\infty$，由 $\sum |a_j|&amp;lt;\infty$，以及 $Y$ 绝对可积，进而得到 $\mathbb{P}(A_\varepsilon) = 0$。事实上，上述证明不仅表明 $X_t$ 是收敛的，还是绝对收敛的。&lt;/p>
+&lt;/div>
+&lt;div class="thm-end-proof">
+&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-2">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="参考">参考&lt;/h2>
+&lt;p>Ulcigrai, Corinna. &lt;em>&lt;a href="https://indico.ictp.it/event/8325/session/1/contribution/9/material/0/0.pdf">Lecture Notes on &amp;ldquo;Measure preserving transformations.&amp;rdquo;&lt;/a>&lt;/em>&lt;/p>
+&lt;p>Hansen, Bruce (2022). &lt;em>Econometrics&lt;/em>. Princeton University Press.&lt;/p>
+&lt;p>Petersen, Karl E. (1989). &lt;em>Ergodic Theory.&lt;/em> Cambridge University Press.&lt;/p>
+- https://cwleo.github.io/posts/ecmt-notes-stationarity/ - 2023 嘉樹.</description></item><item><title>矩阵的秩、核范数与矩阵补全</title><link>https://cwleo.github.io/posts/nuclear-norm-min/</link><pubDate>Sat, 08 Apr 2023 16:06:52 +0800</pubDate><guid>https://cwleo.github.io/posts/nuclear-norm-min/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/nuclear-norm-min/ -&lt;p>大约三周以前，听了一个presentation，讲到了 network 研究中度量关系网络的矩阵的 &lt;em>「低秩」(low rank)&lt;/em> 性质。之后我在浏览一些高维计量文章时，又见到了这个概念，以及 &lt;em>「核范数」(nuclear norm, aka trace norm)&lt;/em>。我印象里应该见过它们很多次，有些模糊的记忆片段，突然想起和硕士期间导师的交流中他提到过，遂从聊天记录中找到一些珍贵文件，当时他让我学习一下关于 &lt;em>「矩阵补全」(matrix recovery, or matrix completion)&lt;/em> 的内容，我没来得及看。那么这几天就学习学习，说不定以后能派上用场。&lt;/p>
 &lt;h2 id="内容提要">内容提要&lt;/h2>
 &lt;p>本文将从矩阵恢复问题出发，介绍秩的最小化问题如何转变为一个核范数的最小化问题，前者是一个非凸的优化问题，很难求解，后者是一个凸优化问题，尽管不可求微分，但凸问题总是更易于求解的。&lt;/p>
 &lt;h2 id="motivation">Motivation&lt;/h2>
