@@ -4,7 +4,7 @@
 平稳时间序列 对于构建时间序列的严格且正式的理论而言，我们需要的是严格平稳性，弱平稳（宽平稳、协方差平稳）是不足够的。平稳性对于一列随机变量序列，即随机过程，施加了特别的结构，从而使我们在离开独立性世界后依然能发展出类似大数定律、中心极限定理的重要理论。
 首先给出严格平稳时间序列的定义：
 Definition 1.
-随机过程 $\{Y_t\}_{t\in\mathbb{Z}}$ 若满足：给定任意的 $r\in\mathbb{Z}$，$(Y_t,\dots,Y_{t+r})$ 的联合分布与 $t$ 无关，则称之为平稳过程。 以随机过程的术语来说，平稳时间序列的分布具有 位移不变 (shift-invariant) 的性质。如果我们采用测度论的严格表述，就是：对于 $\mathbb{R}$ 的任意 Borel 子集 $B_0,B_2,\dots,B_r+1$，以及任意的 $t$ 和 $\tau$，都有
+随机过程 $\{Y_t\}_{t\in\mathbb{Z}}$ 若满足：给定任意的 $r\in\mathbb{Z}$，$(Y_t,\dots,Y_{t+r})$ 的联合分布与 $t$ 无关，则称之为平稳过程。 以随机过程的术语来说，平稳时间序列的分布具有 位移不变 (shift-invariant) 的性质。如果我们采用测度论的严格表述，就是：对于 $\mathbb{R}$ 的任意 Borel 子集 $B_0,B_2,\dots,B_r$，以及任意的 $t$ 和 $\tau$，都有
 $$ \mathbb{P}\{\omega\colon Y_t(\omega)\in B_0,\dots,Y_{t+r}(\omega)\in B_r\} = \mathbb{P}\{\omega\colon Y_\tau(\omega)\in B_0,\dots,Y_{\tau+r}(\omega)\in B_r\} $$
 这就是在表述 $(Y_t,\dots,Y_{t+r})$ 和 $(Y_{\tau},\dots,Y_{\tau+r})$ 具有相同分布。
 值得一提，有时我们会看到略有不同的定义：

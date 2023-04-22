@@ -12,7 +12,7 @@
 随机过程 $\{Y_t\}_{t\in\mathbb{Z}}$ 若满足：给定任意的 $r\in\mathbb{Z}$，$(Y_t,\dots,Y_{t+r})$ 的联合分布与 $t$ 无关，则称之为平稳过程。
 &lt;/div>
 &lt;/div>
-&lt;p>以随机过程的术语来说，平稳时间序列的分布具有 &lt;em>位移不变 (shift-invariant)&lt;/em> 的性质。如果我们采用测度论的严格表述，就是：对于 $\mathbb{R}$ 的任意 Borel 子集 $B_0,B_2,\dots,B_r+1$，以及任意的 $t$ 和 $\tau$，都有&lt;/p>
+&lt;p>以随机过程的术语来说，平稳时间序列的分布具有 &lt;em>位移不变 (shift-invariant)&lt;/em> 的性质。如果我们采用测度论的严格表述，就是：对于 $\mathbb{R}$ 的任意 Borel 子集 $B_0,B_2,\dots,B_r$，以及任意的 $t$ 和 $\tau$，都有&lt;/p>
 &lt;p>$$
 \mathbb{P}\{\omega\colon Y_t(\omega)\in B_0,\dots,Y_{t+r}(\omega)\in B_r\} = \mathbb{P}\{\omega\colon Y_\tau(\omega)\in B_0,\dots,Y_{\tau+r}(\omega)\in B_r\}
 $$&lt;/p>
