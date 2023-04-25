@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计量复习笔记 on 嘉樹的世界</title><link>https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 计量复习笔记 on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Sat, 22 Apr 2023 20:22:42 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (II)：遍历性</title><link>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</link><pubDate>Sat, 22 Apr 2023 20:22:42 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</guid><description>Info
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计量复习笔记 on 嘉樹的世界</title><link>https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 计量复习笔记 on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Mon, 24 Apr 2023 12:18:41 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (III)：几个话题</title><link>https://cwleo.github.io/posts/ecmt-notes-some-notions/</link><pubDate>Mon, 24 Apr 2023 12:18:41 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-some-notions/</guid><description>Info
+本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
+内容提要 这一讲不是单个概念，而是好几个话题。因为单个的内容都比较少，所以我把它们都放在这里。当然，每一个话题都可以拓展为很丰富的内容，但由于课上也是选择性介绍的，这里我也就没有再去探索（留待以后），因为往后的重心是非平稳时间序列。
+介绍了鞅差分中心极限定理、线性投影和 Wold 分解定理。
+鞅差分中心极限定理 鞅 (martingale) 是一类非常重要的随机过程，鞅差分 (martingale difference sequence, m.d.s.) 顾名思义就是鞅的差分。这里我们不通过鞅来定义鞅差分，而是直接给出鞅差分的定义：
+Definition 1.
+随机过程 $\{e_t\}$ 若适应于滤流 (filtration) $\{\mathcal{F}_t\}$ 且满足
+$$ \mathbb{E}(e_t|\mathcal{F_{t-1}}) = 0 \quad\text{almost surely} $$
+则称之为鞅差分序列。
+容易验证一个 m.d.s. 是零均值、序列不相关的。
+不加证明地给出鞅差分中心极限定理：
+Theorem 2.
+若 $\{e_t\}$ 是平稳遍历的 m.d.s.，且 $\mathbb{E}(e_t^2) = \sigma^2 &amp;lt;\infty$，则有
+$$ \sqrt{n}\bar{e}_n = \frac{1}{\sqrt{n}}\sum_{t=1}^ne_t \to_d N(0,\sigma^2) $$
+此定理特别适合我们的需要，因为之前已经介绍了平稳和遍历，为了得到一个中心极限定理，只需额外要求序列是一个鞅差分。此定理的严格证明可参考 Davidson (1994) 定理 24.3，它事实上是 McLeish (1974) 鞅差分 CLT 的一个较弱的推论，平稳遍历将保证那个定理中的各项条件得到满足。
+课本中还介绍了 混合 (mixing) 的概念，它是比遍历更强的要求，但思想是相同的，就是渐进独立性（见上一讲定理 4 下面的讨论）。这里不作更多介绍。</description></item><item><title>计量复习笔记 (II)：遍历性</title><link>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</link><pubDate>Sat, 22 Apr 2023 20:22:42 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</guid><description>Info
 本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
 内容提要 引入一个重要概念：遍历性 (ergodicity)，并证明了（弱版本的）遍历定理，该定理是时间序列版本的大数定律。
 遍历性 上一讲介绍了平稳性，它本质上诱导出一个保测变换。但平稳性仍不足以建立起大数定律，例如，考虑一个平凡的时间序列 $Y_t = Y$，它没有任何时间维度上的变动，很显然，它是平稳的，然而 $\frac1n\sum Y_t = Y$ 并不收敛到 $\mathbb{E}(Y)$。大数定律还需要时间序列是遍历的。顺带一提，遍历性理论已经发展成了一个数学分支，在时间序列中的应用只是其诸多应用之一。
