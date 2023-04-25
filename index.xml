@@ -100,7 +100,7 @@ $$&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;p>值得一提，平均协方差趋于零并不意味着单项协方差也趋于零。&lt;/p>
+&lt;p>值得一提，平均协方差趋于零并不意味着单项协方差也趋于零，换言之，遍历不意味着序列无关（即便是渐进意义上）；反过来，序列无关也不意味着遍历（一个反例可见 &lt;a href="https://math.stackexchange.com/a/526387/693430">这里&lt;/a>）。&lt;/p>
 &lt;div class="notice note" >
 &lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>在数学分析中，我们知道，若数列 $a_n$ 有极限 $a$，那么算数平均 $\frac1n\sum a_i$ 收敛且有相同极限 $a$，但反过来并不成立，例如 $a_n = (-1)^n$ 不收敛，但 $\frac1n\sum a_i$ 收敛到零。这个结论常被称作 &lt;a href="https://en.wikipedia.org/wiki/Ces%C3%A0ro_summation">Cesàro summation&lt;/a>。&lt;/p>&lt;/div>
 &lt;p>下面，我们利用上述推论证明一个弱版本的遍历定理。在强版本里，不需要二阶矩存在，而且得到的是几乎确定收敛（和强大数定律一样），其证明可见 Billingsley (1995) 定理 24.1 或者 Davidson (1994) 定理 13.12，有时间我会专门写一篇笔记。&lt;/p>
