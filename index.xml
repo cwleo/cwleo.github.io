@@ -1,4 +1,98 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Mon, 24 Apr 2023 12:18:41 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (III)：几个话题</title><link>https://cwleo.github.io/posts/ecmt-notes-some-notions/</link><pubDate>Mon, 24 Apr 2023 12:18:41 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-some-notions/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-some-notions/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Tue, 25 Apr 2023 19:14:11 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (IV)：时间趋势与收敛速率</title><link>https://cwleo.github.io/posts/ecmt-notes-time-trends/</link><pubDate>Tue, 25 Apr 2023 19:14:11 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-time-trends/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-time-trends/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
+&lt;h2 id="内容提要">内容提要&lt;/h2>
+&lt;p>介绍了含时间趋势回归中 OLS 估计量的渐进分布，揭示了收敛速率的差异。&lt;/p>
+&lt;h2 id="时间趋势回归">时间趋势回归&lt;/h2>
+&lt;p>考虑线性回归模型&lt;/p>
+&lt;p>$$
+Y_t = \beta_0 + \beta_1 t + e_t
+$$&lt;/p>
+&lt;p>其中 ${e_t}$ 是平稳遍历的鞅差分，方差为 $\sigma^2$。&lt;/p>
+&lt;p>假设我们有 $t=1,\dots,n$ 的样本，OLS 估计量（的偏误）就是&lt;/p>
+&lt;p>$$
+\begin{pmatrix}
+\hat{\beta}_0-\beta_0 \\ \hat{\beta}_1-\beta_1
+\end{pmatrix} =
+\begin{pmatrix}
+n &amp;amp; \sum_{t=1}^n t \\ \sum_{t=1}^n t &amp;amp; \sum_{t=1}^n t^2
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+\sum_{t=1}^n e_t \\ \sum_{t=1}^n te_t
+\end{pmatrix}
+$$&lt;/p>
+&lt;p>很显然，$\frac1n\bm{X}'\bm{X}$ 是不收敛的，因为 $\sum_{t=1}^n t = O(n^2)$，$\sum_{t=1}^n t^2 = O(n^3)$。不过，我们可以做一些 rescaling 凑出收敛。&lt;/p>
+&lt;p>首先将 $\bm{X}'\bm{X}$ 统一调成 $O(1)$，这意味着放缩因子是&lt;/p>
+&lt;p>$$
+\begin{pmatrix}
+1 &amp;amp; \frac{1}{n^2} \\ \frac{1}{n^2} &amp;amp; \frac{1}{n^3}
+\end{pmatrix}
+$$&lt;/p>
+&lt;p>能起到缩放作用的是对角矩阵，左乘一个对角矩阵意味着逐行放缩，右乘一个对角矩阵意味着逐列放缩。假设我们对 $\bm{X}'\bm{X}$ 左乘和右乘相同的矩阵 $\bm{D}_n^{-1} = \text{diag}\{a,b\}$，则必定有&lt;/p>
+&lt;p>$$
+a^2=\frac1n,\quad ab = \frac1{n^2},\quad b^2 = \frac{1}{n^3}
+$$&lt;/p>
+&lt;p>解当然不唯一，但我们取正值，也就是 $a = \sqrt{n}$ 和 $b = n^{-3/2}$。&lt;/p>
+&lt;p>于是，通过缩放，我们得到&lt;/p>
+&lt;p>$$
+\begin{align*}
+\bm{D_n}
+\begin{pmatrix}
+\hat{\beta}_0-\beta_0 \\ \hat{\beta}_1-\beta_1
+\end{pmatrix} &amp;amp;=
+(\bm{D_n}^{-1}\bm{X}'\bm{X}\bm{D_n}^{-1})^{-1}\bm{D_n}^{-1}
+\begin{pmatrix}
+\sum_{t=1}^n e_t \\ \sum_{t=1}^n te_t
+\end{pmatrix} \\
+&amp;amp;=\begin{pmatrix}
+1 &amp;amp; \frac{1}{n^2}\sum t \\ \frac{1}{n^2}\sum t &amp;amp; \frac{1}{n^3}\sum t^2
+\end{pmatrix}^{-1}
+\frac{1}{\sqrt{n}}\sum_{t=1}^n
+\begin{pmatrix}
+1 \\ \frac{t}{n}
+\end{pmatrix}
+e_t
+\end{align*}
+$$&lt;/p>
+&lt;p>可以证明 $\frac{1}{n^2}\sum t\to\frac12$，$\frac{1}{n^3}\sum t^2\to\frac13$，因此&lt;/p>
+&lt;p>$$
+\bm{D_n}^{-1}\bm{X}'\bm{X}\bm{D_n}^{-1} \to
+\begin{pmatrix}
+1 &amp;amp; \frac12 \\ \frac12 &amp;amp; \frac13
+\end{pmatrix}
+$$&lt;/p>
+&lt;div class="notice note" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>事实上，对任意 $r&amp;gt;0$，都有&lt;/p>
+&lt;p>$$
+\lim_{n\to\infty}\frac{1}{n^{1+r}}\sum_{t=1}^n t^r = \lim_{n\to\infty}\sum_{t=1}^n \left(\frac{t}{n}\right)^r\cdot\frac1n = \int_0^1 x^r\,dr = \frac{1}{1+r}
+$$&lt;/p>
+&lt;p>这里利用了 Riemann 积分的定义。&lt;/p>&lt;/div>
+&lt;p>接下来，我们要考察第二个部分的渐进分布。前一讲的鞅差分 CLT 不足以用来证明，因为每一项的方差是变化的，需要回到 Davidson (1994) 定理24.3。不论如何，在 $e_t$ 是平稳遍历鞅差分的条件下，我们总可以使用中心极限定理，于是有&lt;/p>
+&lt;p>$$
+\frac{1}{\sqrt{n}}\sum_{t=1}^n
+\begin{pmatrix}
+1 \\ \frac{t}{n}
+\end{pmatrix}
+e_t
+\to_d
+N(\bm{0},\bm{\Sigma})
+$$&lt;/p>
+&lt;p>其中渐进方差 $\bm{\Sigma}$ 就是&lt;/p>
+&lt;p>$$
+\bm{\Sigma} = \lim_{n\to\infty} \sum_{t=1}^n\mathbb{E}\left[\begin{pmatrix}
+1 \\ t/n
+\end{pmatrix}(1,t/n)e_t^2\right] = \begin{pmatrix}
+1 &amp;amp; 1/2 \\ 1/2 &amp;amp; 1/3
+\end{pmatrix}\sigma^2
+$$&lt;/p>
+&lt;p>因此，$\bm{D_n}(\hat{\bm{\beta}}-\beta)$ 的渐进分布&lt;/p>
+&lt;p>$$
+\bm{D_n}(\hat{\bm{\beta}}-\beta) \to_d N(\bm{0},\bm{V}) \quad\text{where } \bm{V} = \sigma^2\begin{pmatrix}
+1 &amp;amp; 1/2 \\ 1/2 &amp;amp; 1/3
+\end{pmatrix}^{-1}
+$$&lt;/p>
+&lt;p>可以看到，$\hat{\beta}_1-\beta_1 = O_p(n^{-3/2})$，比 $\beta_0$ 有更快的收敛速度。这本质上是因为，$X_t = t$ 是一个非平稳的（尽管是确定性的）时间序列，非平稳性意味着序列失去均值回归的性质，因而大数定律失效，欲得到回归或者收敛性，必须使用更高阶的平均。&lt;/p>
+- https://cwleo.github.io/posts/ecmt-notes-time-trends/ - 2023 嘉樹.</description></item><item><title>计量复习笔记 (III)：几个话题</title><link>https://cwleo.github.io/posts/ecmt-notes-some-notions/</link><pubDate>Mon, 24 Apr 2023 12:18:41 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-some-notions/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-some-notions/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
 &lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
 &lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
 &lt;h2 id="内容提要">内容提要&lt;/h2>

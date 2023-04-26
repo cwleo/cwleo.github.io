@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计量复习笔记 on 嘉樹的世界</title><link>https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 计量复习笔记 on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Mon, 24 Apr 2023 12:18:41 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (III)：几个话题</title><link>https://cwleo.github.io/posts/ecmt-notes-some-notions/</link><pubDate>Mon, 24 Apr 2023 12:18:41 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-some-notions/</guid><description>Info
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计量复习笔记 on 嘉樹的世界</title><link>https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 计量复习笔记 on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Tue, 25 Apr 2023 19:14:11 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (IV)：时间趋势与收敛速率</title><link>https://cwleo.github.io/posts/ecmt-notes-time-trends/</link><pubDate>Tue, 25 Apr 2023 19:14:11 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-time-trends/</guid><description>Info
+本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
+内容提要 介绍了含时间趋势回归中 OLS 估计量的渐进分布，揭示了收敛速率的差异。
+时间趋势回归 考虑线性回归模型
+$$ Y_t = \beta_0 + \beta_1 t + e_t $$
+其中 ${e_t}$ 是平稳遍历的鞅差分，方差为 $\sigma^2$。
+假设我们有 $t=1,\dots,n$ 的样本，OLS 估计量（的偏误）就是
+$$ \begin{pmatrix} \hat{\beta}_0-\beta_0 \\ \hat{\beta}_1-\beta_1 \end{pmatrix} = \begin{pmatrix} n &amp;amp; \sum_{t=1}^n t \\ \sum_{t=1}^n t &amp;amp; \sum_{t=1}^n t^2 \end{pmatrix}^{-1} \begin{pmatrix} \sum_{t=1}^n e_t \\ \sum_{t=1}^n te_t \end{pmatrix} $$
+很显然，$\frac1n\bm{X}'\bm{X}$ 是不收敛的，因为 $\sum_{t=1}^n t = O(n^2)$，$\sum_{t=1}^n t^2 = O(n^3)$。不过，我们可以做一些 rescaling 凑出收敛。
+首先将 $\bm{X}'\bm{X}$ 统一调成 $O(1)$，这意味着放缩因子是</description></item><item><title>计量复习笔记 (III)：几个话题</title><link>https://cwleo.github.io/posts/ecmt-notes-some-notions/</link><pubDate>Mon, 24 Apr 2023 12:18:41 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-some-notions/</guid><description>Info
 本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
 内容提要 这一讲不是单个概念，而是好几个话题。因为单个的内容都比较少，所以我把它们都放在这里。当然，每一个话题都可以拓展为很丰富的内容，但由于课上也是选择性介绍的，这里我也就没有再去探索（留待以后），因为往后的重心是非平稳时间序列。
 介绍了鞅差分中心极限定理、线性投影和 Wold 分解定理。
