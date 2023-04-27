@@ -19,7 +19,7 @@ $$&lt;/p>
 &lt;p>若 $S_n(r)$ 满足&lt;/p>
 &lt;ol>
 &lt;li>对任意 $r_1,\dots,r_m$，$(S_n(r_1),\dots,S_n(r_m))\to_d(S(r_1),\dots,S(r_m))$；&lt;/li>
-&lt;li>$S_n(r)$ &lt;a href="https://en.wikipedia.org/wiki/Stochastic_equicontinuity">&lt;em>渐进等度连续 (asymptotically equicontinuous)&lt;/em>&lt;/a>。&lt;/li>
+&lt;li>$S_n(r)$ &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Stochastic_equicontinuity">渐进等度连续 (asymptotically equicontinuous)&lt;/a>&lt;/em>。&lt;/li>
 &lt;/ol>
 &lt;p>则 $S_n(r) \to_d S(r)$。&lt;/p>
 &lt;/div>
