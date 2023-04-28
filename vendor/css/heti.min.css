@@ -259,7 +259,11 @@
 }
 
 .heti p {
-    text-align:justify
+    text-align:justify;
+}
+
+@media screen and (max-width: 1020px) {
+    .heti p {text-align: left;}
 }
 
 .heti p:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)), .heti p:not(:lang(zh)) {
