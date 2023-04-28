@@ -31,7 +31,7 @@ $$&lt;/p>
 &lt;h2 id="一个例子">一个例子&lt;/h2>
 &lt;p>设 $\{e_t(\omega)\}_{t=1}^\infty$ 是一个平稳遍历的鞅差分，方差为 $\sigma^2$，标准化部分和 $S_n(r)$ 依照前述定义。根据鞅差分中心极限定理（见 &lt;a href="../ecmt-notes-some-notions/">第三讲&lt;/a>），有&lt;/p>
 &lt;p>$$
-S_n(r) = \frac{\lfloor nr\rfloor}{n}\frac{1}{\sqrt{\lfloor nr\rfloor}}\sum_{t=1}^{\lfloor nr\rfloor}e_t \to_d N(0,r\sigma^2)
+S_n(r) = \sqrt{\frac{\lfloor nr\rfloor}{n}}\frac{1}{\sqrt{\lfloor nr\rfloor}}\sum_{t=1}^{\lfloor nr\rfloor}e_t \to_d N(0,r\sigma^2)
 $$&lt;/p>
 &lt;p>此外，我们还可证明 $S_n(r_1)$ 和 $S_n(r_2)-S_n(r_1)$ 的联合分布渐进服从联合正态分布，协方差矩阵为 $\text{diag}\{r_1\sigma^2,(r_2-r_1)\sigma^2\}$。这事实上表明了 $S_n(r)$ 的极限分布具有布朗运动的性质。&lt;/p>
 &lt;p>$S_n(r)$ 还是是渐进等度连续的，证明可见 Hansen 课本第 16.22 节。&lt;/p>
