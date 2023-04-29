@@ -31,7 +31,7 @@ $$&lt;/p>
 &lt;p>$$
 y_t = \sum_{\tau=1}^te_\tau = \sum_{\tau=1}^t\xi_\tau + \nu_t - \nu_0
 $$&lt;/p>
-&lt;p>求和项 $\sum\xi_\tau$ 称为 &lt;em>永久部分 (permenant component)&lt;/em> 或趋势部分，随时间而积累；$v_t-v_0$ 称为 &lt;em>瞬时部分 (transitory component)&lt;/em>，不随时间积累；前者是 $Y_t$ 在长期的决定部分。此分解就是 Beveridge-Nelson 分解。&lt;/p>
+&lt;p>求和项 $\sum\xi_\tau$ 称为 &lt;em>永久部分 (permenant component)&lt;/em> 或趋势部分，随时间而积累；$\nu_t-\nu_0$ 称为 &lt;em>瞬时部分 (transitory component)&lt;/em>，不随时间积累；前者是 $Y_t$ 在长期的决定部分。此分解就是 Beveridge-Nelson 分解。&lt;/p>
 &lt;h2 id="部分和过程的极限分布">部分和过程的极限分布&lt;/h2>
 &lt;p>通过构造阶跃并除以 $\sqrt{n}$，得到标准化的连续时间部分和过程&lt;/p>
 &lt;p>$$

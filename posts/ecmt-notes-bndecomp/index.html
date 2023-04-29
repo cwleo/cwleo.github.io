@@ -52,7 +52,7 @@ $$</p><p>为保证求和顺序可交换，一个充分条件是 $\sum_{k=0}^\inf
 e_t = \Theta(1)u_t + (1-L)[\Theta^{*}(L)u_t] \equiv \xi_t + \nu_t-\nu_{t-1}
 $$</p><p>$\xi_t$ 无疑仍是一个平稳遍历的鞅差分，方差为 $\Theta(1)^2\sigma^2$；根据第二和第三讲，$\nu_t=\Theta^{*}(L)u_t$ 也是平稳遍历的（但不再是鞅差分）。</p><p>那么，部分和序列就有如下分解</p><p>$$
 y_t = \sum_{\tau=1}^te_\tau = \sum_{\tau=1}^t\xi_\tau + \nu_t - \nu_0
-$$</p><p>求和项 $\sum\xi_\tau$ 称为 <em>永久部分 (permenant component)</em> 或趋势部分，随时间而积累；$v_t-v_0$ 称为 <em>瞬时部分 (transitory component)</em>，不随时间积累；前者是 $Y_t$ 在长期的决定部分。此分解就是 Beveridge-Nelson 分解。</p><h2 id=部分和过程的极限分布>部分和过程的极限分布&nbsp;<a class=hash-link href=#部分和过程的极限分布><i class="fas fa-link"></i></a></h2><p>通过构造阶跃并除以 $\sqrt{n}$，得到标准化的连续时间部分和过程</p><p>$$
+$$</p><p>求和项 $\sum\xi_\tau$ 称为 <em>永久部分 (permenant component)</em> 或趋势部分，随时间而积累；$\nu_t-\nu_0$ 称为 <em>瞬时部分 (transitory component)</em>，不随时间积累；前者是 $Y_t$ 在长期的决定部分。此分解就是 Beveridge-Nelson 分解。</p><h2 id=部分和过程的极限分布>部分和过程的极限分布&nbsp;<a class=hash-link href=#部分和过程的极限分布><i class="fas fa-link"></i></a></h2><p>通过构造阶跃并除以 $\sqrt{n}$，得到标准化的连续时间部分和过程</p><p>$$
 y_n(r) = \frac{1}{\sqrt{n}}y_{\lfloor nr\rfloor} = \frac{1}{\sqrt{n}}\sum_{\tau=1}^{\lfloor nr\rfloor}\xi_\tau + \frac{1}{\sqrt{n}}\nu_{\lfloor nr\rfloor} - \frac{1}{\sqrt{n}}\nu_0
 $$</p><p>第一项应用上一讲的内容，依分布收敛到布朗运动 $B(r)$，单位时间累积方差为 $\Theta(1)^2\sigma^2$；第三项显然是 $o_p(1)$，因为任意随机变量都是 $O_p(1)$。</p><p>第二项值得细说。它是 $o_p(1)$ 的一个充分条件是 $\max_{1\leq t\leq n}n^{-1/2}|\nu_t| = o_p(1)$，这是因为</p><p>$$
 |\nu_{\lfloor nr\rfloor}| \leq \max_{1\leq t\leq n}|\nu_t| \quad\text{for every } r\in[0,1]
