@@ -1,0 +1,108 @@
+<!doctype html><html lang=en-us><head><title>计量复习笔记 (VII)：单位根序列的均值和趋势</title><meta charset=utf-8><meta name=X-UA-Compatible content="IE=edge"><meta name=google-site-verification content><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name=viewport><meta content="telephone=no" name=format-detection><meta name=description content><meta name=renderer content="webkit"><meta name=theme-color content="#ffffff"><meta property="og:title" content="计量复习笔记 (VII)：单位根序列的均值和趋势"><meta property="og:description" content="Info
+本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
+内容提要 介绍了随机游走序列的样本均值、带趋势项回归、除均值和除趋势等过程的渐进分布，它们都涉及布朗运动。
+样本均值过程 设 $Y_t = \sum_{\tau=1}^te_\tau$ 是上一讲定义的部分和序列，阶跃函数 $Y_n(r)$ 的具体定义如下：
+$$ Y_n(r) = \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor} = \frac{1}{\sqrt{n}}Y_t \quad \text{for } \textstyle r\in\left[\frac{t}{n},\frac{t+1}{n}\right) \quad t = 1,\dots,n $$
+也就是说，$Y_n(r)$ 在区间 $\left[\frac{t}{n},\frac{t+1}{n}\right)$ 上是常数（当然是对固定的 $\omega$），因此可写为
+$$ \frac{1}{\sqrt{n}}Y_t = n\cdot\frac1n Y_n(r) = n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr $$
+于是，对样本均值 $\bar{Y}_n = n^{-1}\sum_{t=1}^nY_t$，我们有
+$$ \begin{align*} \frac{1}{\sqrt{n}}\bar{Y}_n &= \sum_{t=1}^n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr = \int_{1/n}^{1+1/n} Y_n(r)\,dr \\ &= \int_0^1Y_n(r)\,dr + \frac{1}{n^{3/2}}Y_n - \frac{1}{n^{3/2}}Y_0 \\ &= \int_0^1Y_n(r)\,dr + o_p(1) \end{align*} $$"><meta property="og:type" content="article"><meta property="og:url" content="https://cwleo.github.io/posts/ecmt-notes-fclt-means-trends/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-04-29T13:28:11+08:00"><meta property="article:modified_time" content="2023-04-30T00:12:48+08:00"><meta property="og:site_name" content="嘉樹的世界"><meta name=twitter:card content="summary"><meta name=twitter:title content="计量复习笔记 (VII)：单位根序列的均值和趋势"><meta name=twitter:description content="Info
+本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
+内容提要 介绍了随机游走序列的样本均值、带趋势项回归、除均值和除趋势等过程的渐进分布，它们都涉及布朗运动。
+样本均值过程 设 $Y_t = \sum_{\tau=1}^te_\tau$ 是上一讲定义的部分和序列，阶跃函数 $Y_n(r)$ 的具体定义如下：
+$$ Y_n(r) = \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor} = \frac{1}{\sqrt{n}}Y_t \quad \text{for } \textstyle r\in\left[\frac{t}{n},\frac{t+1}{n}\right) \quad t = 1,\dots,n $$
+也就是说，$Y_n(r)$ 在区间 $\left[\frac{t}{n},\frac{t+1}{n}\right)$ 上是常数（当然是对固定的 $\omega$），因此可写为
+$$ \frac{1}{\sqrt{n}}Y_t = n\cdot\frac1n Y_n(r) = n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr $$
+于是，对样本均值 $\bar{Y}_n = n^{-1}\sum_{t=1}^nY_t$，我们有
+$$ \begin{align*} \frac{1}{\sqrt{n}}\bar{Y}_n &= \sum_{t=1}^n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr = \int_{1/n}^{1+1/n} Y_n(r)\,dr \\ &= \int_0^1Y_n(r)\,dr + \frac{1}{n^{3/2}}Y_n - \frac{1}{n^{3/2}}Y_0 \\ &= \int_0^1Y_n(r)\,dr + o_p(1) \end{align*} $$"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LER46KQN8K"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LER46KQN8K",{anonymize_ip:!1})}</script><script src=/js/toc.js></script>
+<link type=text/css rel=stylesheet href=/vendor/css/bootstrap.min.css><link rel=stylesheet href=/scss/journal.min.0b741cb415cbefdd6bf03bbce34d80d1749c99e5c175ca649c8ae47517682ac2.css integrity="sha256-C3QctBXL791r8Du8402A0XScmeXBdcpknIrkdRdoKsI=" media=screen><link rel=stylesheet href=/scss/dark-mode.min.8c1b6d0472cb25b7fe6f98e592eb49750bf4567cb56ab23521c037183ddf3c05.css integrity="sha256-jBttBHLLJbf+b5jlkutJdQv0Vny1arI1IcA3GD3fPAU=" media=screen><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:500,500italic,700,700italic|Roboto:400,400italic,700,700italic|Montserrat:500,500italic,700,700italic|Fira+Mono:500,700|Noto+Serif+TC:500,700|Noto+Serif+SC:500,700|Material+Icons&display=swap"><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script>
+<link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><script>console.log("Hello from 'layouts/partials/extended_head.html'")</script><link rel=stylesheet href=/vendor/css/lxgwwenkaiscreenr.css><script defer src=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js></script>
+<link rel=stylesheet href=/scss/custom/_custom.min.1cbcd45e11d5ecc39472fe299fbc4543d6c431033393ecf5c83877cd3eff8c3f.css integrity="sha256-HLzUXhHV7MOUcv4pn7xFQ9bEMQMzk+z1yDh3zT7/jD8=" media=screen><link rel=stylesheet href=/vendor/css/heti.min.css><script src=/vendor/js/heti.min.js></script>
+<script defer>function domReady(){var e=document.querySelector(".post-subtitle");e&&e.classList.add("heti"),e=document.querySelector("#post-content"),e&&e.classList.add("heti"),document.querySelectorAll(".post-item-summary").forEach(e=>{e.classList.add("heti")})}document.addEventListener("DOMContentLoaded",function(){document.removeEventListener("DOMContentLoaded",arguments.callee,!1),domReady()});const heti=new Heti(".heti");heti.autoSpacing(),window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],macros:{bm:["\\boldsymbol{#1}",1]},processEscapes:!0,processEnvironments:!0},svg:{fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre"],enableMenu:!1}},function(){var e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js",e.async=!0,document.addEventListener("DOMContentLoaded",function(){document.head.appendChild(e)})}()</script><script>document.addEventListener("DOMContentLoaded",function(){var e,t=document.getElementsByClassName("collapsible");for(e=0;e<t.length;e++)t[e].addEventListener("click",function(){this.classList.toggle("active");var e=this.nextElementSibling;e.style.display==="block"?e.style.display="none":e.style.display="block"})})</script></head><body><div id=app><div class=single-column-drawer-container id=drawer v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }"><div class=drawer-content><div class=drawer-menu><a class="a-block drawer-menu-item active" href=/posts>歸檔</a>
+<a class="a-block drawer-menu-item false" href=/categories>分類</a>
+<a class="a-block drawer-menu-item false" href=/tags>標籤</a>
+<a class="a-block drawer-menu-item false" href=/about>關於</a>
+<a class="a-block drawer-menu-item false" href=/index.xml>訂閱</a><div class=toc><div class=toc-content><center>- 目錄 -</center><ul><ul><li><a href=#%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81 class=nav-内容提要>内容提要</a></li><li><a href=#%e6%a0%b7%e6%9c%ac%e5%9d%87%e5%80%bc%e8%bf%87%e7%a8%8b class=nav-样本均值过程>样本均值过程</a></li><li><a href=#%e5%b8%a6%e8%b6%8b%e5%8a%bf%e9%a1%b9%e5%9b%9e%e5%bd%92 class=nav-带趋势项回归>带趋势项回归</a></li><li><a href=#%e9%99%a4%e5%9d%87%e5%80%bc%e5%92%8c%e9%99%a4%e8%b6%8b%e5%8a%bf class=nav-除均值和除趋势>除均值和除趋势</a></li><li><a href=#%e5%8f%82%e8%80%83 class=nav-参考>参考</a></li></ul></div></div></div></div></div><transition name=fade><div id=drawer-mask v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if=isDrawerOpen v-on:click=toggleDrawer></div></transition><nav id=navBar class="navbar sticky-top navbar-light single-column-nav-container"><div id=navBackground class=nav-background></div><div class="container container-narrow nav-content"><button id=nav_dropdown_btn class=nav-dropdown-toggle type=button v-on:click=toggleDrawer>
+<i class=material-icons>menu</i></button>
+<a id=navTitle class=navbar-brand href=https://cwleo.github.io/>嘉樹的世界</a>
+<button type=button class=nav-darkmode-toggle id=darkModeToggleButton2>
+<i class=material-icons id=darkModeToggleIcon2>dark_mode</i></button></div></nav><div class=single-column-header-container id=pageHead v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }"><a href=https://cwleo.github.io/><div class=single-column-header-title>嘉樹的世界</div><div class=single-column-header-subtitle>This is my blog.</div></a></div><div id=content><div id=streamContainer class=stream-container><div class="post-list-container post-list-container-shadow"><div class=post><div class=post-head-wrapper-text-only><div class=post-title>计量复习笔记 (VII)：单位根序列的均值和趋势<div class=post-meta>嘉树 &nbsp;
+<time itemprop=datePublished>2023-04-29 13:28</time>
+&emsp;
+<i class=material-icons>folder</i>
+<a href=/categories/econometrics>Econometrics</a>
+&nbsp;
+<i class=material-icons>label</i>
+<a href=/tags/%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0>计量复习笔记</a>
+&nbsp;
+<a href=/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97>时间序列</a>
+&nbsp;</div></div></div><div class=post-body-wrapper><div class=post-body v-pre><div id=post-content><style type=text/css>.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media(prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}</style><div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379.0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628.0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628.0l-22.627 22.627c-6.248 6.248-6.248 16.379.0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405.0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373.0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884.0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937.0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154.0l239.94 416.028zM288 354c-25.405.0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373.0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884.0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196.0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627.0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627.0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627.0 12 5.373 12 12v1e2h12c6.627.0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice info"><p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"/></svg></span>Info</p><p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) <em>Econometrics</em> 第14和16章的内容。</p></div><h2 id=内容提要>内容提要&nbsp;<a class=hash-link href=#内容提要><i class="fas fa-link"></i></a></h2><p>介绍了随机游走序列的样本均值、带趋势项回归、除均值和除趋势等过程的渐进分布，它们都涉及布朗运动。</p><h2 id=样本均值过程>样本均值过程&nbsp;<a class=hash-link href=#样本均值过程><i class="fas fa-link"></i></a></h2><p>设 $Y_t = \sum_{\tau=1}^te_\tau$ 是上一讲定义的部分和序列，阶跃函数 $Y_n(r)$ 的具体定义如下：</p><p>$$
+Y_n(r) = \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor} = \frac{1}{\sqrt{n}}Y_t \quad \text{for } \textstyle r\in\left[\frac{t}{n},\frac{t+1}{n}\right) \quad t = 1,\dots,n
+$$</p><p>也就是说，$Y_n(r)$ 在区间 $\left[\frac{t}{n},\frac{t+1}{n}\right)$ 上是常数（当然是对固定的 $\omega$），因此可写为</p><p>$$
+\frac{1}{\sqrt{n}}Y_t = n\cdot\frac1n Y_n(r) = n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr
+$$</p><p>于是，对样本均值 $\bar{Y}_n = n^{-1}\sum_{t=1}^nY_t$，我们有</p><p>$$
+\begin{align*}
+\frac{1}{\sqrt{n}}\bar{Y}_n &= \sum_{t=1}^n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr = \int_{1/n}^{1+1/n} Y_n(r)\,dr \\
+&= \int_0^1Y_n(r)\,dr + \frac{1}{n^{3/2}}Y_n - \frac{1}{n^{3/2}}Y_0 \\
+&= \int_0^1Y_n(r)\,dr + o_p(1)
+\end{align*}
+$$</p><p>这个式子刻画了（标准化的）样本均值同（几乎处处连续的）阶跃函数的关系：阶跃函数是一个连续时间随机过程，它关于时间的积分就成了一个随机变量，我们就是在将样本均值表述成一个连续时间随机过程对时间的积分。</p><p>我们从上一讲已经知道 $Y_n(r)\to_d B(r)$。积分作为一个泛函，是关于被积函数的一个连续函数，因而根据 <em>连续映射定理 (Continuous Mapping Theorem, CMT)</em>，有</p><p>$$
+\frac{1}{\sqrt{n}}\bar{Y}_n = \int_0^1 Y_n(r)\,dr + o_p(1) \to_d \int_0^1 B(r)\,dr
+$$</p><p>即 scaled 样本均值依分布收敛于布朗运动在时间维度上的平均。这也表明了 $\bar{Y}_n$ 本身是发散的，即一个单位根序列不具有均值回归的性质。</p><h2 id=带趋势项回归>带趋势项回归&nbsp;<a class=hash-link href=#带趋势项回归><i class="fas fa-link"></i></a></h2><p>用单位根序列对时间趋势回归会得到不同寻常的结果。我们采用 <a href=./ecmt-notes-time-trends.html>第四讲</a> 中的 scaling 矩阵 $\bm{D}_n = \text{diag}\{\sqrt{n},n^{3/2}\}$，分母的收敛仍然是</p><p>$$
+\bm{D}_n^{-1}\bm{X}'\bm{X}\bm{D}_n^{-1} \to
+\begin{pmatrix}
+1 & \frac12 \\ \frac12 & \frac13
+\end{pmatrix}
+$$</p><p>分子项 $\bm{D}_n^{-1}\sum_{t=1}^n\bm{X}_tY_{t}$ 的两个分量可以表述如下：</p><p>$$
+\begin{align*}
+\frac{1}{\sqrt{n}}\sum_{t=1}^n Y_t &= n\cdot\frac{1}{\sqrt{n}}\bar{Y}_n \\
+\frac{1}{n^{3/2}}\sum_{t=1}^n tY_t &= n\sum_{t=1}^n\int_{t/n}^{(t+1)/n} X_n(r)Y_n(r)\,dr = n\left[\int_0^1 X_n(r)Y_n(r)\,dr + o_p(1)\right]
+\end{align*}
+$$</p><p>其中 $X_n(r)$ 的定义与 $Y_n(r)$ 类似：</p><p>$$
+X_n(r) = \frac{1}{n}X_{\lfloor nr\rfloor} = \frac{1}{n}t \quad \text{for } \textstyle r\in\left[\frac{t}{n},\frac{t+1}{n}\right) \quad t = 1,\dots,n
+$$</p><p>显然，$\sup_r|X_n(r)-r|=1/n\to0$，因而由 CMT 得到 $X_n(r)Y_n(r)\to_d rB(r)$，再次使用 CMT 便有</p><p>$$
+\int_0^1 X_n(r)Y_n(r)\,dr \to_d \int_0^1 rB(r)\,dr
+$$</p><p>以上分析表明，$\bm{D}_n^{-1}$ 还不足以使分子项收敛，还需除以 $n$，即有</p><p>$$
+\frac{1}{n}\bm{D}_n^{-1}\sum_{t=1}^n\bm{X}_tY_{t} \to_d
+\begin{pmatrix}
+\int_0^1 B(r)\,dr \\ \int_0^1 rB(r)\,dr
+\end{pmatrix}
+$$</p><p>综合起来就是</p><p>$$
+\frac1n\bm{D}_n\hat{\bm{\beta}} =
+\begin{pmatrix}
+n^{-1/2}\hat{\beta}_0 \\ \sqrt{n}\hat{\beta}_1
+\end{pmatrix}
+\to_d
+\begin{pmatrix}
+1 & \frac12 \\ \frac12 & \frac13
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+\int_0^1 B(r)\,dr \\ \int_0^1 rB(r)\,dr
+\end{pmatrix}
+$$</p><p>这表明，$\hat{\beta}_1$ 具有与平稳情形下 OLS 估计量相同的收敛速度，只是收敛到 0。如果我们不知道一个序列是单位根而做了带趋势项回归，那么拟合出的趋势线的斜率是具有误导性的，因为它不应该传达任何有价值的信息，对预测也毫无帮助。</p><h2 id=除均值和除趋势>除均值和除趋势&nbsp;<a class=hash-link href=#除均值和除趋势><i class="fas fa-link"></i></a></h2><p>考虑除均值序列 $Y_t^* = Y_t - \bar{Y}_n$，对其构造阶跃并除以 $\sqrt{n}$，得到</p><p>$$
+Y_n^{*}(r) = \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor}^* = Y_n(r) - \frac{1}{\sqrt{n}}\bar{Y}_n \to_d B(r) - \int_0^1 B(s)\,ds
+$$</p><p>注意，我们仍应用了 CMT，这里的映射 $T(f) = f - \int_0^1 f$ 是一个泛函，它将 $C[0,1]$ 中的函数映射回 $C[0,1]$。</p><p>线性除趋势序列 $Y_t^{**} = Y_t - \bm{X}_t'\hat{\bm{\beta}}$，对应的阶跃函数</p><p>$$
+\begin{align*}
+Y_n^{**}(r) &= \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor}^{**} = Y_n(r) - \frac{1}{\sqrt{n}}\hat{\beta}_0 - \frac{\lfloor nr\rfloor}{n}\sqrt{n}\hat{\beta}_1 \\
+&\to_d B(r) - \bm{X}(r)\begin{pmatrix}
+1 & \frac12 \\ \frac12 & \frac13
+\end{pmatrix}^{-1}\int_0^1\bm{X}(s)B(s)\,ds
+\end{align*}
+$$</p><p>其中 $\bm{X}(r) = (1,r)'$。</p><p>线性插值除趋势：$\widetilde{Y}_t = Y_t - Y_0 - \frac{t}{n}(Y_n-Y_0)$，这不是通过拟合，而是连接 $Y_0$ 和 $Y_n$ 得到的趋势线。对应的阶跃函数</p><p>$$
+\begin{align*}
+\widetilde{Y}_n(r) &= \frac{1}{\sqrt{n}}\widetilde{Y}_{\lfloor nr\rfloor} = Y_n(r) - \frac{1}{\sqrt{n}}Y_0 - \frac{\lfloor nr\rfloor}{n^{3/2}}(Y_n-Y_0) \\
+&= Y_n(r) - \frac{\lfloor nr\rfloor}{n}\frac{1}{\sqrt{n}}Y_n + o_p(1) \\
+&\to_d B(r) - rB(1)
+\end{align*}
+$$</p><p>极限过程 $V(r) := B(r) - rB(1)$ 称作 <em><a href=https://en.wikipedia.org/wiki/Brownian_bridge>布朗桥 (Brownian Bridge)</a></em>，其特点是每条样本路径首末值均为 0，就像一座桥一样连接 $r=0$ 和 $r=1$ 两个端点。</p><h2 id=参考>参考&nbsp;<a class=hash-link href=#参考><i class="fas fa-link"></i></a></h2><p>Hansen, Bruce (2022). <em>Econometrics</em>. Princeton University Press.</p></div><div><hr width=100% id=EOF style="border-top:.6px solid #777;margin-top:2.5rem"><p style=color:#777>上次修改於 2023-04-30</p></div></div></div><nav class=post-pagination><a class=older-posts href=/posts/ecmt-notes-bndecomp/>上回<br><em>计量复习笔记 (VI)：Beveridge-Nelson 分解</em></a>
+<a class=newer-posts>下回<br>已經到底啦。</a></nav><div class=post-comment-wrapper><div id=waline></div><script>Waline.init({el:"#waline",dark:"body.night",serverURL:"https://mysitecomments-2yzw3y3tk-cwleo.vercel.app"})</script></div></div></div></div></div><div id=sideContainer class=side-container><a class="a-block nav-head false" href=https://cwleo.github.io/><div class=nav-title>嘉樹的世界</div><div class=nav-subtitle>This is my blog.</div></a><div class=nav-link-list><a class="a-block nav-link-item active" href=/posts>歸檔</a>
+<a class="a-block nav-link-item false" href=/categories>分類</a>
+<a class="a-block nav-link-item false" href=/tags>標籤</a>
+<a class="a-block nav-link-item false" href=/about>關於</a>
+<a class="a-block nav-link-item false" href=/index.xml>訂閱</a></div><div class=nav-footer>由 <a href=https://gohugo.io>Hugo</a> 強力驅動<br>主題改動自 <a href=https://github.com/amazingrise/hugo-theme-diary>Diary</a><br>&copy;
+2023 嘉樹.
+本站遵循 <a href=https://creativecommons.org/licenses/by-nc/4.0/>CC-BY-NC 4.0</a> 協議</div></div><div id=extraContainer class=extra-container><div class=toc-wrapper><div class=toc><div class=toc-content><center>- 目錄 -</center><ul><ul><li><a href=#%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81 class=nav-内容提要>内容提要</a></li><li><a href=#%e6%a0%b7%e6%9c%ac%e5%9d%87%e5%80%bc%e8%bf%87%e7%a8%8b class=nav-样本均值过程>样本均值过程</a></li><li><a href=#%e5%b8%a6%e8%b6%8b%e5%8a%bf%e9%a1%b9%e5%9b%9e%e5%bd%92 class=nav-带趋势项回归>带趋势项回归</a></li><li><a href=#%e9%99%a4%e5%9d%87%e5%80%bc%e5%92%8c%e9%99%a4%e8%b6%8b%e5%8a%bf class=nav-除均值和除趋势>除均值和除趋势</a></li><li><a href=#%e5%8f%82%e8%80%83 class=nav-参考>参考</a></li></ul></div></div></div><div class=pagination><a id=globalBackToTop class="pagination-action animated-visibility" href=#top :class="{ invisible: scrollY == 0 }"><i class="material-icons pagination-action-icon">keyboard_arrow_up</i></a>
+<a type=button class=pagination-action id=darkModeToggleButton><span class="material-icons pagination-action-icon" id=darkModeToggleIcon>dark_mode</span></a></div></div><div id=single-column-footer>由 <a href=https://gohugo.io>Hugo</a> 強力驅動<br>主題改動自 <a href=https://github.com/amazingrise/hugo-theme-diary>Diary</a><br>&copy;
+2023 嘉樹.
+本站遵循 <a href=https://creativecommons.org/licenses/by-nc/4.0/>CC-BY-NC 4.0</a> 協議</div></div><script src=/js/journal.js></script></body></html>
