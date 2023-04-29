@@ -35,7 +35,7 @@ $$&lt;/p>
 &lt;h2 id="部分和过程的极限分布">部分和过程的极限分布&lt;/h2>
 &lt;p>通过构造阶跃并除以 $\sqrt{n}$，得到标准化的连续时间部分和过程&lt;/p>
 &lt;p>$$
-Y_n(r) = \frac{1}{\sqrt{n}}y_{\lfloor nr\rfloor} = \frac{1}{\sqrt{n}}\sum_{\tau=1}^{\lfloor nr\rfloor}\xi_\tau + \frac{1}{\sqrt{n}}\nu_{\lfloor nr\rfloor} - \frac{1}{\sqrt{n}}\nu_0
+Y_n(r) = \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor} = \frac{1}{\sqrt{n}}\sum_{\tau=1}^{\lfloor nr\rfloor}\xi_\tau + \frac{1}{\sqrt{n}}\nu_{\lfloor nr\rfloor} - \frac{1}{\sqrt{n}}\nu_0
 $$&lt;/p>
 &lt;p>第一项应用上一讲的内容，依分布收敛到布朗运动 $B(r)$，单位时间累积方差为 $\Theta(1)^2\sigma^2$；第三项显然是 $o_p(1)$，因为任意随机变量都是 $O_p(1)$。&lt;/p>
 &lt;p>第二项值得细说。它是 $o_p(1)$ 的一个充分条件是 $\max_{1\leq t\leq n}n^{-1/2}|\nu_t| = o_p(1)$，这是因为&lt;/p>
