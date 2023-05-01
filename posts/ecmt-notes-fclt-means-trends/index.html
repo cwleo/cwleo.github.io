@@ -6,7 +6,7 @@ $$ Y_n(r) = \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor} = \frac{1}{\sqrt{n}}Y_t \qua
 也就是说，$Y_n(r)$ 在区间 $\left[\frac{t}{n},\frac{t+1}{n}\right)$ 上是常数（当然是对固定的 $\omega$），因此可写为
 $$ \frac{1}{\sqrt{n}}Y_t = n\cdot\frac1n Y_n(r) = n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr $$
 于是，对样本均值 $\bar{Y}_n = n^{-1}\sum_{t=1}^nY_t$，我们有
-$$ \begin{align*} \frac{1}{\sqrt{n}}\bar{Y}_n &= \sum_{t=1}^n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr = \int_{1/n}^{1+1/n} Y_n(r)\,dr \\ &= \int_0^1Y_n(r)\,dr + \frac{1}{n^{3/2}}Y_n - \frac{1}{n^{3/2}}Y_0 \\ &= \int_0^1Y_n(r)\,dr + o_p(1) \end{align*} $$"><meta property="og:type" content="article"><meta property="og:url" content="https://cwleo.github.io/posts/ecmt-notes-fclt-means-trends/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-04-29T13:28:11+08:00"><meta property="article:modified_time" content="2023-04-30T00:12:48+08:00"><meta property="og:site_name" content="嘉樹的世界"><meta name=twitter:card content="summary"><meta name=twitter:title content="计量复习笔记 (VII)：单位根序列的均值和趋势"><meta name=twitter:description content="Info
+$$ \begin{align*} \frac{1}{\sqrt{n}}\bar{Y}_n &= \sum_{t=1}^n\int_{t/n}^{(t+1)/n} Y_n(r)\,dr = \int_{1/n}^{1+1/n} Y_n(r)\,dr \\ &= \int_0^1Y_n(r)\,dr + \frac{1}{n^{3/2}}Y_n - \frac{1}{n^{3/2}}Y_0 \\ &= \int_0^1Y_n(r)\,dr + o_p(1) \end{align*} $$"><meta property="og:type" content="article"><meta property="og:url" content="https://cwleo.github.io/posts/ecmt-notes-fclt-means-trends/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-04-29T13:28:11+08:00"><meta property="article:modified_time" content="2023-05-01T20:37:45+08:00"><meta property="og:site_name" content="嘉樹的世界"><meta name=twitter:card content="summary"><meta name=twitter:title content="计量复习笔记 (VII)：单位根序列的均值和趋势"><meta name=twitter:description content="Info
 本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) Econometrics 第14和16章的内容。
 内容提要 介绍了随机游走序列的样本均值、带趋势项回归、除均值和除趋势等过程的渐进分布，它们都涉及布朗运动。
 样本均值过程 设 $Y_t = \sum_{\tau=1}^te_\tau$ 是上一讲定义的部分和序列，阶跃函数 $Y_n(r)$ 的具体定义如下：
@@ -85,7 +85,7 @@ Y_n^{*}(r) = \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor}^* = Y_n(r) - \frac{1}{\sqrt
 $$</p><p>注意，我们仍应用了 CMT，这里的映射 $T(f) = f - \int_0^1 f$ 是一个泛函，它将 $C[0,1]$ 中的函数映射回 $C[0,1]$。</p><p>线性除趋势序列 $Y_t^{**} = Y_t - \bm{X}_t'\hat{\bm{\beta}}$，对应的阶跃函数</p><p>$$
 \begin{align*}
 Y_n^{**}(r) &= \frac{1}{\sqrt{n}}Y_{\lfloor nr\rfloor}^{**} = Y_n(r) - \frac{1}{\sqrt{n}}\hat{\beta}_0 - \frac{\lfloor nr\rfloor}{n}\sqrt{n}\hat{\beta}_1 \\
-&\to_d B(r) - \bm{X}(r)\begin{pmatrix}
+&\to_d B(r) - \bm{X}(r)'\begin{pmatrix}
 1 & \frac12 \\ \frac12 & \frac13
 \end{pmatrix}^{-1}\int_0^1\bm{X}(s)B(s)\,ds
 \end{align*}
@@ -95,8 +95,8 @@ $$</p><p>其中 $\bm{X}(r) = (1,r)'$。</p><p>线性插值除趋势：$\widetild
 &= Y_n(r) - \frac{\lfloor nr\rfloor}{n}\frac{1}{\sqrt{n}}Y_n + o_p(1) \\
 &\to_d B(r) - rB(1)
 \end{align*}
-$$</p><p>极限过程 $V(r) := B(r) - rB(1)$ 称作 <em><a href=https://en.wikipedia.org/wiki/Brownian_bridge>布朗桥 (Brownian Bridge)</a></em>，其特点是每条样本路径首末值均为 0，就像一座桥一样连接 $r=0$ 和 $r=1$ 两个端点。</p><h2 id=参考>参考&nbsp;<a class=hash-link href=#参考><i class="fas fa-link"></i></a></h2><p>Hansen, Bruce (2022). <em>Econometrics</em>. Princeton University Press.</p></div><div><hr width=100% id=EOF style="border-top:.6px solid #777;margin-top:2.5rem"><p style=color:#777>上次修改於 2023-04-30</p></div></div></div><nav class=post-pagination><a class=older-posts href=/posts/ecmt-notes-bndecomp/>上回<br><em>计量复习笔记 (VI)：Beveridge-Nelson 分解</em></a>
-<a class=newer-posts>下回<br>已經到底啦。</a></nav><div class=post-comment-wrapper><div id=waline></div><script>Waline.init({el:"#waline",dark:"body.night",serverURL:"https://mysitecomments-2yzw3y3tk-cwleo.vercel.app"})</script></div></div></div></div></div><div id=sideContainer class=side-container><a class="a-block nav-head false" href=https://cwleo.github.io/><div class=nav-title>嘉樹的世界</div><div class=nav-subtitle>This is my blog.</div></a><div class=nav-link-list><a class="a-block nav-link-item active" href=/posts>歸檔</a>
+$$</p><p>极限过程 $V(r) := B(r) - rB(1)$ 称作 <em><a href=https://en.wikipedia.org/wiki/Brownian_bridge>布朗桥 (Brownian Bridge)</a></em>，其特点是每条样本路径首末值均为 0，就像一座桥一样连接 $r=0$ 和 $r=1$ 两个端点。</p><h2 id=参考>参考&nbsp;<a class=hash-link href=#参考><i class="fas fa-link"></i></a></h2><p>Hansen, Bruce (2022). <em>Econometrics</em>. Princeton University Press.</p></div><div><hr width=100% id=EOF style="border-top:.6px solid #777;margin-top:2.5rem"><p style=color:#777>上次修改於 2023-05-01</p></div></div></div><nav class=post-pagination><a class=older-posts href=/posts/ecmt-notes-bndecomp/>上回<br><em>计量复习笔记 (VI)：Beveridge-Nelson 分解</em></a>
+<a class=newer-posts href=/posts/ecmt-notes-ar-adf/>下回<br><em>计量复习笔记 (VIII)：自回归估计与 (A)DF 检验</em></a></nav><div class=post-comment-wrapper><div id=waline></div><script>Waline.init({el:"#waline",dark:"body.night",serverURL:"https://mysitecomments-2yzw3y3tk-cwleo.vercel.app"})</script></div></div></div></div></div><div id=sideContainer class=side-container><a class="a-block nav-head false" href=https://cwleo.github.io/><div class=nav-title>嘉樹的世界</div><div class=nav-subtitle>This is my blog.</div></a><div class=nav-link-list><a class="a-block nav-link-item active" href=/posts>歸檔</a>
 <a class="a-block nav-link-item false" href=/categories>分類</a>
 <a class="a-block nav-link-item false" href=/tags>標籤</a>
 <a class="a-block nav-link-item false" href=/about>關於</a>

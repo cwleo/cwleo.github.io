@@ -1,4 +1,97 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Sat, 29 Apr 2023 13:28:11 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Bayesian Persuasion</title><link>https://cwleo.github.io/posts/bayesian-persuasion/</link><pubDate>Wed, 08 Mar 2023 22:25:46 +0800</pubDate><guid>https://cwleo.github.io/posts/bayesian-persuasion/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/bayesian-persuasion/ -&lt;h2 id="内容提要">内容提要&lt;/h2>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Sun, 30 Apr 2023 12:02:47 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Ridge Regression</title><link>https://cwleo.github.io/posts/ridge-regression/</link><pubDate>Fri, 17 Mar 2023 13:37:45 +0800</pubDate><guid>https://cwleo.github.io/posts/ridge-regression/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ridge-regression/ -&lt;h2 id="内容提要">内容提要&lt;/h2>
+&lt;p>一周以前（3月7日）考计量期中，第一题是证明岭回归估计量的渐进分布的，我没有完整地写出来，这里面还是有些技巧，之前我并不熟悉，现在总结在这里。&lt;/p>
+&lt;h2 id="岭回归简介">岭回归简介&lt;/h2>
+&lt;p>Ridge regression，中文译名「岭回归」，是一种利用 &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">正则化方法&lt;/a>&lt;/em> 处理 &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Well-posed_problem">不适定问题&lt;/a>&lt;/em> 的技术。我们知道，使用 OLS 时是要求自变量之间不存在完全多重共线性的，即回归元矩阵必须是列满秩的，否则最小二乘问题没有唯一解；但如果某些变量间的相关性很高，甚至接近完全相关，OLS 估计量的方差将会相当大，估计精度大大下降。这个问题在待估参数很多时常常发生。岭回归通过对系数向量的 $L^2$ 范数（的平方）施加一个惩罚，控制系数的整体大小，达到以一定程度的偏误换取更低方差的目的（见 &lt;a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">bias-variance tradeoff&lt;/a>）。&lt;/p>
+&lt;h2 id="formulation">Formulation&lt;/h2>
+&lt;p>考虑线性模型：$y_i = \bm{x}_i^\prime\bm{\beta} + \varepsilon_i$，$i=1,\dots,N$。其中 $\bm{x}_i$ 和 $\bm{\beta}$ 都是 $p$ 维向量。我们更喜欢表示为矩阵形式：&lt;/p>
+&lt;p>$$
+\bm{Y} = \bm{X}\bm{\beta} + \bm{\mathcal{E}}
+$$&lt;/p>
+&lt;p>其中 $\bm{Y} = (y_1,\dots,y_N)^\prime$，$\bm{X} = (\bm{x}_1,\dots,\bm{x}_N)^\prime$，$\bm{\mathcal{E}} = (\varepsilon_1,\dots,\varepsilon_N)^\prime$。假设 $\mathbb{E}(\varepsilon_i|\bm{x}_i) = 0$ 以及 $\mathbb{E}(\varepsilon_i^2|\bm{x}_i) = \sigma^2$，并假设 $\{(\bm{x}_i,y_i)\}_{i=1}^n$ 是独立同分布的。&lt;/p>
+&lt;p>岭回归估计量 $\hat{\bm{\beta}}$ 来自如下带有惩罚项的最小二乘问题：&lt;/p>
+&lt;p>$$
+\min_{\bm{\beta}}\quad \frac1n(\bm{Y}-\bm{X}\bm{\beta})^\prime(\bm{Y}-\bm{X}\bm{\beta}) + \lambda\bm{\beta}^\prime\bm{\beta}
+\tag{$*$}
+$$&lt;/p>
+&lt;p>这里 $\lambda$ 是一个参数，它衡量了惩罚的大小。当 $\lambda=0$ 时，该问题就是 OLS；当 $\lambda\to\infty$ 时，$\bm{\beta} = \bm{0}$。事实上，这个问题等价于一个有约束的最小二乘：&lt;/p>
+&lt;p>$$
+\min_{\bm{\beta}}\quad (\bm{Y}-\bm{X}\bm{\beta})^\prime(\bm{Y}-\bm{X}\bm{\beta}) \qquad \text{s.t.}\quad \bm{\beta}^\prime\bm{\beta} = c^2
+$$&lt;/p>
+&lt;p>其中 $c$ 为某个非负常数。可见我们是在 $p$ 维 Euclidean 空间中半径为 $c$ 的球面上寻找最小二乘估计量。&lt;/p>
+&lt;p>由 $(*)$，一阶条件为 $n^{-1}(-2\bm{X}^\prime\bm{Y}+2\bm{X}^\prime\bm{X}\bm{\beta})+2\lambda\bm{\beta} = \bm{0}$，于是岭回归估计量&lt;/p>
+&lt;p>$$
+\hat{\bm{\beta}} = \left(\frac1n\bm{X}^\prime\bm{X}+\lambda\bm{I}_p\right)^{-1}\frac1n\bm{X}^\prime\bm{Y}
+$$&lt;/p>
+&lt;p>其中 $\bm{I}_p$ 是 $p$ 阶单位阵。&lt;/p>
+&lt;h2 id="渐进分布">渐进分布&lt;/h2>
+&lt;p>我们把 $\bm{Y} = \bm{X}\bm{\beta} + \bm{\mathcal{E}}$ 带入 $\hat{\bm{\beta}}$ 的表达式，并做适当整理变形，得到&lt;/p>
+&lt;p>$$
+\hat{\bm{\beta}} - \bm{\beta} = \left(\frac1n\bm{X}^\prime\bm{X}+\lambda\bm{I}_p\right)^{-1}\frac1n\bm{X}^\prime\bm{\mathcal{E}} - \left(\frac1n\bm{X}^\prime\bm{X}+\lambda\bm{I}_p\right)^{-1}\lambda\bm{\beta}
+$$&lt;/p>
+&lt;p>为简化符号，记 $\bm{B}_i = \bm{x}_i\bm{x}_i^\prime+\lambda\bm{I}_p$，$\bar{\bm{B}}_n = n^{-1}\sum_{i=1}^n\bm{B}_i$，其无条件期望 $\mathbb{E}(\bm{x}_i\bm{x}_i^\prime)+\lambda\bm{I}_p$ 记作 $\bm{B}$；此外，记 $\bm{Q} = \mathbb{E}(\bm{x}_i\bm{x}_i^\prime)$。&lt;/p>
+&lt;p>为应用中心极限定理（CLT），需要将上式整理成某个样本均值的形式。事实上，我们应当考虑构造一个更大的随机向量，导出其渐进分布，然后应用 &lt;a href="https://en.wikipedia.org/wiki/Cram%C3%A9r%E2%80%93Wold_theorem">Cramér–Wold device&lt;/a> 得到估计量的渐进分布。如果我们构造 $(\bm{x}_i^\prime\varepsilon_i,\lambda\bm{\beta}^\prime)^\prime$，则无法直接应用 CLT，因为该向量均值非零（除非 $\bm{\beta} = \bm{0}$）。正确的方式是作如下变形：&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\hat{\bm{\beta}} - \bm{\beta} + \lambda\bm{B}^{-1}\bm{\beta} &amp;amp;= \bar{\bm{B}}_n^{-1}\left[\frac1n\bm{X}^\prime\bm{\mathcal{E}}-(\bm{I}_p-\bar{\bm{B}}_n\bm{B}^{-1})\lambda\bm{\beta}\right] \\
+&amp;amp;= \bar{\bm{B}}_n^{-1}\frac1n\sum_{i=1}^n\Bigl[\bm{x}_i\varepsilon_i-(\bm{I}_p-\bm{B}_i\bm{B}^{-1})\lambda\bm{\beta}\Bigr]
+\end{aligned}
+$$&lt;/p>
+&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice note" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>我们可以将 summand 视为一体，计算其均值和方差，然后直接应用 CLT，这本质上和 Cramér–Wold device 相同。&lt;/p>&lt;/div>
+&lt;p>考虑随机向量 $(\bm{c}_i^\prime,\bm{e}_i^\prime)^\prime$，其中 $\bm{c}_i = \bm{x}_i\varepsilon_i$，$\bm{e}_i = (\bm{I}_p-\bm{B}_i\bm{B}^{-1})\lambda\bm{\beta}$。易见 $\{(\bm{c}_i^\prime,\bm{e}_i^\prime)^\prime\}_{i=1}^n$ 是独立同分布的，均值为 $\bm{0}$，协方差矩阵&lt;/p>
+&lt;p>$$
+\bm{V} = \begin{pmatrix}
+\sigma^2\bm{Q} &amp;amp; \bm{0} \\
+\bm{0} &amp;amp; \lambda^2\bm{D}
+\end{pmatrix}
+$$&lt;/p>
+&lt;p>其中 $\bm{D} = \mathbb{E}(\bm{B}_i\bm{B}^{-1}\bm{\beta\beta}^\prime\bm{B}^{-1}\bm{B}_i)-\bm{\beta}\bm{\beta}^\prime$。由 CLT，有&lt;/p>
+&lt;p>$$
+\frac1{\sqrt{n}}\sum_{i=1}^n\begin{pmatrix}
+\bm{c}_i \\ \bm{e}_i
+\end{pmatrix} \to_d N(\bm{0},\bm{V})
+$$&lt;/p>
+&lt;p>于是，利用 Cramér–Wold device，有&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\frac1{\sqrt{n}}\sum_{i=1}^n\Bigl[\bm{x}_i\varepsilon_i-(\bm{I}_p-\bm{B}_i\bm{B}^{-1})\lambda\bm{\beta}\Bigr] &amp;amp;= (1,-1)\frac1{\sqrt{n}}\sum_{i=1}^n\begin{pmatrix}
+\bm{c}_i \\ \bm{e}_i
+\end{pmatrix} \begin{pmatrix}
+1 \\ -1
+\end{pmatrix}
+\\
+&amp;amp;\to_d N(\bm{0}, \sigma^2\bm{Q}+\lambda^2\bm{D})
+\end{aligned}
+$$&lt;/p>
+&lt;p>最后，$\bar{\bm{B}}_n\to_p\bm{B}$，根据 Slutsky 定理，有&lt;/p>
+&lt;p>$$
+\sqrt{n}(\hat{\bm{\beta}} - \bm{\beta} + \lambda\bm{B}^{-1}\bm{\beta}) \to_d N(\bm{0},\bm{\Omega})
+$$&lt;/p>
+&lt;p>其中 $\bm{\Omega} = \bm{B}^{-1}(\sigma^2\bm{Q}+\lambda^2\bm{D})\bm{B}^{-1}$。&lt;/p>
+&lt;div class="notice note" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>值得一提，Knight and Fu (2000) 也给出了岭回归估计量的渐进分布，但其做法根本上是不同的，且不适用于我们这里的情形。由于他们并未在 $(*)$ 中第一项前添加 $1/n$，所以按照其文中定义，$\lambda_n = n\lambda$ 并非 $O(\sqrt{n})$，故其 Theorem 2 不能适用。&lt;/p>&lt;/div>
+&lt;h2 id="延伸思考">延伸思考&lt;/h2>
+&lt;p>如果我们想构造渐进方差 $\bm{\Omega}$ 的一致估计，则需要构造 $\bm{B},\bm{Q},\bm{D}$ 的一致估计，前两者容易，而 $\bm{D}$ 较为困难。&lt;/p>
+&lt;ul>
+&lt;li>记 $\bm{A} = \bm{B}^{-1}\bm{\beta\beta}^\prime\bm{B}^{-1}$。&lt;/li>
+&lt;li>$\bm{\beta}$ 的一致估计 $\bar{\bm{\beta}} = (\bm{I}_p - \lambda\bar{\bm{B}}_n^{-1})^{-1}\hat{\bm{\beta}}$。&lt;/li>
+&lt;li>$\bm{A}$ 的一致估计 $\bar{\bm{A}} = \bar{\bm{B}}_n^{-1}\bar{\bm{\beta}}\bar{\bm{\beta}}^\prime\bar{\bm{B}}_n^{-1}$。&lt;/li>
+&lt;/ul>
+&lt;p>乍一看，似乎不能用 $n^{-1}\sum_i\bm{B}_i\bar{\bm{A}}\bm{B}_i$ 作为 $\mathbb{E}(\bm{B}_i\bm{A}\bm{B}_i)$ 的一致估计，因为 $\bar{\bm{A}}$ 本身就是一个估计量，$\bm{B}_i\bar{\bm{A}}\bm{B}_i$ 将不是一列独立随机矩阵，也就无法引用大数定律得到一致性。但实际上是可行的，只需利用 trace 的性质对每个 entry 进行分析：&lt;/p>
+&lt;ul>
+&lt;li>$\bm{B}_i\bar{\bm{A}}\bm{B}_i$ 的第 $(k,\ell)$ 元素是 $\bm{b}_{ik}^\prime\bar{\bm{A}}\bm{b}_{i\ell}$，$\bm{b}_{ik}^{\prime}$ 是 $\bm{B}_i$ 的第 $k$ 行，注意 $\bm{B}_i$ 是对称矩阵。&lt;/li>
+&lt;li>$\frac1n\sum_i\text{tr}(\bm{b}_{ik}^\prime\bar{\bm{A}}\bm{b}_{i\ell}) = \text{tr}(\frac1n\sum_i\bm{b}_{i\ell}\bm{b}_{ik}^\prime\bar{\bm{A}})$ 依概率收敛到 $\mathbb{E}(\bm{B}_i\bm{A}\bm{B}_i)$ 的第 $(k,\ell)$ 元素，也就是 $\mathbb{E}(\bm{b}_{ik}^\prime\bm{A}\bm{b}_{i\ell}) = \text{tr}(\mathbb{E}[\bm{b}_{i\ell}\bm{b}_{ik}^\prime]\bm{A})$。&lt;/li>
+&lt;/ul>
+&lt;p>这和 OLS 中异方差时对渐进方差的估计有些相似，比如都是三明治形式。&lt;/p>
+&lt;h2 id="参考">参考&lt;/h2>
+&lt;ol>
+&lt;li>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/Ridge_regression">Ridge regression&lt;/a>.&amp;rdquo; &lt;em>Wikipedia&lt;/em>, accessed March 17, 2023.&lt;/li>
+&lt;li>van Wieringen, W. N. &amp;ldquo;Lecture Notes on Ridge Regression.&amp;rdquo; &lt;em>arXiv preprint&lt;/em>, submitted in 2015. &lt;a href="https://arxiv.org/pdf/1509.09169.pdf">arXiv:1509.09169&lt;/a>.&lt;/li>
+&lt;li>Knight, Keith and Wenjiang Fu. 2000. &amp;ldquo;Asymptotics for Lasso-type Estimators.&amp;rdquo; &lt;em>The Annals of Statistics&lt;/em>, 28 (5): 1356-1378.&lt;/li>
+&lt;li>Hansen, Bruce. 2022. &lt;em>Econometrics&lt;/em>. Princeton University Press.&lt;/li>
+&lt;/ol>
+- https://cwleo.github.io/posts/ridge-regression/ - 2023 嘉樹.</description></item><item><title>Bayesian Persuasion</title><link>https://cwleo.github.io/posts/bayesian-persuasion/</link><pubDate>Wed, 08 Mar 2023 22:25:46 +0800</pubDate><guid>https://cwleo.github.io/posts/bayesian-persuasion/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/bayesian-persuasion/ -&lt;h2 id="内容提要">内容提要&lt;/h2>
 &lt;p>本文是基于 Kamenica and Gentzkow (2011) 的学习笔记，仅对微观课上覆盖的内容做了分析，目的只是通过考试，并不是对文章的全面剖析，但由于上课时一头雾水，为了彻底理解均衡的概念，有必要深入学习。以下分为两节，第一节直接介绍模型框架和重要推论，第二节给出解题的一般方法，此方法是几何直观的，依赖于第一节的分析。&lt;/p>
 &lt;p>相比于普通的信号博弈，Bayesian persuasion 中的信号发送者表现得既像 informed，又像 uninformed。其 informed 的地方在于，发送者所发送的信号是条件于 state 的；其 uninformed 的地方在于，发送者最大化事前的期望效用（无条件期望）。此外，信号结构并非是给定的，而全由发送者决定，即内生化了。&lt;/p>
 &lt;p>如前所示，由于信号发送者全权决定信号结构，他可以将信号设计得非常复杂，为简化分析，我们作出一个重要假设：发送者必须如实地告知接收者信号的实现结果。这基本上是在假设信号只有一层。&lt;/p>
