@@ -1,4 +1,189 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Sun, 30 Apr 2023 12:02:47 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (VIII)：自回归估计与 (A)DF 检验</title><link>https://cwleo.github.io/posts/ecmt-notes-ar-adf/</link><pubDate>Sun, 30 Apr 2023 12:02:47 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ar-adf/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-ar-adf/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Fri, 09 Jun 2023 16:22:12 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Micro QE 备考练习</title><link>https://cwleo.github.io/posts/micro-qe-preparation/</link><pubDate>Fri, 09 Jun 2023 16:22:12 +0800</pubDate><guid>https://cwleo.github.io/posts/micro-qe-preparation/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/micro-qe-preparation/ -&lt;p>本来计划做一份所有往年题的答案（已经全部做好了但希望打出一份电子版），但不幸考前🐑了，只完成此三题的誊抄，姑且留个纪念吧。&lt;/p>
+&lt;h2 id="problem-1-stochastic-dominance">Problem 1 (stochastic dominance)&lt;/h2>
+&lt;p>Consider lotteries $L_1\equiv(p_1\circ x_1,p_2\circ x_2)$ and $L_2\equiv(1\circ \bar{x})$, where $\bar{x} &amp;gt; p_1x_1+p_2x_2$, and $\bar{x}&amp;lt;x_2$. Let $x$ denote the outcome of $L_1$ and $\widetilde{x}$ the outcome of $L_2$. ($L_2$ is a trivial lottery. So $\widetilde{x}$ is a random variable that equals $\bar{x}$ with probability one.) Let $z$ denote the outcome of lottery&lt;/p>
+&lt;p>$$
+L_3 \equiv (q_1\circ z_1, \dots, q_i\circ z_i, \dots, q_n\circ z_n),
+$$&lt;/p>
+&lt;p>where $n$ is some finite number greater than 1. Let $F_1$ and $F_2$ denote the cumulative distributions of $x+z$ and $\widetilde{x}+z$, respectively.&lt;/p>
+&lt;ol class="alph" start="1">
+&lt;li>Suppose $n=2$. Use a diagram to illustrate $F_1$ and $F_2$.&lt;/li>
+&lt;li>Show that $\widetilde{x}+z$ cannot first-order stochastically dominates (f.o.s.d.) $x+z$. [Recall that for any two lotteries $L_1$ and $L_2$ with cdf $F_1$ and $F_2$, respectively, we say that $F_1$ first-order stochastically dominates $L_2$ if for any $x$, $F_1(x)\leq F_2(x)$.]&lt;/li>
+&lt;li>&lt;p>Let $z$ denote the outcome of a lottery&lt;/p>
+&lt;p>$$
+L_4 \equiv (q_1\circ z_1, \dots, q_i\circ z_i, \dots)
+$$&lt;/p>
+&lt;p>that has a countably infinite number of outcomes. Show that in this case it is possible that $\widetilde{x}+z$ f.o.s.d. $x+z$. That is, come up with an example of $L_4$ such that $\widetilde{x}+z$ f.o.s.d. $x+z$.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="solution">Solution&lt;/h3>
+&lt;p>&lt;strong>&lt;code>(a)&lt;/code>&lt;/strong> Omitted.&lt;/p>
+&lt;p>&lt;strong>&lt;code>(b)&lt;/code>&lt;/strong> We need to prove that there is some $x$ such that $F_2(x) &amp;gt; F_1(x)$. WLOG, assume $z_n$ is the largest outcome of $L_3$, i.e., $x_n\geq x_i$ for every $i$. Since $p_1x_1+p_2x_2&amp;lt;\bar{x}&amp;lt;x_2$, we must have $x_1&amp;lt;\bar{x}&amp;lt;x_2$. Then $x_2+z_n$ is the rightmost point where $F_1$ puts a positive mass, which means $F_1(x_2+z_n) = 1 &amp;gt; F_1(\bar{x}+z_n)$. It is easy to see $F_2(\bar{x}+z_n) = 1$. So we have shown $F_2(\bar{x}+z_n) = 1 &amp;gt; F_1(\bar{x}+z_n)$.&lt;/p>
+&lt;p>&lt;strong>&lt;code>(c)&lt;/code>&lt;/strong> If there is some $x_m \geq x_i$ for every $i$, then we can use the same argument as in (b) to show that $F_2$ cannot f.o.s.d. $F_1$. Thus we may consider the case in which $\{z_n\}$ is an increasing sequence unbounded from above. We first show the following claim:&lt;/p>
+&lt;p>&lt;em>Claim.&lt;/em> If $\{z_n\}$ is an increasing sequence, then $F_2(x)\leq F_1(x)$ iff $F_2(\bar{x}+z_n)\leq F_1(\bar{x}+z_n)$ for each $n\in\mathbb{N}$.&lt;/p>
+&lt;p>&lt;em>Proof.&lt;/em> &amp;ldquo;Only if&amp;rdquo; is trivial. We show the &amp;ldquo;if&amp;rdquo; part. As both $F_1$ and $F_2$ are discrete distributions, it would suffice to show $F_2(x_j+z_n)\leq F(x_j+z_n)$ for $j=1,2$. For convenience, let $z_0=-\infty$. Then $x_1+z_n\in[\bar{x}+z_0,\bar{x}+z_n)$. There must exist some $m\leq n$ such that $x_1+z_n\in[\bar{x}+z_{m-1},\bar{x}+z_m)$. We have&lt;/p>
+&lt;p>$$
+F_2(x_1+z_n) = F_2(\bar{x}+z_{m-1}) \leq F_1(\bar{x}+z_{m-1}) \leq F_1(x_1+z_n).
+$$&lt;/p>
+&lt;p>Likewise, there is some $k\geq n$ such that $x_2+z_n\in[\bar{x}+z_k,\bar{x}+z_{k+1})$ and it follows that $F_2(x_2+z_n)$ is no greater than $F_2(x_2+z_n)$. This completes the proof. &lt;em>&lt;code>Q.E.D.&lt;/code>&lt;/em>&lt;/p>
+&lt;p>By the claim, we only need to construct $\{z_n\}$ and the corresponding pmf $\{q_n\}$ so that $F_2(\bar{x}+z_n)\leq F_1(\bar{x}+z_n)$ for each $n$.&lt;/p>
+&lt;p>First, it is easy to see $F_2(\bar{x}+z_n) = \sum_{j=1}^nq_j$. In addition, it is for sure that for $j\leq n$, $x_1+z_j&amp;lt;\bar{x}+z_n$ and so $F_1(\bar{x}+z_n)\geq p_1\sum_{j=1}^nq_j$. To make $F_1(\bar{x}+z_n)$ larger, we can let&lt;/p>
+&lt;p>$$
+x_1+z_{n+1}\leq\bar{x}+z_n \quad\text{and}\quad x_2+z_{n-1}\leq\bar{x}+z_n
+$$&lt;/p>
+&lt;p>for each $n$. Note that this amounts to $x_2-\bar{x}\leq z_{n}-z_{n-1}\leq \bar{x}-x_1$, which requires&lt;/p>
+&lt;p>$$
+x_2-\bar{x}\leq\bar{x}-x_1 \quad\Rightarrow\quad \bar{x}\geq\frac{x_1+x_2}{2}.
+$$&lt;/p>
+&lt;p>Now we have&lt;/p>
+&lt;p>$$
+F_1(\bar{x}+z_n) \geq \sum_{j=1}^{n-1}q_j + p_1q_n + p_1q_{n+1}.
+$$&lt;/p>
+&lt;p>Thus, a sufficient condition for $F_2(\bar{x}+z_n)\leq F_1(\bar{x}+z_n)$ is&lt;/p>
+&lt;p>$$
+\sum_{j=1}^{n-1}q_j + p_1q_n + p_1q_{n+1} \geq \sum_{j=1}^nq_j \quad\Leftrightarrow\quad \frac{q_{n+1}}{q_n}\geq\frac{1-p_1}{p_1}.
+$$&lt;/p>
+&lt;p>This would require $p_1&amp;gt;\frac12$ since otherwise $q_n$ would explode. We can then construct $\{q_n\}$ as a geometric sequence: $q_n = (1-q)q^{n-1}$ where $q=(1-p_1)/p_1$.&lt;/p>
+&lt;p>Therefore, if $\bar{x}\geq(x_1+x_2)/2$ and $p_1&amp;gt;\frac12$,&lt;/p>
+&lt;p>$$
+\begin{align*}
+z_n &amp;amp;= n\delta \quad\text{where } \delta\in[x_2-\bar{x},\bar{x}-x_1],\\
+q_n &amp;amp;= (1-q)q^{n-1} \quad\text{where } q = (1-p_1)/p_1,
+\end{align*}
+$$&lt;/p>
+&lt;p>would lead $F_2$ to f.o.s.d. $F_1$.&lt;/p>
+&lt;hr>
+&lt;h2 id="problem-2-spne">Problem 2 (SPNE)&lt;/h2>
+&lt;p>Consider the following two-stage game between players 1 and 2. In stage 1, two players decide simultaneously whether to invest on a joint project. The cost of investment is $c&amp;gt;0$ for both players. No cost is incurred if a player chooses not to invest. The project generates a surplus of $(1+R)c$ if one player invests and of $(2+R)c$ if both players invest, where $0&amp;lt;R&amp;lt;1$. The game ends after stage 1 if no one invests and each player receives a payoff 0. If at least one player invests, the game enters stage 2, in which the players negotiate how to divide the realized surplus. Note that even a player did not invest, he is still entitled to participate in the surplus negotiation. The negotiation goes as follows: the players simultaneously announce their demands $d_1$ and $d_2$, where $d_i\in[0,1]$ refers to the share of the realized surplus. An agreement is reached if and only if the demands are compatible (i.e., $d_1+d_2\leq1$), in which case each player simply receives his own demand. If no agreement is reached (i.e., $d_1+d_2&amp;gt;1$), a player receives 0 if he did not invest in stage 1 and receives a compensation of $\delta c$ if he invested, where $0&amp;lt;\delta&amp;lt;1$. Each player&amp;rsquo;s payoff, denoted by $U_i$, is equal to the surplus or the compensation that he receives from the negotiation less his investment cost. For example, if player 1 is the only one who invested in stage 1 and an agreement of $(d_1,d_2)$ is reached in stage 2, then $U_1=d_1(1+R)c-c$ and $U_2=d_2(1+R)c$; if player 1 is the only one who invested in stage 1 and no agreement is reached in stage 2, then $U_1=\delta c-c$ and $U_2=0$.&lt;/p>
+&lt;ol class="alph" start="1">
+&lt;li>Specify a subgame perfect equilibrium in which no one invests in stage 1.&lt;/li>
+&lt;li>Specify a subgame perfect equilibrium in which both players invest in stage 1.&lt;/li>
+&lt;/ol>
+&lt;p>Suppose that in the negotiation in stage 2, one of the two players in randomly selected, with probability $1/2$, to make a take-it-or-leave-it proposal in the form of $(d_1,d_2)$, with $d_i\geq0$ and $d_1+d_2=1$. The other player then decides whether to accept or reject this proposal. An agreement is reached if and only if the proposal accepted. Players&amp;rsquo; payoffs are the same as specified in the previous parts. Assume that $R+\delta&amp;gt;1$.&lt;/p>
+&lt;ol class="alph" start="3">
+&lt;li>Specify a subgame perfect equilibrium. Which player(s) will invest in the equilibrium?&lt;/li>
+&lt;li>Briefly discuss the efficiency of the equilibrium outcomes in the previous parts.&lt;/li>
+&lt;/ol>
+&lt;h3 id="solution-1">Solution&lt;/h3>
+&lt;p>&lt;strong>&lt;code>(a)&lt;/code>&lt;/strong> There are four (proper) subgames, and we need to find the stage NEs for each of them. Use $Y$ to denote invest and $N$ not invest.&lt;/p>
+&lt;p>If both players invest in stage 1, denoted $(Y,Y)$, then in stage 2, given player $i$&amp;rsquo;s demand $d_i$, player $j$&amp;rsquo;s payoff function:&lt;/p>
+&lt;p>$$
+U_j(d_j|d_i,Y,Y) = \begin{cases}
+d_j(2+R)c-c, &amp;amp; \text{if } d_j\leq1-d_i,\\
+\delta c-c, &amp;amp; \text{if } d_j&amp;gt;1-d_i.
+\end{cases}
+$$&lt;/p>
+&lt;p>Then player $j$&amp;rsquo;s best response:&lt;/p>
+&lt;p>$$
+\mathit{BR}_j(d_i,Y,Y) = \begin{cases}
+1-d_i, &amp;amp; \text{if } (1-d_i)(2+R)\geq\delta,\\
+\in(1-d_i,1], &amp;amp; \text{otherwise}.
+\end{cases}
+$$&lt;/p>
+&lt;p>If $(Y_i,N_j)$, then in stage 2, given player $i$&amp;rsquo;s demand $d_i$, player $j$&amp;rsquo;s payoff function:&lt;/p>
+&lt;p>$$
+U_j(d_j|d_i,Y_i,N_j) = \begin{cases}
+d_j(1+R)c, &amp;amp; \text{if } d_j\leq1-d_i,\\
+0, &amp;amp; \text{if } d_j&amp;gt;1-d_i.
+\end{cases}
+$$&lt;/p>
+&lt;p>Then player $j$&amp;rsquo;s best response:&lt;/p>
+&lt;p>$$
+\mathit{BR}_j(d_i,Y_i,N_j) = 1-d_i.
+$$&lt;/p>
+&lt;p>If $(N_i,Y_j)$, then in stage 2, given player $i$&amp;rsquo;s demand $d_i$, player $j$&amp;rsquo;s payoff function:&lt;/p>
+&lt;p>$$
+U_j(d_j|d_i,N_i,Y_j) = \begin{cases}
+d_j(1+R)c-c, &amp;amp; \text{if } d_j\leq1-d_i,\\
+\delta c-c, &amp;amp; \text{if } d_j&amp;gt;1-d_i.
+\end{cases}
+$$&lt;/p>
+&lt;p>Then player $j$&amp;rsquo;s best response:&lt;/p>
+&lt;p>$$
+\mathit{BR}_j(d_i,N_i,Y_j) = \begin{cases}
+1-d_i, &amp;amp; \text{if } (1-d_i)(1+R)\geq\delta,\\
+\in(1-d_i,1), &amp;amp; \text{otherwise}.
+\end{cases}
+$$&lt;/p>
+&lt;p>If $(N,N)$, then in stage 2, given player $i$&amp;rsquo;s demand $d_i$, player $j$&amp;rsquo;s payoff function:&lt;/p>
+&lt;p>$$
+U_j(d_j|d_i,N,N) = 0.
+$$&lt;/p>
+&lt;p>Then player $j$&amp;rsquo;s best response:&lt;/p>
+&lt;p>$$
+\mathit{BR}_j(d_i,N,N) \in [0,1].
+$$&lt;/p>
+&lt;p>In an SPNE where $(N,N)$ is the stage-1 action profile, both players must have zero payoffs. Then, no incentive to deviate means that player $i$ should have non-positive payoff in the stage-2 subgame corresponding to $(Y_i,N_j)$. For the subgame corresponding to $(Y,Y)$, there is actually no such requirement: any subgame NE is fine; this is because a player&amp;rsquo;s deviation does not lead him to that subgame.&lt;/p>
+&lt;p>According to the above best response functions, we can easily find the stage-2 NEs. For example, $(d_1=d_2=1)$ in the subgame corresponding to $(Y,Y)$; $(d_i=\frac{1}{1+R},d_j=\frac{R}{1+R})$ corresponding to $(Y_i,N_j)$; $(d_1=d_2=1)$ corresponding to $(N,N)$. If player $i$ deviates from his current actions to $Y_i$ and other $d_i$&amp;rsquo;s, he would not be strictly better off. Thus, we indeed find an NE, and it is, as all stage-2 action profiles form NEs, an SPNE.&lt;/p>
+&lt;p>&lt;strong>&lt;code>(b)&lt;/code>&lt;/strong> First, let us find an NE in the subgame corresponding to $(Y,Y)$. A straightforward one is $(d_1=d_2=\frac12)$ in which both players have payoff $\frac12Rc$. Now, no incentive to deviate requires that player $i$ should have payoff no greater than $\frac12Rc$ in the stage-2 subgame corresponding to $(N_i,Y_j)$; easy to see $(d_i=0,d_j=1)$ is an NE that gives player $i$ zero payoff in this subgame. For the subgame corresponding to $(N,N)$, we can still use $(d_1=d_2=1)$.&lt;/p>
+&lt;p>&lt;strong>&lt;code>(c)&lt;/code>&lt;/strong> Analyze the four stage-2 subgames one by one. In the subgame following $(Y,Y)$: If player $i$ is selected as the proposer, then player $j$ would accept if $d_j(2+R)\geq\delta$, and so player $i$ would propose $d_i=1-\frac{\delta}{2+R}$. Player $i$ and $j$&amp;rsquo;s expected payoff are both&lt;/p>
+&lt;p>$$
+U_i = U_j = \frac12(\delta c-c)+\frac12(1+R-\delta)c = \frac12Rc.
+$$&lt;/p>
+&lt;p>In the subgame following $(Y_i,N_j)$: If player $i$ is selected as the proposer, then player $j$ would always accept, so player $i$ proposes $d_i=1$; if player $j$ is selected as the proposer, then player $i$ would accept if $d_i(1+R)\geq\delta$, so player $j$ would propose $d_i = \frac{\delta}{1+R}$. Players $i$ and $j$&amp;rsquo;s expected payoffs are thus&lt;/p>
+&lt;p>$$
+\begin{align*}
+U_i &amp;amp;= \frac12Rc+\frac12(\delta-1)c = \frac12(R+\delta-1)c &amp;gt; 0, \\
+U_j &amp;amp;= \frac12\cdot0 + \frac12(1+R-\delta)c = \frac12(1+R-\delta)c &amp;gt; \frac12Rc.
+\end{align*}
+$$&lt;/p>
+&lt;p>In the subgame following $(N,N)$: Any proposal would be accepted and $U_i=U_j=0$.&lt;/p>
+&lt;p>The above analysis indicates an SPNE where one player invests while the other does not. Suppose $(Y_i,N_j)$. Clearly, player $i$ has no incentive to deviate to $N_i$ and player $j$ has no incentive to deviate to $Y_j$.&lt;/p>
+&lt;p>&lt;strong>&lt;code>(d)&lt;/code>&lt;/strong> The SPNE in which neither invests is inefficient. The other SPNEs in which at least one invests are efficient since the total (expected) payoff is $Rc$ and there is no room for any further improvement.&lt;/p>
+&lt;hr>
+&lt;h2 id="problem-3-mechanism-design">Problem 3 (mechanism design)&lt;/h2>
+&lt;p>Consider a bilateral trade setting. A seller owns an object, which a buyer wants to buy. The object quality $v$ is drawn from $[0,1]$ according to the distribution $F(v) = v^a$, where $a &amp;gt; 0$ is a parameter. The seller knows $v$, while the buyer does not. When the object quality is $v$, its value is $v$ to the seller and $bv$ to the buyer with $b &amp;gt; 1$. If a trade happens at the price $p$, then the seller gets $p−v$ and the buyer gets $bv − p$. When there is no trade, both players get 0.&lt;/p>
+&lt;p>For each $(a,b)$, present an incentive–compatible individually–rational mechanism that maximizes the (ex-ante) probability of trade. Denote the maximal probability by $H(a,b)$. Derive the function $H$.&lt;/p>
+&lt;h3 id="solution-2">Solution&lt;/h3>
+&lt;p>A mechanism consists of $q\colon [0,1]\to[0,1]$ and $p\colon [0,1]\to\mathbb{R}$. More specifically, $q(v)$ is the probability of the seller accepting the trade (allocation rule) and $p(v)$ stipulates the payment (transfer rule).&lt;/p>
+&lt;p>The seller of type $v$, if he tells the truth (reporting his type as is), has payoff&lt;/p>
+&lt;p>$$
+u_s(v) = q(v)[p(v)-v] = q(v)p(v) - vq(v) = t(v) - vq(v),
+$$&lt;/p>
+&lt;p>where we let $t(v):=q(v)p(v)$; it is the expected transfer. Now, instead of directly finding the optimal $q$ and $p$, we would determine $q$ and $t$.&lt;/p>
+&lt;p>Incentive compatibility implies&lt;/p>
+&lt;p>$$
+\begin{align*}
+t(v) - vq(v) &amp;amp;\geq t(v&amp;rsquo;) - vq(v&amp;rsquo;), \\
+t(v&amp;rsquo;) - v&amp;rsquo;q(v&amp;rsquo;) &amp;amp;\geq t(v) - v&amp;rsquo;q(v).
+\end{align*}
+$$&lt;/p>
+&lt;p>Thus, we have&lt;/p>
+&lt;p>$$
+(v&amp;rsquo;-v)[q(v)-q(v&amp;rsquo;)] \geq 0.
+$$&lt;/p>
+&lt;p>This means $q(v)\geq q(v&amp;rsquo;)$ whenever $v&amp;lt;v&amp;rsquo;$. In other words, $q(\cdot)$ is decreasing.&lt;/p>
+&lt;p>Further, IC must imply&lt;/p>
+&lt;p>$$
+u_s(v) = \max_{v&amp;rsquo;}\ t(v&amp;rsquo;) - vq(v&amp;rsquo;).
+$$&lt;/p>
+&lt;p>By the envelope theorem (assuming $u_s$ is differentiable), $u_s&amp;rsquo;(v) = -q(v)\leq0$. Since $q(v)$ is decreasing, $u_s(v)$ is a convex, decreasing function. (In fact, the convexity can be proved directly from the formula above without imposing differentiability assumption.) Then, we have&lt;/p>
+&lt;p>$$
+\begin{align*}
+u_s(v) &amp;amp;= \int_v^1 q(x)\,dx + u_s(1), \\
+t(v) &amp;amp;= u_s(v) + vq(v) = \int_v^1 q(x)\,dx + u_s(1) + vq(v).
+\end{align*}
+$$&lt;/p>
+&lt;p>Now, given IC, IR would imply&lt;/p>
+&lt;p>$$
+u_s(v)\geq 0 \text{ for each } v \quad\Leftrightarrow\quad u_s(1)\geq0.
+$$&lt;/p>
+&lt;p>If an IC and IR mechanism maximizes the probability of trade, then it maximizes&lt;/p>
+&lt;p>$$
+\mathbb{E}[q(v)] = \int_0^1q(v)\,dF(v)
+$$&lt;/p>
+&lt;p>subject to&lt;/p>
+&lt;p>$$
+\mathbb{E}(q(v)[bv-p(v)]) = \int_0^1bvq(v)-t(v)\,dF(v) \geq 0.
+$$&lt;/p>
+&lt;p>Doing some algebra, the constraint reduces to&lt;/p>
+&lt;p>$$
+\begin{align*}
+&amp;amp;\mathbin{\phantom{=}}\int_0^1\left[(b-1)v\frac{f(v)}{F(v)}-1\right]q(v)F(v)\,dv - u_s(1) \\
+&amp;amp;= \int_0^1[a(b-1)-1]q(v)F(v)\,dv - u_s(1)\geq0.
+\end{align*}
+$$&lt;/p>
+&lt;p>If $a(b-1)&amp;lt;1$, then any $q(v)\geq 0$ would not make trade happen with a positive probability. If $a(b-1)\geq 1$, then $q(v) = 1$ with $u_s(1) = 0$ would make trade happen for sure and so is the optimal allocation rule. Hence, we derive $H(a,b) = \mathbb{1}\{a(b-1)\geq1\}$.&lt;/p>
+- https://cwleo.github.io/posts/micro-qe-preparation/ - 2023 嘉樹.</description></item><item><title>计量复习笔记 (VIII)：自回归估计与 (A)DF 检验</title><link>https://cwleo.github.io/posts/ecmt-notes-ar-adf/</link><pubDate>Sun, 30 Apr 2023 12:02:47 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ar-adf/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-ar-adf/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
 &lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
 &lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
 &lt;h2 id="内容提要">内容提要&lt;/h2>
@@ -1000,8 +1185,4 @@ In: &lt;em>2014 IEEE Conference on Computer Vision and Pattern Recognition&lt;/e
 &lt;i>SIAM Review&lt;/i>, 52(3), 471–501.
 &lt;a href="https://doi.org/10.1137/070697835" title="Guaranteed Minimum-Rank Solutions of Linear Matrix Equations via Nuclear Norm Minimization" target="_blank" style="word-break: break-all;">doi: 10.1137/070697835&lt;/a>.&lt;/p>
 &lt;/div>
-- https://cwleo.github.io/posts/nuclear-norm-min/ - 2023 嘉樹.</description></item><item><title>保持平稳心情</title><link>https://cwleo.github.io/posts/smooth-mood/</link><pubDate>Fri, 07 Apr 2023 20:12:29 +0800</pubDate><guid>https://cwleo.github.io/posts/smooth-mood/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/smooth-mood/ -&lt;p>几天前有朋友问起我的近况，我说挺好，主要是心情稳定。的确，相比于以前，我感到自己的一个显著变化就是长期平稳的心情，总的来说，我认为这是好事。&lt;/p>
-&lt;p>所谓平稳心情，就是大多数时候，既不会兴高采烈，也不会忧郁伤感，而是处于一种平和恬淡的状态。当然，某些时候，譬如想明白一个问题、和朋友一起吃饭聊天，还是会感到快乐的。因此我的心情分布的均值大约是「微乐」，而方差较小。当我明白这种状态之初，并不觉得有多好，因为这表现得像是对生活中大多数事物失去了兴致，快乐的幅度被大大压缩，一切变得索然无趣。但慢慢地我意识到，这种心情上的钝感能最大限度地使自己远离忧郁沼泽，从这个意义上讲，不能不说它反而提高了生活的整体积极性和生活质量。疫情期间，或许是长期居家，又或许是对未来的担忧，我一度陷入了极大的忧郁之中。这个心情低谷几乎持续了一整年，也就是说，在一年中的多数时间，我都是感到不快乐的。好在最终还是恢复了，这之后我就进入了前述平稳状态。我想这也许是一种身体自动的调整和保护方式，通过压缩心情波动规避风险。&lt;/p>
-&lt;p>现在我也认为，猛烈的狂喜并不是一个好信号，因为或早或晚随之而来的是快乐源泉抽离后带来的巨大失落感，甚至陷入更大的低谷。成年人毕竟和小孩子不一样，小孩子的欢乐像是天生的，不高兴和烦恼是暂时的，而大人们的快乐常常是稀缺品，取用有度才是理性的做法。诚然，的确有一些（真正的）乐天派，他们的心境几乎如孩童，可我觉得这应该是少数，很难想象在成年人的世界中做到像小孩子那样需要多大的精神能量。所以，合理分配心情是一种稳健的办法，如此，你会发现在那些原本可能进入忧郁沼泽的节点，基本能轻盈跨过。以我自己为例，去年这个时候适逢上海封城，放在以前我可能又会低落好一阵，但由于已经采用了平稳模式，身心俱康。&lt;/p>
-&lt;p>我希望能继续保持这种稳定性，这样我可以集中精力、以最大效率去做我想做的事而不是被极端情绪所左右。长期来看，这是一个不错的效用函数。&lt;/p>
-- https://cwleo.github.io/posts/smooth-mood/ - 2023 嘉樹.</description></item></channel></rss>
+- https://cwleo.github.io/posts/nuclear-norm-min/ - 2023 嘉樹.</description></item></channel></rss>
