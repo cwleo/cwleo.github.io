@@ -1,0 +1,95 @@
+<!doctype html><html lang=en-US><head><title>Macro QE 备考 (I): 动态规划</title><meta charset=utf-8><meta name=X-UA-Compatible content="IE=edge"><meta name=google-site-verification content><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name=viewport><meta content="telephone=no" name=format-detection><meta name=description content><meta name=renderer content="webkit"><meta name=theme-color content="#ffffff"><meta property="og:title" content="Macro QE 备考 (I): 动态规划"><meta property="og:description" content="Info
+本系列未能完成，只出了两期，因为复习进度太慢，最终换成手写笔记了。且作留恋。
+Sequential form and recursive form 我们只考虑平稳的动态规划问题，「平稳」是说即时收益函数 $u$ 和状态变量的演化约束 $G$ 不显式地依赖于时间 $t$。
+有两种表述形式：序列式和递归式，递归式也就是 Bellman 方程。序列式如下：
+$$ \begin{align*} V^*(x_0) = \max_{\{x_t\}_{t=0}^\infty} &\quad\sum_{t=0}^\infty\beta^tu(x_t,x_{t+1}), \\ \text{s.t.}&\quad x_{t+1}\in G(x_t), \\ &\quad x_0 \text{ is given.} \end{align*} $$
+递归式如下：
+$$ V(x) = \max_{y\in G(x)} u(x,y) + \beta V(y). $$
+两种形式所确立的值函数是等价的。
+欧拉方程 在以上递归式中，一阶条件为
+$$ u_2(x,y) + \beta V&rsquo;(y) = 0. $$
+此外，由包络定理，有
+$$ V&rsquo;(x) = u_1(x,y). $$
+假设最优 policy 的函数（因为是平稳的，故不显式依赖于 $t$）：$y = \pi(x)$，便有欧拉方程
+$$ u_2(x,\pi(x)) + \beta u_1\bigl(\pi(x),\pi(\pi(x))\bigr) = 0."><meta property="og:type" content="article"><meta property="og:url" content="https://cwleo.github.io/posts/macro-qe-preparation-dynamic-programming/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-06-23T22:35:19+08:00"><meta property="article:modified_time" content="2023-07-21T15:17:14+08:00"><meta property="og:site_name" content="My Blog"><meta name=twitter:card content="summary"><meta name=twitter:title content="Macro QE 备考 (I): 动态规划"><meta name=twitter:description content="Info
+本系列未能完成，只出了两期，因为复习进度太慢，最终换成手写笔记了。且作留恋。
+Sequential form and recursive form 我们只考虑平稳的动态规划问题，「平稳」是说即时收益函数 $u$ 和状态变量的演化约束 $G$ 不显式地依赖于时间 $t$。
+有两种表述形式：序列式和递归式，递归式也就是 Bellman 方程。序列式如下：
+$$ \begin{align*} V^*(x_0) = \max_{\{x_t\}_{t=0}^\infty} &\quad\sum_{t=0}^\infty\beta^tu(x_t,x_{t+1}), \\ \text{s.t.}&\quad x_{t+1}\in G(x_t), \\ &\quad x_0 \text{ is given.} \end{align*} $$
+递归式如下：
+$$ V(x) = \max_{y\in G(x)} u(x,y) + \beta V(y). $$
+两种形式所确立的值函数是等价的。
+欧拉方程 在以上递归式中，一阶条件为
+$$ u_2(x,y) + \beta V&rsquo;(y) = 0. $$
+此外，由包络定理，有
+$$ V&rsquo;(x) = u_1(x,y). $$
+假设最优 policy 的函数（因为是平稳的，故不显式依赖于 $t$）：$y = \pi(x)$，便有欧拉方程
+$$ u_2(x,\pi(x)) + \beta u_1\bigl(\pi(x),\pi(\pi(x))\bigr) = 0."><script async src="https://www.googletagmanager.com/gtag/js?id=G-LER46KQN8K"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LER46KQN8K",{anonymize_ip:!1})}</script><script src=/js/toc.js></script>
+<link type=text/css rel=stylesheet href=/vendor/css/bootstrap.min.css><link rel=stylesheet href=/scss/journal.min.0b741cb415cbefdd6bf03bbce34d80d1749c99e5c175ca649c8ae47517682ac2.css integrity="sha256-C3QctBXL791r8Du8402A0XScmeXBdcpknIrkdRdoKsI=" media=screen><link rel=stylesheet href=/scss/dark-mode.min.8c1b6d0472cb25b7fe6f98e592eb49750bf4567cb56ab23521c037183ddf3c05.css integrity="sha256-jBttBHLLJbf+b5jlkutJdQv0Vny1arI1IcA3GD3fPAU=" media=screen><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:500,500italic,700,700italic|Roboto:400,400italic,700,700italic|Montserrat:500,500italic,700,700italic|Fira+Mono:500,700|Noto+Serif+TC:500,700|Noto+Serif+SC:500,700|Material+Icons&display=swap"><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script>
+<link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><script>console.log("Hello from 'layouts/partials/extended_head.html'")</script><link rel=stylesheet href=/vendor/css/lxgwwenkaiscreenr.css><script defer src=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js></script>
+<link rel=stylesheet href=/scss/custom/_custom.min.41f49da02a12357d0b9757558c85a9c05c125c1eb242e06b639745ddf0063219.css integrity="sha256-QfSdoCoSNX0Ll1dVjIWpwFwSXB6yQuBrY5dF3fAGMhk=" media=screen><link rel=stylesheet href=/vendor/css/heti.min.css><script src=/vendor/js/heti.min.js></script>
+<script defer>function domReady(){var e=document.querySelector(".post-subtitle");e&&e.classList.add("heti"),e=document.querySelector("#post-content"),e&&e.classList.add("heti"),document.querySelectorAll(".post-item-summary").forEach(e=>{e.classList.add("heti")})}document.addEventListener("DOMContentLoaded",function(){document.removeEventListener("DOMContentLoaded",arguments.callee,!1),domReady()});const heti=new Heti(".heti");heti.autoSpacing(),window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],macros:{bm:["\\boldsymbol{#1}",1]},processEscapes:!0,processEnvironments:!0},svg:{scale:.962,fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre"],enableMenu:!1}},function(){var e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js",e.async=!0,document.addEventListener("DOMContentLoaded",function(){document.head.appendChild(e)})}()</script><script>document.addEventListener("DOMContentLoaded",function(){var e,t=document.getElementsByClassName("collapsible");for(e=0;e<t.length;e++)t[e].addEventListener("click",function(){this.classList.toggle("active");var e=this.nextElementSibling;e.style.display==="block"?e.style.display="none":e.style.display="block"})})</script></head><body><div id=app><div class=single-column-drawer-container id=drawer v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }"><div class=drawer-content><div class=drawer-menu><a class="a-block drawer-menu-item active" href=/posts>歸檔</a>
+<a class="a-block drawer-menu-item false" href=/categories>分類</a>
+<a class="a-block drawer-menu-item false" href=/tags>標籤</a>
+<a class="a-block drawer-menu-item false" href=/about>關於</a>
+<a class="a-block drawer-menu-item false" href=/index.xml>訂閱</a><div class=toc><div class=toc-content><center>- 目錄 -</center><ul><ul><li><a href=#sequential-form-and-recursive-form class=nav-sequential-form-and-recursive-form>Sequential form and recursive form</a></li><li><a href=#%e6%ac%a7%e6%8b%89%e6%96%b9%e7%a8%8b class=nav-欧拉方程>欧拉方程</a></li><li><a href=#%e6%a8%aa%e6%88%aa%e6%80%a7%e6%9d%a1%e4%bb%b6 class=nav-横截性条件>横截性条件</a></li><ul><li><a href=#the-finite-horizon-case class=nav-the-finite-horizon-case>The finite horizon case</a></li><li><a href=#the-infinite-horizon-case class=nav-the-infinite-horizon-case>The infinite horizon case</a></li></ul></div></div></div></div></div><transition name=fade><div id=drawer-mask v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if=isDrawerOpen v-on:click=toggleDrawer></div></transition><nav id=navBar class="navbar sticky-top navbar-light single-column-nav-container"><div id=navBackground class=nav-background></div><div class="container container-narrow nav-content"><button id=nav_dropdown_btn class=nav-dropdown-toggle type=button v-on:click=toggleDrawer>
+<i class=material-icons>menu</i></button>
+<a id=navTitle class=navbar-brand href=https://cwleo.github.io/>嘉樹的世界</a>
+<button type=button class=nav-darkmode-toggle id=darkModeToggleButton2>
+<i class=material-icons id=darkModeToggleIcon2>dark_mode</i></button></div></nav><div class=single-column-header-container id=pageHead v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }"><a href=https://cwleo.github.io/><div class=single-column-header-title>嘉樹的世界</div><div class=single-column-header-subtitle>This is my blog.</div></a></div><div id=content><div id=streamContainer class=stream-container><div class="post-list-container post-list-container-shadow"><div class=post><div class=post-head-wrapper-text-only><div class=post-title>Macro QE 备考 (I): 动态规划<div class=post-meta>嘉树 &nbsp;
+<time itemprop=datePublished>2023-06-23 22:35</time>
+&emsp;
+<i class=material-icons>folder</i>
+<a href=/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6>经济学</a>
+&nbsp;
+<i class=material-icons>label</i>
+<a href=/tags/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6>宏观经济学</a>
+&nbsp;</div></div></div><div class=post-body-wrapper><div class=post-body v-pre><div id=post-content><style type=text/css>.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media(prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}</style><div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379.0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628.0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628.0l-22.627 22.627c-6.248 6.248-6.248 16.379.0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405.0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373.0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884.0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937.0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154.0l239.94 416.028zM288 354c-25.405.0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373.0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884.0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196.0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627.0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627.0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627.0 12 5.373 12 12v1e2h12c6.627.0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice info"><p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"/></svg></span>Info</p><p>本系列未能完成，只出了两期，因为复习进度太慢，最终换成手写笔记了。且作留恋。</p></div><h2 id=sequential-form-and-recursive-form>Sequential form and recursive form&nbsp;<a class=hash-link href=#sequential-form-and-recursive-form><i class="fas fa-link"></i></a></h2><p>我们只考虑平稳的动态规划问题，「平稳」是说即时收益函数 $u$ 和状态变量的演化约束 $G$ 不显式地依赖于时间 $t$。</p><p>有两种表述形式：序列式和递归式，递归式也就是 Bellman 方程。序列式如下：</p><p>$$
+\begin{align*}
+V^*(x_0) = \max_{\{x_t\}_{t=0}^\infty} &\quad\sum_{t=0}^\infty\beta^tu(x_t,x_{t+1}), \\
+\text{s.t.}&\quad x_{t+1}\in G(x_t), \\
+&\quad x_0 \text{ is given.}
+\end{align*}
+$$</p><p>递归式如下：</p><p>$$
+V(x) = \max_{y\in G(x)} u(x,y) + \beta V(y).
+$$</p><p>两种形式所确立的值函数是等价的。</p><h2 id=欧拉方程>欧拉方程&nbsp;<a class=hash-link href=#欧拉方程><i class="fas fa-link"></i></a></h2><p>在以上递归式中，一阶条件为</p><p>$$
+u_2(x,y) + \beta V&rsquo;(y) = 0.
+$$</p><p>此外，由包络定理，有</p><p>$$
+V&rsquo;(x) = u_1(x,y).
+$$</p><p>假设最优 policy 的函数（因为是平稳的，故不显式依赖于 $t$）：$y = \pi(x)$，便有欧拉方程</p><p>$$
+u_2(x,\pi(x)) + \beta u_1\bigl(\pi(x),\pi(\pi(x))\bigr) = 0.
+$$</p><p>对欧拉方程的直觉解释：增加 $y$ 的边际成本（通常 $u_2 \leq 0$）等于边际收益（未来收益的贴现）。</p><h2 id=横截性条件>横截性条件&nbsp;<a class=hash-link href=#横截性条件><i class="fas fa-link"></i></a></h2><p><em>横截性条件 (transversality condition)</em> 是动态优化的 <em>必要</em> 条件，它是对满足欧拉方程的候选路径的进一步筛选。具体而言，欧拉方程要求最优路径必定满足：任意边际的偏离（偏离后又回到路径上）都无法获得改进。如果路径终末值是不受限制的，那么可能有很多满足欧拉方程的候选路径，此时，横截性条件的作用就是从这些候选路径中排除（部分）非最优的路径，它要求最优路径满足：任意永久的偏离（偏离后不再回到原路径上）都无法获得改进。</p><p>一个形象的例子：从一点到一条直线 $L$ 的最短路径是什么？显然是从该点到直线的垂线段。欧拉方程相当于是说最短的路径必定是直线段，而从一点到直线 $L$ 可作无数条直线。横截性条件则是说在所有这些直线段中，最短路径必定垂直于直线 $L$。</p><h3 id=the-finite-horizon-case>The finite horizon case&nbsp;<a class=hash-link href=#the-finite-horizon-case><i class="fas fa-link"></i></a></h3><p>为更好地理解横截性条件，我们首先考虑有限期的动态优化：</p><p>$$
+\begin{align*}
+\max_{\{x_t\}_{t=0}^{T+1}}&\quad\sum_{t=0}^T\beta^tu(x_t,x_{t+1}), \\
+\text{s.t.}&\quad x_{t+1}\geq0, \\
+&\quad x_0 \text{ is given.}
+\end{align*}
+$$</p><p>关于 $x_{t+1}$ 的一阶必要条件是</p><p>$$
+\begin{cases}
+\beta^Tu_2(x_T,x_{T+1}) = 0, & \text{if } x_{T+1}>0, \\
+\beta^Tu_2(x_T,x_{T+1}) \leq 0, & \text{if } x_{T+1}=0.
+\end{cases}
+$$</p><p>两种情况可以合写为</p><p>$$
+\beta^Tu_2(x_T,x_{T+1})x_{T+1} = 0.
+$$</p><p>这便是横截性条件。它是说，除非增加下一期存量的边际成本为0，否则终末期的存量必定是0。我们把 $x_t$ 对应为资本存量，就更好理解了，在终末期，最优的选择就是，不进行任何储蓄而是把现有的产出全部用作消费。考虑离散 Ramsey 模型：即时效用定义为消费的函数 $u(c_t)$，资本存量的演化服从</p><p>$$
+k_{t+1} = f(k_t) + (1-\delta)k_t - c_t.
+$$</p><p>将即时效用写作 $k_t$ 和 $k_{t+1}$ 的函数：</p><p>$$
+u(k_t,k_{t+1}) = u(f(k_t) + (1-\delta)k_t - k_{t+1}).
+$$</p><p>从而横截性条件</p><p>$$
+-\beta^Tu&rsquo;(c_T)k_{T+1} = 0.
+$$</p><p>这基本上意味着 $k_{T+1} = 0$，即 $T$ 期全部产出和资本都用于消费，没有储蓄。</p><h3 id=the-infinite-horizon-case>The infinite horizon case&nbsp;<a class=hash-link href=#the-infinite-horizon-case><i class="fas fa-link"></i></a></h3><p>在无限期动态优化中，我们无法像上面那样直接推导出横截性条件，但我们可以基于此合理推广为极限形式：</p><p>$$
+\lim_{t\to\infty}\beta^Tu_2(x_T,x_{T+1})x_{T+1} = 0.
+$$</p><p>如果结合欧拉方程 $u_2(x_t,x_{t+1})+\beta u_1(x_{t+1},x_{t+2})=0$，我们还有另一种形式:</p><p>$$
+\lim_{t\to\infty}\beta^Tu_1(x_T,x_{T+1})x_T = 0.
+$$</p><p>它们意味着无穷远期存量的贴现值为0，这表明最优路径上存量不能是过度积累的。</p></div><div><hr width=100% id=EOF style="border-top:.6px solid #777;margin-top:2.5rem"><p style=color:#777>上次修改於 2023-07-21</p></div></div></div><nav class=post-pagination><a class=older-posts href=/posts/micro-qe-preparation/>上回<br><em>Micro QE 备考练习</em></a>
+<a class=newer-posts href=/posts/macro-qe-preparation-ngm-olg/>下回<br><em>Macro QE 备考 (II): 新古典增长和世代交叠模型</em></a></nav><div class=post-comment-wrapper><div id=waline></div><script>Waline.init({el:"#waline",dark:"body.night",serverURL:"https://mysitecomments-2yzw3y3tk-cwleo.vercel.app"})</script></div></div></div></div></div><div id=sideContainer class=side-container><a class="a-block nav-head false" href=https://cwleo.github.io/><div class=nav-title>嘉樹的世界</div><div class=nav-subtitle>This is my blog.</div></a><div class=nav-link-list><a class="a-block nav-link-item active" href=/posts>歸檔</a>
+<a class="a-block nav-link-item false" href=/categories>分類</a>
+<a class="a-block nav-link-item false" href=/tags>標籤</a>
+<a class="a-block nav-link-item false" href=/about>關於</a>
+<a class="a-block nav-link-item false" href=/index.xml>訂閱</a></div><div class=nav-footer>由 <a href=https://gohugo.io>Hugo</a> 強力驅動<br>主題改動自 <a href=https://github.com/amazingrise/hugo-theme-diary>Diary</a><br>&copy;
+2023 嘉樹.
+本站遵循 <a href=https://creativecommons.org/licenses/by-nc/4.0/>CC-BY-NC 4.0</a> 協議</div></div><div id=extraContainer class=extra-container><div class=toc-wrapper><div class=toc><div class=toc-content><center>- 目錄 -</center><ul><ul><li><a href=#sequential-form-and-recursive-form class=nav-sequential-form-and-recursive-form>Sequential form and recursive form</a></li><li><a href=#%e6%ac%a7%e6%8b%89%e6%96%b9%e7%a8%8b class=nav-欧拉方程>欧拉方程</a></li><li><a href=#%e6%a8%aa%e6%88%aa%e6%80%a7%e6%9d%a1%e4%bb%b6 class=nav-横截性条件>横截性条件</a></li><ul><li><a href=#the-finite-horizon-case class=nav-the-finite-horizon-case>The finite horizon case</a></li><li><a href=#the-infinite-horizon-case class=nav-the-infinite-horizon-case>The infinite horizon case</a></li></ul></div></div></div><div class=pagination><a id=globalBackToTop class="pagination-action animated-visibility" href=#top :class="{ invisible: scrollY == 0 }"><i class="material-icons pagination-action-icon">keyboard_arrow_up</i></a>
+<a type=button class=pagination-action id=darkModeToggleButton><span class="material-icons pagination-action-icon" id=darkModeToggleIcon>dark_mode</span></a></div></div><div id=single-column-footer>由 <a href=https://gohugo.io>Hugo</a> 強力驅動<br>主題改動自 <a href=https://github.com/amazingrise/hugo-theme-diary>Diary</a><br>&copy;
+2023 嘉樹.
+本站遵循 <a href=https://creativecommons.org/licenses/by-nc/4.0/>CC-BY-NC 4.0</a> 協議</div></div><script src=/js/journal.js></script></body></html>

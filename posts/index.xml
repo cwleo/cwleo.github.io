@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 嘉樹的世界</title><link>https://cwleo.github.io/posts/</link><description>Recent content in Posts on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Fri, 09 Jun 2023 16:22:12 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Micro QE 备考练习</title><link>https://cwleo.github.io/posts/micro-qe-preparation/</link><pubDate>Fri, 09 Jun 2023 16:22:12 +0800</pubDate><guid>https://cwleo.github.io/posts/micro-qe-preparation/</guid><description>本来计划做一份所有往年题的答案（已经全部做好了但希望打出一份电子版），但不幸考前🐑了，只完成此三题的誊抄，姑且留个纪念吧。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 嘉樹的世界</title><link>https://cwleo.github.io/posts/</link><description>Recent content in Posts on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Tue, 27 Jun 2023 15:08:53 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Macro QE 备考 (II): 新古典增长和世代交叠模型</title><link>https://cwleo.github.io/posts/macro-qe-preparation-ngm-olg/</link><pubDate>Tue, 27 Jun 2023 15:08:53 +0800</pubDate><guid>https://cwleo.github.io/posts/macro-qe-preparation-ngm-olg/</guid><description>Info
+本系列未能完成，只出了两期，因为复习进度太慢，最终换成手写笔记了。且作留恋。
+Overlapping Generations 资本过度积累和动态无效率 我们对 OLG 模型的竞争均衡同一个社会计划者的中心化决策进行对比，考察竞争均衡是否是 Pareto 最优的。社会计划者意图最大化所有代际的加权平均效用：
+$$ \sum_{t=0}^\infty \xi_t[u(c_{1,t})+\beta u(c_{2,t+1})] $$
+其中 $\xi_t$ 是社会计划者赋予代际 $t$ 的权重。同时，还要服从总的资源约束：
+$$ F(K_t,L_t) = K_{t+1} + L_tc_{1,t} + L_{t-1}c_{2,t} $$
+两边同除以 $L_t$，得到
+$$ f(k_t) = (1+n)k_{t+1} + c_{1,t} + \frac{c_{2,t}}{1+n} $$
+对于同一个体青年期和老年期的消费分配，一阶条件为
+$$ \frac{u&amp;rsquo;(c_{1,t})}{\beta u&amp;rsquo;(c_{2,t+1})} = \frac{1}{1+n}\frac{dc_{2,t+1}}{dk_{t+1}} = f&amp;rsquo;(k_{t+1}) $$
+回忆在竞争均衡中，一阶条件是
+$$ u&amp;rsquo;(c_{1,t}) = \beta R_{t+1} u&amp;rsquo;(c_{2,t+1}) $$
+而 $R_{t+1} = f'(k_{t+1})$，因此社会计划者对一个个体青年期和老年期的消费配置同该个体自身的最大化决策是一致的，在这一点上市场配置是有效率的。
+然而，由于社会计划者给每一代个体分配了不同的权重（$\xi_t$ 随 $t$ 变化），可以想见代际之间资源配置不会相同，这是区别于竞争均衡的。
+考虑一个具体的权重设定：$\xi_t = \xi^t$。我们使用 Lagrange 函数：</description></item><item><title>Macro QE 备考 (I): 动态规划</title><link>https://cwleo.github.io/posts/macro-qe-preparation-dynamic-programming/</link><pubDate>Fri, 23 Jun 2023 22:35:19 +0800</pubDate><guid>https://cwleo.github.io/posts/macro-qe-preparation-dynamic-programming/</guid><description>Info
+本系列未能完成，只出了两期，因为复习进度太慢，最终换成手写笔记了。且作留恋。
+Sequential form and recursive form 我们只考虑平稳的动态规划问题，「平稳」是说即时收益函数 $u$ 和状态变量的演化约束 $G$ 不显式地依赖于时间 $t$。
+有两种表述形式：序列式和递归式，递归式也就是 Bellman 方程。序列式如下：
+$$ \begin{align*} V^*(x_0) = \max_{\{x_t\}_{t=0}^\infty} &amp;amp;\quad\sum_{t=0}^\infty\beta^tu(x_t,x_{t+1}), \\ \text{s.t.}&amp;amp;\quad x_{t+1}\in G(x_t), \\ &amp;amp;\quad x_0 \text{ is given.} \end{align*} $$
+递归式如下：
+$$ V(x) = \max_{y\in G(x)} u(x,y) + \beta V(y). $$
+两种形式所确立的值函数是等价的。
+欧拉方程 在以上递归式中，一阶条件为
+$$ u_2(x,y) + \beta V&amp;rsquo;(y) = 0. $$
+此外，由包络定理，有
+$$ V&amp;rsquo;(x) = u_1(x,y). $$
+假设最优 policy 的函数（因为是平稳的，故不显式依赖于 $t$）：$y = \pi(x)$，便有欧拉方程
+$$ u_2(x,\pi(x)) + \beta u_1\bigl(\pi(x),\pi(\pi(x))\bigr) = 0.</description></item><item><title>Micro QE 备考练习</title><link>https://cwleo.github.io/posts/micro-qe-preparation/</link><pubDate>Fri, 09 Jun 2023 16:22:12 +0800</pubDate><guid>https://cwleo.github.io/posts/micro-qe-preparation/</guid><description>本来计划做一份所有往年题的答案（已经全部做好了但希望打出一份电子版），但不幸考前🐑了，只完成此三题的誊抄，姑且留个纪念吧。
 Problem 1 (stochastic dominance) Consider lotteries $L_1\equiv(p_1\circ x_1,p_2\circ x_2)$ and $L_2\equiv(1\circ \bar{x})$, where $\bar{x} &amp;gt; p_1x_1+p_2x_2$, and $\bar{x}&amp;lt;x_2$. Let $x$ denote the outcome of $L_1$ and $\widetilde{x}$ the outcome of $L_2$. ($L_2$ is a trivial lottery. So $\widetilde{x}$ is a random variable that equals $\bar{x}$ with probability one.) Let $z$ denote the outcome of lottery
 $$ L_3 \equiv (q_1\circ z_1, \dots, q_i\circ z_i, \dots, q_n\circ z_n), $$
 where $n$ is some finite number greater than 1.</description></item><item><title>计量复习笔记 (VIII)：自回归估计与 (A)DF 检验</title><link>https://cwleo.github.io/posts/ecmt-notes-ar-adf/</link><pubDate>Sun, 30 Apr 2023 12:02:47 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ar-adf/</guid><description>Info

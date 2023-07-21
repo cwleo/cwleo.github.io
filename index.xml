@@ -1,4 +1,185 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Fri, 09 Jun 2023 16:22:12 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Micro QE 备考练习</title><link>https://cwleo.github.io/posts/micro-qe-preparation/</link><pubDate>Fri, 09 Jun 2023 16:22:12 +0800</pubDate><guid>https://cwleo.github.io/posts/micro-qe-preparation/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/micro-qe-preparation/ -&lt;p>本来计划做一份所有往年题的答案（已经全部做好了但希望打出一份电子版），但不幸考前🐑了，只完成此三题的誊抄，姑且留个纪念吧。&lt;/p>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Tue, 27 Jun 2023 15:08:53 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Macro QE 备考 (II): 新古典增长和世代交叠模型</title><link>https://cwleo.github.io/posts/macro-qe-preparation-ngm-olg/</link><pubDate>Tue, 27 Jun 2023 15:08:53 +0800</pubDate><guid>https://cwleo.github.io/posts/macro-qe-preparation-ngm-olg/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/macro-qe-preparation-ngm-olg/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列未能完成，只出了两期，因为复习进度太慢，最终换成手写笔记了。且作留恋。&lt;/p>&lt;/div>
+&lt;h2 id="overlapping-generations">Overlapping Generations&lt;/h2>
+&lt;h3 id="资本过度积累和动态无效率">资本过度积累和动态无效率&lt;/h3>
+&lt;p>我们对 OLG 模型的竞争均衡同一个社会计划者的中心化决策进行对比，考察竞争均衡是否是 Pareto 最优的。社会计划者意图最大化所有代际的加权平均效用：&lt;/p>
+&lt;p>$$
+\sum_{t=0}^\infty \xi_t[u(c_{1,t})+\beta u(c_{2,t+1})]
+$$&lt;/p>
+&lt;p>其中 $\xi_t$ 是社会计划者赋予代际 $t$ 的权重。同时，还要服从总的资源约束：&lt;/p>
+&lt;p>$$
+F(K_t,L_t) = K_{t+1} + L_tc_{1,t} + L_{t-1}c_{2,t}
+$$&lt;/p>
+&lt;p>两边同除以 $L_t$，得到&lt;/p>
+&lt;p>$$
+f(k_t) = (1+n)k_{t+1} + c_{1,t} + \frac{c_{2,t}}{1+n}
+$$&lt;/p>
+&lt;p>对于同一个体青年期和老年期的消费分配，一阶条件为&lt;/p>
+&lt;p>$$
+\frac{u&amp;rsquo;(c_{1,t})}{\beta u&amp;rsquo;(c_{2,t+1})} = \frac{1}{1+n}\frac{dc_{2,t+1}}{dk_{t+1}} = f&amp;rsquo;(k_{t+1})
+$$&lt;/p>
+&lt;p>回忆在竞争均衡中，一阶条件是&lt;/p>
+&lt;p>$$
+u&amp;rsquo;(c_{1,t}) = \beta R_{t+1} u&amp;rsquo;(c_{2,t+1})
+$$&lt;/p>
+&lt;p>而 $R_{t+1} = f'(k_{t+1})$，因此社会计划者对一个个体青年期和老年期的消费配置同该个体自身的最大化决策是一致的，在这一点上市场配置是有效率的。&lt;/p>
+&lt;p>然而，由于社会计划者给每一代个体分配了不同的权重（$\xi_t$ 随 $t$ 变化），可以想见代际之间资源配置不会相同，这是区别于竞争均衡的。&lt;/p>
+&lt;p>考虑一个具体的权重设定：$\xi_t = \xi^t$。我们使用 Lagrange 函数：&lt;/p>
+&lt;p>$$
+\mathcal{L} = \sum_{t=0}^\infty \left(\xi^t[u(c_{1,t})+\beta u(c_{2,t+1})]-\lambda_t\left[(1+n)k_{t+1}+c_{1,t}+\frac{c_{2,t}}{1+n}-f(k_t)\right]\right)
+$$&lt;/p>
+&lt;p>一阶条件：&lt;/p>
+&lt;p>$$
+\begin{align*}
+[c_{1,t}]&amp;amp;\colon\quad \xi^tu&amp;rsquo;(c_{1,t}) - \lambda_t = 0 \\
+[c_{2,t+1}]&amp;amp;\colon\quad \xi^t\beta u&amp;rsquo;(c_{2,t+1}) - \frac{\lambda_{t+1}}{1+n} = 0 \\
+[k_t]&amp;amp;\colon\quad \lambda_t f&amp;rsquo;(k_t) - \lambda_{t-1}(1+n) = 0
+\end{align*}
+$$&lt;/p>
+&lt;p>前两个条件可推出同期年轻人和老年人消费的欧拉方程&lt;/p>
+&lt;p>$$
+\frac{u&amp;rsquo;(c_{1,t})}{u&amp;rsquo;(c_{2,t})} = \frac{\beta(1+n)}{\xi}
+$$&lt;/p>
+&lt;p>这表明 $c_{1,t}$ 和 $c_{2,t}$ 可以互相确定。因此我们只需考虑 $c_{1,t}$ 和 $c_{1,t+1}$ 的欧拉方程（由上述第一和第三个一阶条件得到）：&lt;/p>
+&lt;p>$$
+u&amp;rsquo;(c_{1,t}) = \frac{\xi}{1+n}f&amp;rsquo;(k_{t+1})u&amp;rsquo;(c_{1,t+1})
+$$&lt;/p>
+&lt;p>由此可知在稳态中我们有&lt;/p>
+&lt;p>$$
+\frac{\xi}{1+n}f&amp;rsquo;(k^s) = 1 \quad\Rightarrow\quad f&amp;rsquo;(k^s) = (1+n)(1+\rho) &amp;gt; 1+n
+$$&lt;/p>
+&lt;p>其中 $1+\rho = 1/\xi$，$\rho$ 相当于贴现率。根据资源约束可确定稳态中的消费。&lt;/p>
+&lt;div class="notice note" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>可以证明社会计划者的配置会收敛到上述稳态，证明方式见 &lt;em>DA&lt;/em> 课本 6.8 节。&lt;/p>&lt;/div>
+&lt;p>在离散时间 Ramsey 模型中（课本 6.8 节，但设定折旧率 $\delta=1$ 以及人口增长率 $n$），稳态人均资本存量满足&lt;/p>
+&lt;p>$$
+\beta f&amp;rsquo;(k^*) = 1+n \quad\Rightarrow\quad f&amp;rsquo;(k^*) = (1+n)(1+\varrho) &amp;gt; 1+n
+$$&lt;/p>
+&lt;p>可以看到，社会计划者在 OLG 中的稳态配置和 Ramsey 模型的稳态高度相似（我们知道，根据第一福利定理，Ramsey 模型中的竞争均衡是 Pareto 有效率的），它们都有一个共同点，那就是稳态的利率 $r = f'(k) - 1$ 大于人口增长率 $n$，这说明资本不是过度积累的，而它事实上是 Pareto 最优的一个必要条件。&lt;/p>
+&lt;p>下面我们说明 OLG 的竞争均衡有可能不是 Pareto 最优的。记 $k_{\textit{gold}}$ 为最大化稳态消费的人均资本存量。在 OLG 的稳态中，由总资源约束，有&lt;/p>
+&lt;p>$$
+f(k^*) - (1+n)k^* = c_1^* + \frac{1}{1+n}c_2^* \equiv c^*
+$$&lt;/p>
+&lt;p>于是，$k_{\textit{gold}}$ 满足&lt;/p>
+&lt;p>$$
+f&amp;rsquo;(k_{\textit{gold}}) = 1+n
+$$&lt;/p>
+&lt;p>若 $k^* &amp;gt; k_{\textit{gold}}$，则 $\partial c^*/\partial k^* &amp;lt; 0$，表明减少储蓄可以增加总的消费。此时，我们说经济是动态无效率的：资本过度积累了。$k^* &amp;gt; k_{\textit{gold}}$ 也意味着稳态利率小于人口增长率：$r^* &amp;lt; n$。&lt;/p>
+&lt;p>以上竞争均衡的稳态可获得 Pareto 改进。假设在某一时间 $T$ 处经济处于稳态且 $k^* &amp;gt; k_{\textit{gold}}$，在 $T+1$ 期，减少人均资本存量至 $k^*-\Delta k\geq k_{\textit{gold}}$，之后便一直维持此水平。那么，根据总资源约束，第 $T$ 期总消费的变化量&lt;/p>
+&lt;p>$$
+\Delta c_T = (1+n)\Delta k &amp;gt; 0
+$$&lt;/p>
+&lt;p>此后每一期的消费变化量&lt;/p>
+&lt;p>$$
+\Delta c_t = f(k^*-\Delta k) - f(k^*) + (1+n)\Delta k = -[f&amp;rsquo;(\hat{k})-(1+n)]\Delta k
+$$&lt;/p>
+&lt;p>其中 $\hat{k}\in(k^*-\Delta k,k^*)$，因此 $f'(\hat{k})-(1+n) &amp;lt; 0$，$\Delta c_t &amp;gt; 0$。社会计划者可将每一期增加的总消费在年轻人和老年人之间分配，于是每一代人在其年轻和年老时期都都获得了增益。&lt;/p>
+&lt;p>那么，为什么在市场是完全的且没有外部性的情况下，竞争均衡却不是 Pareto 有效率的呢？原因在于，在 OLG 模型中我们不一定能应用第一福利定理，因为有无穷多个新生的个体不断地加入经济，这意味着总的收入流可能是无穷大的，这事实上就发生在经济动态无效率时（即 $r^* &amp;lt; n$ 时，可参见课本习题 9.11 的证明）。于是，这给予我们进行 Pareto 改进的机会：通过减少过度的储蓄增加每一代人的消费；这种调整不像竞争市场中通过价格（工资、利率）配置资源，从而能合理利用无限的收入流实现改进。&lt;/p>
+&lt;h3 id="社会保障">社会保障&lt;/h3>
+&lt;p>资本过度积累导致动态无效率，除了前述直接对储蓄进行调整的方法，直觉上也可以通过向老年人提供消费来消除或缓解资本过度积累，这便向模型中引入了社会保障体系。有两种社保体系可供考虑：fully-funded 和 unfunded (or pay-as-you-go)。前者从年轻人手中筹资，然后在他们年老时返还；后者直接将年轻人的部分收入转移到同期的老年人手中。我们考察它们是否能缓解资本过度积累的问题。&lt;/p>
+&lt;h4 id="fully-funded-social-security">Fully funded social security&lt;/h4>
+&lt;p>在此社保体系下，个体的最大化问题是&lt;/p>
+&lt;p>$$
+\begin{align*}
+\max_{c_{1,t},c_{2,t+1},s_t}&amp;amp;\quad u(c_{1,t})+\beta u(c_{2,t+1}) \\
+\text{s.t.}&amp;amp;\quad c_{1,t} + s_t + d_t \leq w_t \\
+&amp;amp;\quad c_{2,t+1} \leq R_{t+1}(s_t+d_t)
+\end{align*}
+$$&lt;/p>
+&lt;p>其中 $d_t$ 是由政府外生决定的筹资额度。&lt;/p>
+&lt;p>如果我们不对 $s_t$ 施加任何限制（可正可负），很显然，对任意给定的 $d_t$，原 OLG 的竞争均衡仍是上述问题的解，因为我们可将 $s_t+d_t$ 视作一体，那么任意 $d_t$ 的变动都会被 $s_t$ 的变动抵消而不会导致一个新的均衡。&lt;/p>
+&lt;p>即便我们要求 $s_t\geq 0$，且最优解中某些时期 $s_t = 0$，此新的均衡也不会比原竞争均衡更有效率，因为紧约束必然意味着 $d_t$ 不小于原均衡中的储蓄，也就是说，该社保体系下的资本积累不会低于原竞争均衡中的资本积累。&lt;/p>
+&lt;p>综上，完全融资的社保体系不会带来 Pareto 改进。&lt;/p>
+&lt;h4 id="unfunded-social-security">Unfunded social security&lt;/h4>
+&lt;p>个体的效用最大化问题&lt;/p>
+&lt;p>$$
+\begin{align*}
+\max_{c_{1,t},c_{2,t+1},s_t}&amp;amp;\quad u(c_{1,t})+\beta u(c_{2,t+1}) \\
+\text{s.t.}&amp;amp;\quad c_{1,t} + s_t + d_t \leq w_t \\
+&amp;amp;\quad c_{2,t+1} \leq R_{t+1}s_t + (1+n)d_{t+1}
+\end{align*}
+$$&lt;/p>
+&lt;p>注意只有 $s_t$ 进入资本积累而 $d_t$ 是纯粹的转移支付。当无社保体系的竞争均衡存在动态无效率时，即 $r^* &amp;lt; n$，此社保体系能够缓解资本过度积累。为说明这一点，假设个体也可以自由选择缴纳的社保额度 $d_t$，那么很显然，只要 $r_{t+1} &amp;lt; n$，则 $R_{t+1} &amp;lt; 1+n$，即投资的回报率小于社保的回报率，于是不会有任何投资，但这违背了均衡条件 $R_{t+1} = f'(k_{t+1})$，由此可知均衡时一定有 $r_{t+1} \geq n$。这个分析表明，在纯转移的社保体系下，政府可以选择合适的缴纳额度让经济的竞争均衡不再是动态无效率的。事实上，还可以证明，通过选择合适的 $\{d_t\}$，所得到的竞争均衡可以 Pareto 占优于无社保体系的竞争均衡（见课本命题 9.8）。&lt;/p>
+- https://cwleo.github.io/posts/macro-qe-preparation-ngm-olg/ - 2023 嘉樹.</description></item><item><title>Macro QE 备考 (I): 动态规划</title><link>https://cwleo.github.io/posts/macro-qe-preparation-dynamic-programming/</link><pubDate>Fri, 23 Jun 2023 22:35:19 +0800</pubDate><guid>https://cwleo.github.io/posts/macro-qe-preparation-dynamic-programming/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/macro-qe-preparation-dynamic-programming/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列未能完成，只出了两期，因为复习进度太慢，最终换成手写笔记了。且作留恋。&lt;/p>&lt;/div>
+&lt;h2 id="sequential-form-and-recursive-form">Sequential form and recursive form&lt;/h2>
+&lt;p>我们只考虑平稳的动态规划问题，「平稳」是说即时收益函数 $u$ 和状态变量的演化约束 $G$ 不显式地依赖于时间 $t$。&lt;/p>
+&lt;p>有两种表述形式：序列式和递归式，递归式也就是 Bellman 方程。序列式如下：&lt;/p>
+&lt;p>$$
+\begin{align*}
+V^*(x_0) = \max_{\{x_t\}_{t=0}^\infty} &amp;amp;\quad\sum_{t=0}^\infty\beta^tu(x_t,x_{t+1}), \\
+\text{s.t.}&amp;amp;\quad x_{t+1}\in G(x_t), \\
+&amp;amp;\quad x_0 \text{ is given.}
+\end{align*}
+$$&lt;/p>
+&lt;p>递归式如下：&lt;/p>
+&lt;p>$$
+V(x) = \max_{y\in G(x)} u(x,y) + \beta V(y).
+$$&lt;/p>
+&lt;p>两种形式所确立的值函数是等价的。&lt;/p>
+&lt;h2 id="欧拉方程">欧拉方程&lt;/h2>
+&lt;p>在以上递归式中，一阶条件为&lt;/p>
+&lt;p>$$
+u_2(x,y) + \beta V&amp;rsquo;(y) = 0.
+$$&lt;/p>
+&lt;p>此外，由包络定理，有&lt;/p>
+&lt;p>$$
+V&amp;rsquo;(x) = u_1(x,y).
+$$&lt;/p>
+&lt;p>假设最优 policy 的函数（因为是平稳的，故不显式依赖于 $t$）：$y = \pi(x)$，便有欧拉方程&lt;/p>
+&lt;p>$$
+u_2(x,\pi(x)) + \beta u_1\bigl(\pi(x),\pi(\pi(x))\bigr) = 0.
+$$&lt;/p>
+&lt;p>对欧拉方程的直觉解释：增加 $y$ 的边际成本（通常 $u_2 \leq 0$）等于边际收益（未来收益的贴现）。&lt;/p>
+&lt;h2 id="横截性条件">横截性条件&lt;/h2>
+&lt;p>&lt;em>横截性条件 (transversality condition)&lt;/em> 是动态优化的 &lt;em>必要&lt;/em> 条件，它是对满足欧拉方程的候选路径的进一步筛选。具体而言，欧拉方程要求最优路径必定满足：任意边际的偏离（偏离后又回到路径上）都无法获得改进。如果路径终末值是不受限制的，那么可能有很多满足欧拉方程的候选路径，此时，横截性条件的作用就是从这些候选路径中排除（部分）非最优的路径，它要求最优路径满足：任意永久的偏离（偏离后不再回到原路径上）都无法获得改进。&lt;/p>
+&lt;p>一个形象的例子：从一点到一条直线 $L$ 的最短路径是什么？显然是从该点到直线的垂线段。欧拉方程相当于是说最短的路径必定是直线段，而从一点到直线 $L$ 可作无数条直线。横截性条件则是说在所有这些直线段中，最短路径必定垂直于直线 $L$。&lt;/p>
+&lt;h3 id="the-finite-horizon-case">The finite horizon case&lt;/h3>
+&lt;p>为更好地理解横截性条件，我们首先考虑有限期的动态优化：&lt;/p>
+&lt;p>$$
+\begin{align*}
+\max_{\{x_t\}_{t=0}^{T+1}}&amp;amp;\quad\sum_{t=0}^T\beta^tu(x_t,x_{t+1}), \\
+\text{s.t.}&amp;amp;\quad x_{t+1}\geq0, \\
+&amp;amp;\quad x_0 \text{ is given.}
+\end{align*}
+$$&lt;/p>
+&lt;p>关于 $x_{t+1}$ 的一阶必要条件是&lt;/p>
+&lt;p>$$
+\begin{cases}
+\beta^Tu_2(x_T,x_{T+1}) = 0, &amp;amp; \text{if } x_{T+1}&amp;gt;0, \\
+\beta^Tu_2(x_T,x_{T+1}) \leq 0, &amp;amp; \text{if } x_{T+1}=0.
+\end{cases}
+$$&lt;/p>
+&lt;p>两种情况可以合写为&lt;/p>
+&lt;p>$$
+\beta^Tu_2(x_T,x_{T+1})x_{T+1} = 0.
+$$&lt;/p>
+&lt;p>这便是横截性条件。它是说，除非增加下一期存量的边际成本为0，否则终末期的存量必定是0。我们把 $x_t$ 对应为资本存量，就更好理解了，在终末期，最优的选择就是，不进行任何储蓄而是把现有的产出全部用作消费。考虑离散 Ramsey 模型：即时效用定义为消费的函数 $u(c_t)$，资本存量的演化服从&lt;/p>
+&lt;p>$$
+k_{t+1} = f(k_t) + (1-\delta)k_t - c_t.
+$$&lt;/p>
+&lt;p>将即时效用写作 $k_t$ 和 $k_{t+1}$ 的函数：&lt;/p>
+&lt;p>$$
+u(k_t,k_{t+1}) = u(f(k_t) + (1-\delta)k_t - k_{t+1}).
+$$&lt;/p>
+&lt;p>从而横截性条件&lt;/p>
+&lt;p>$$
+-\beta^Tu&amp;rsquo;(c_T)k_{T+1} = 0.
+$$&lt;/p>
+&lt;p>这基本上意味着 $k_{T+1} = 0$，即 $T$ 期全部产出和资本都用于消费，没有储蓄。&lt;/p>
+&lt;h3 id="the-infinite-horizon-case">The infinite horizon case&lt;/h3>
+&lt;p>在无限期动态优化中，我们无法像上面那样直接推导出横截性条件，但我们可以基于此合理推广为极限形式：&lt;/p>
+&lt;p>$$
+\lim_{t\to\infty}\beta^Tu_2(x_T,x_{T+1})x_{T+1} = 0.
+$$&lt;/p>
+&lt;p>如果结合欧拉方程 $u_2(x_t,x_{t+1})+\beta u_1(x_{t+1},x_{t+2})=0$，我们还有另一种形式:&lt;/p>
+&lt;p>$$
+\lim_{t\to\infty}\beta^Tu_1(x_T,x_{T+1})x_T = 0.
+$$&lt;/p>
+&lt;p>它们意味着无穷远期存量的贴现值为0，这表明最优路径上存量不能是过度积累的。&lt;/p>
+- https://cwleo.github.io/posts/macro-qe-preparation-dynamic-programming/ - 2023 嘉樹.</description></item><item><title>Micro QE 备考练习</title><link>https://cwleo.github.io/posts/micro-qe-preparation/</link><pubDate>Fri, 09 Jun 2023 16:22:12 +0800</pubDate><guid>https://cwleo.github.io/posts/micro-qe-preparation/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/micro-qe-preparation/ -&lt;p>本来计划做一份所有往年题的答案（已经全部做好了但希望打出一份电子版），但不幸考前🐑了，只完成此三题的誊抄，姑且留个纪念吧。&lt;/p>
 &lt;h2 id="problem-1-stochastic-dominance">Problem 1 (stochastic dominance)&lt;/h2>
 &lt;p>Consider lotteries $L_1\equiv(p_1\circ x_1,p_2\circ x_2)$ and $L_2\equiv(1\circ \bar{x})$, where $\bar{x} &amp;gt; p_1x_1+p_2x_2$, and $\bar{x}&amp;lt;x_2$. Let $x$ denote the outcome of $L_1$ and $\widetilde{x}$ the outcome of $L_2$. ($L_2$ is a trivial lottery. So $\widetilde{x}$ is a random variable that equals $\bar{x}$ with probability one.) Let $z$ denote the outcome of lottery&lt;/p>
 &lt;p>$$
@@ -935,254 +1116,4 @@ $$&lt;/p>
 &lt;p>Davidson, James (1994). &lt;em>Stochastic Limit Theory: An Introduction for Econometricians&lt;/em>. Oxford University Press.&lt;/p>
 &lt;p>Hansen, Bruce (2022). &lt;em>Econometrics&lt;/em>. Princeton University Press.&lt;/p>
 &lt;p>Petersen, Karl E. (1989). &lt;em>Ergodic Theory.&lt;/em> Cambridge University Press.&lt;/p>
-- https://cwleo.github.io/posts/ecmt-notes-ergodicity/ - 2023 嘉樹.</description></item><item><title>计量复习笔记 (I)：严格平稳性</title><link>https://cwleo.github.io/posts/ecmt-notes-stationarity/</link><pubDate>Sat, 22 Apr 2023 00:58:32 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-stationarity/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-stationarity/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
-&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
-&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
-&lt;h2 id="内容提要">内容提要&lt;/h2>
-&lt;p>介绍了时间序列中的一个重要概念：严格平稳性（如无特别说明，平稳性均指代严格平稳），并证明了对平稳序列的任意（可测）变换所得序列仍是平稳的（原书定理 14.2）。&lt;/p>
-&lt;h2 id="平稳时间序列">平稳时间序列&lt;/h2>
-&lt;p>对于构建时间序列的严格且正式的理论而言，我们需要的是严格平稳性，弱平稳（宽平稳、协方差平稳）是不足够的。平稳性对于一列随机变量序列，即随机过程，施加了特别的结构，从而使我们在离开独立性世界后依然能发展出类似大数定律、中心极限定理的重要理论。&lt;/p>
-&lt;p>首先给出严格平稳时间序列的定义：&lt;/p>
-&lt;div class="thm">
-&lt;p id="thm:stationary" class="thm-title thm-definition">Definition 1.&lt;/p>
-&lt;div class="thm-inner thm-definition">
-随机过程 $\{Y_t\}_{t\in\mathbb{Z}}$ 若满足：给定任意的 $r\in\mathbb{Z}$，$(Y_t,\dots,Y_{t+r})$ 的联合分布与 $t$ 无关，则称之为平稳过程。
-&lt;/div>
-&lt;/div>
-&lt;p>以随机过程的术语来说，平稳时间序列的分布具有 &lt;em>位移不变 (shift-invariant)&lt;/em> 的性质。如果我们采用测度论的严格表述，就是：对于 $\mathbb{R}$ 的任意 Borel 子集 $B_0,B_2,\dots,B_r$，以及任意的 $t$ 和 $\tau$，都有&lt;/p>
-&lt;p>$$
-\mathbb{P}\{\omega\colon Y_t(\omega)\in B_0,\dots,Y_{t+r}(\omega)\in B_r\} = \mathbb{P}\{\omega\colon Y_\tau(\omega)\in B_0,\dots,Y_{\tau+r}(\omega)\in B_r\}
-$$&lt;/p>
-&lt;p>这就是在表述 $(Y_t,\dots,Y_{t+r})$ 和 $(Y_{\tau},\dots,Y_{\tau+r})$ 具有相同分布。&lt;/p>
-&lt;p>值得一提，有时我们会看到略有不同的定义：&lt;/p>
-&lt;blockquote>
-&lt;p>若对任意的 $t_1,t_2,\dots,t_r$，$(Y_{t_1},\dots,Y_{t_r})$ 的联合分布与 $(Y_{t_1+k},\dots,Y_{t_r+k})$ 相同，而与 $k$ 无关，则称 ${Y_t}$ 是平稳序列。&lt;/p>
-&lt;/blockquote>
-&lt;p>乍一看，这个定义似乎更一般，但它和上面的定义是等价的。要从前述定义推出此定义，只需注意到联合分布相同，则边缘分布必定相同，而 $(Y_{t_1},\dots,Y_{t_r})$ 的分布实际上就是 $(Y_t)_{t=t_1}^{t_r}$ 的边缘分布（不失一般性，假设 $t_1,\dots,t_r$ 由小到大排列）。&lt;/p>
-&lt;h3 id="平稳时间序列的变换">平稳时间序列的变换&lt;/h3>
-&lt;p>现在给出一个很强大的定理，它表明了平稳时间序列在任意可测变换下仍可保留平稳性。&lt;/p>
-&lt;div class="thm">
-&lt;p id="thm:trans" class="thm-title thm-Theorem">Theorem 2.&lt;/p>
-&lt;div class="thm-inner thm-Theorem">
-若 $\{Y_t\}$ 是平稳序列，则对任意可测变换 $\phi\colon\mathbb{R}^{\mathbb{Z}}\to \mathbb{R}$，$X_t := \phi(Y_t,Y_{t-1},\dots)$ 仍是平稳的。
-&lt;/div>
-&lt;/div>
-&lt;div class="thm">
-&lt;button type="button" class="collapsible">&lt;div id="thm-proof-1" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
-&lt;div class="proof-content">
-&lt;div class="thm-inner-proof">
-&lt;p>此证明是以测度论表述的严格证明，因为涉及到无穷维的情况。&lt;/p>
-&lt;p>我们先定义整个随机过程 $\{Y_t\}$ 的分布。设 $T\colon\Omega\to\mathbb{R}^{\mathbb{Z}}$ 以 $(T\omega)_t = Y_t(\omega)$ 作为定义，换言之，$T\omega$ 是一个无穷维向量。设 $\mu$ 是 $\mathbb{P}$ 在 $T$ 下的像测度，即有&lt;/p>
-&lt;p>$$
-\mu(E) = \mathbb{P}(T^{-1}E) \quad\text{for each } E\in\mathcal{B}(\mathbb{R}^{\mathbb{Z}})
-$$&lt;/p>
-&lt;p>$\mu$ 描述了 $\{Y_t\}$ 的分布。&lt;/p>
-&lt;p>现在，我们在无穷维空间 $\mathbb{R}^{\mathbb{Z}}$ 上定义一个 &lt;em>位移变换&lt;/em> $\delta\colon\mathbb{R}^{\mathbb{Z}}\to\mathbb{R}^{\mathbb{Z}}$：&lt;/p>
-&lt;p>$$
-(\delta x)_t = x_{t+r}
-$$&lt;/p>
-&lt;p>也就是说，$\delta$ 将给定的坐标移位 $r$ 个维度。这在时间序列中便是滞后算子。&lt;/p>
-&lt;p>我们要证明 $\delta$ 是一个 $\mu$-&lt;em>&lt;a href="https://en.wikipedia.org/wiki/Measure-preserving_dynamical_system">保测变换&lt;/a>&lt;/em>（或称 $\mu$ 在 $\delta$ 下是 invariant）：&lt;/p>
-&lt;p>$$
-\mu(\delta^{-1}E) = \mu(E) \quad\text{for each } E\in\mathcal{B}(\mathbb{R}^{\mathbb{Z}})
-$$&lt;/p>
-&lt;p>根据 &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Carath%C3%A9odory%27s_extension_theorem">Carathéodory 扩张定理&lt;/a>&lt;/em>，我们不需要证明上式对任意 Borel 子集成立，而只需证明对某个能生成 $\mathcal{B}(\mathbb{R}^{\mathbb{Z}})$ 的代数（对有限交、并、补封闭）的所有子集成立。我们选取的这个代数就是所有 $\mathbb{R}^{\mathbb{Z}}$ 的 &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Cylinder_set">圆柱&lt;/a>&lt;/em> 子集构成的集族，记作 $\mathcal{C}$。&lt;/p>
-&lt;p>$\mathbb{R}^{\mathbb{Z}}$ 的一个圆柱子集定义为如下形式：&lt;/p>
-&lt;p>$$
-C = \{(\dots,x_{-1},x_0,x_1,\dots)\in\mathbb{R}^{\mathbb{Z}}\colon (x_{t_1},x_{t_2},\dots,x_{t_n})\in B\}
-$$&lt;/p>
-&lt;p>其中 $B\in\mathbb{R}^n$ 是一个 Borel 子集。&lt;/p>
-&lt;p>容易证明，$\mathcal{C}$ 是一个代数，并且其生成的 $\sigma$ 域 $\sigma(\mathcal{C})$ 正好是 $\mathcal{B}(\mathbb{R}^{\mathbb{Z}})$。这样，我们只需证明 $\delta$ 在 $\mathcal{C}$ 上保测，而根据 $Y_t$ 的平稳性，这显然成立。于是，$\delta$ 是一个保测变换。&lt;/p>
-&lt;p>上面的证明立即表明，无穷维向量 $\widetilde{Y}_t:=(Y_t, Y_{t-1},\dots)$ 和其任意移位变换 $(Y_{t+r},Y_{t+r-1},\dots)$ 具有相同分布，进而 $x_t = \phi(\widetilde{Y}_t)$ 是平稳的。&lt;/p>
-&lt;/div>
-&lt;div class="thm-end-proof">
-&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-1">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;p>在时间序列中，我们经常用到的一个特殊变换就是移动平均，即 $Y_t,Y_{t-1},\dots$ 的线性组合：&lt;/p>
-&lt;p>$$
-X_t = \sum_{j=0}^\infty a_jY_{t-j}
-$$&lt;/p>
-&lt;p>当然，我们要求这个级数是几乎确定收敛的，一般情况下，我们省略限定语「几乎确定」。毫无疑问，根据上面的定理，$X_t$ 是平稳的。现在给出 $X_t$ 收敛的充分条件：&lt;/p>
-&lt;div class="thm">
-&lt;p id="thm:conv" class="thm-title thm-Theorem">Theorem 3.&lt;/p>
-&lt;div class="thm-inner thm-Theorem">
-若 $\{Y_t\}$ 平稳，$\mathbb{E}|Y|&amp;lt;\infty$，且 $\sum_{j=0}^\infty|a_j| &amp;lt; \infty$，则 $X_t$ 收敛且平稳。
-&lt;/div>
-&lt;/div>
-&lt;div class="thm">
-&lt;button type="button" class="collapsible">&lt;div id="thm-proof-2" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
-&lt;div class="proof-content">
-&lt;div class="thm-inner-proof">
-&lt;p>记 $S_n = \sum_{j=0}^n a_jY_{t-j}$ 为部分和序列。&lt;/p>
-&lt;p>根据 Cauchy 收敛准则，$X_t$ 收敛的充要条件是：对于任意的 $\varepsilon&amp;gt;0$，存在 $N$，当 $n&amp;gt;N$ 时，我们有&lt;/p>
-&lt;p>$$
-\sup_{p\geq1}|S_{n+p}-S_n| &amp;lt; \varepsilon
-$$&lt;/p>
-&lt;p>我们要证明这个条件几乎处处成立。这等价于证明以下事件&lt;/p>
-&lt;p>$$
-A_{\varepsilon} := \bigcap_{n=1}^\infty A_{\varepsilon,n} = \bigcap_{n=1}^\infty\left\{\omega\colon\sup_{p\geq1}\left|\sum_{j=n+1}^{n+p}a_jY_{t-j}\right|\geq\varepsilon\right\}
-$$&lt;/p>
-&lt;p>总是零测集（而不论 $\varepsilon&amp;gt;0$ 的取值）。&lt;/p>
-&lt;p>有如下关系成立：&lt;/p>
-&lt;p>$$
-\begin{align*}
-\mathbb{P}(A_\varepsilon) &amp;amp;\leq \mathbb{P}(A_{\varepsilon,n}) \\
-&amp;amp;\leq \frac{1}{\varepsilon}\mathbb{E}\left[\sup_{p\geq1}\left|\sum_{j=n+1}^{n+p}a_jY_{t-j}\right|\right] \\
-&amp;amp;\leq \frac{1}{\varepsilon}\mathbb{E}\left[\sup_{p\geq1}\sum_{j=n+1}^{n+p}|a_j||Y_{t-j}|\right] \\
-&amp;amp;= \frac{1}{\varepsilon}\mathbb{E}\left[\lim_{p\to\infty}\sum_{j=n+1}^{n+p}|a_j||Y_{t-j}|\right] \\
-&amp;amp;= \frac{1}{\varepsilon}\lim_{p\to\infty}\mathbb{E}\left[\sum_{j=n+1}^{n+p}|a_j||Y_{t-j}|\right] \\
-&amp;amp;= \frac{1}{\varepsilon}\lim_{p\to\infty}\sum_{j=n+1}^{n+p}|a_j|\mathbb{E}|Y|
-\end{align*}
-$$&lt;/p>
-&lt;p>第二行来自 Markov 不等式；第三行来自三角不等式；第五行是单调收敛定理；第六行是积分的线性性。现在，再令 $n\to\infty$，由 $\sum |a_j|&amp;lt;\infty$，以及 $Y$ 绝对可积，进而得到 $\mathbb{P}(A_\varepsilon) = 0$。事实上，上述证明不仅表明 $X_t$ 是收敛的，还是绝对收敛的。&lt;/p>
-&lt;/div>
-&lt;div class="thm-end-proof">
-&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-2">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;h2 id="参考">参考&lt;/h2>
-&lt;p>Ulcigrai, Corinna. &lt;em>&lt;a href="https://indico.ictp.it/event/8325/session/1/contribution/9/material/0/0.pdf">Lecture Notes on &amp;ldquo;Measure preserving transformations.&amp;rdquo;&lt;/a>&lt;/em>&lt;/p>
-&lt;p>Hansen, Bruce (2022). &lt;em>Econometrics&lt;/em>. Princeton University Press.&lt;/p>
-&lt;p>Petersen, Karl E. (1989). &lt;em>Ergodic Theory.&lt;/em> Cambridge University Press.&lt;/p>
-- https://cwleo.github.io/posts/ecmt-notes-stationarity/ - 2023 嘉樹.</description></item><item><title>矩阵的秩、核范数与矩阵补全</title><link>https://cwleo.github.io/posts/nuclear-norm-min/</link><pubDate>Sat, 08 Apr 2023 16:06:52 +0800</pubDate><guid>https://cwleo.github.io/posts/nuclear-norm-min/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/nuclear-norm-min/ -&lt;p>大约三周以前，听了一个presentation，讲到了 network 研究中度量关系网络的矩阵的 &lt;em>「低秩」(low rank)&lt;/em> 性质。之后我在浏览一些高维计量文章时，又见到了这个概念，以及 &lt;em>「核范数」(nuclear norm, aka trace norm)&lt;/em>。我印象里应该见过它们很多次，有些模糊的记忆片段，突然想起和硕士期间导师的交流中他提到过，遂从聊天记录中找到一些珍贵文件，当时他让我学习一下关于 &lt;em>「矩阵补全」(matrix recovery, or matrix completion)&lt;/em> 的内容，我没来得及看。那么这几天就学习学习，说不定以后能派上用场。&lt;/p>
-&lt;h2 id="内容提要">内容提要&lt;/h2>
-&lt;p>本文将从矩阵恢复问题出发，介绍秩的最小化问题如何转变为一个核范数的最小化问题，前者是一个非凸的优化问题，很难求解，后者是一个凸优化问题，尽管不可求微分，但凸问题总是更易于求解的。&lt;/p>
-&lt;h2 id="motivation">Motivation&lt;/h2>
-&lt;p>我们所感兴趣的问题是，如何基于非常有限的信息复原一个（低秩）矩阵。这一话题原本来自于工程实践的需要，例如计算机视觉领域的图像降噪，我们知道图像是由像素点构成的，因而整个图像可以视为一个大矩阵，当有一些像素被破坏，得到的就是一个不完整的矩阵，对图像降噪就是要补全那些污损或缺失的像素点；又如著名的 Netflix 问题（类似地，在国内语境下是豆瓣问题）：Netflix 用户评分矩阵只包含了某些用户对某些电影的评分，而不是每个用户对所有电影的评分（如下图所示），我们希望能推测出那些缺失的评分。这些问题都涉及到矩阵补全。&lt;/p>
-&lt;figure id = "fig:ratings" align="" role="group" aria-describedby="caption-7a0da52ea67b6a781291fe53e8b9f6fe">
-&lt;a href="https://cwleo.github.io/posts/nuclear-norm-min/rating-mat.png" class="img-link">
-&lt;img src="https://cwleo.github.io/posts/nuclear-norm-min/rating-mat.png" style="width: 60%;">
-&lt;/a>
-&lt;figcaption id="caption-7a0da52ea67b6a781291fe53e8b9f6fe">
-Rating Matrix (Source: Yuejie Chi, 2018, Lecture Notes)
-&lt;/figcaption>
-&lt;/figure>
-&lt;p>那么，这和低秩又有什么关系呢？很显然，在没有任何限制条件下去补全那些未知的项，我们有无数种填充方式。想要唯一地重建一个矩阵，这个矩阵必须有些特殊的结构作为限制，而低秩就是一个合理的结构。低秩意味着，矩阵的列向量高度线性相关──它们扩展形成的线性空间是低维的。说得更加人话就是，数据中的大部分波动都由少数几个因子驱动。&lt;/p>
-&lt;p>现在可能又要问了，低秩在实践中是一个合理的假设吗？以 Netflix 评分矩阵为例，直觉上，同一类用户群体的行为、特征有很高的相似性，因此他们的潜在评分高度一致，这样评分矩阵的「主成分」实际上就是几个群体的评价，从而是低秩的。&lt;/p>
-&lt;h2 id="核范数最小化">核范数最小化&lt;/h2>
-&lt;p>低秩矩阵的补全可分为两类方法 (Gu &lt;i>et al.&lt;/i>
-2014)：&lt;em>矩阵分解法&lt;/em> 和 &lt;em>求解秩最小化问题法&lt;/em>。前者用两个低秩矩阵之积作为构造方式，可留待以后学习；后者是本文要讨论的内容。&lt;/p>
-&lt;h3 id="秩最小化问题的正式表述">秩最小化问题的正式表述&lt;/h3>
-&lt;p>假设真实矩阵是 $\bm{M}$，我们所观测到的元素集合是 $\{M_{i,j}\colon (i,j)\in\Omega\}$。秩最小化问题就表述为&lt;/p>
-&lt;p>$$
-\min_{\bm{X}}\ \text{rank}(\bm{X}) \quad \text{s.t. } X_{i,j} = M_{i,j},\ \text{for every }(i,j)\in\Omega
-$$&lt;/p>
-&lt;p>为方便起见，定义算子 $\mathcal{P}_{\Omega}$ 如下：&lt;/p>
-&lt;p>$$
-[\mathcal{P}_{\Omega}(\bm{X})]_{i,j} = \begin{cases}
-X_{i,j} &amp;amp; \text{if }(i,j)\in\Omega \\
-0 &amp;amp; \text{otherwise}
-\end{cases}
-$$&lt;/p>
-&lt;p>换言之，$\mathcal{P}_{\Omega}$ 将任意矩阵正交投影到以指标集 $\Omega$ 作为支撑集的所有矩阵构成的空间上。&lt;/p>
-&lt;p>于是，上述问题就可以方便地写为&lt;/p>
-&lt;p>$$
-\min_{\bm{X}}\ \text{rank}(\bm{X}) \quad \text{s.t. } \mathcal{P}_{\Omega}(\bm{X}) = \mathcal{P}_{\Omega}(\bm{M})
-$$&lt;/p>
-&lt;p>问题的解就是我们对真实矩阵 $\bm{M}$ 的估计或者近似。&lt;/p>
-&lt;h4 id="仿射秩最小化">仿射秩最小化&lt;/h4>
-&lt;p>更一般地，我们不满足于普通的矩阵补全，而是以线性变换作为约束条件：&lt;/p>
-&lt;p>$$
-\min_{\bm{X}}\ \text{rank}(\bm{X}) \quad \text{s.t. } \mathcal{A}(\bm{X}) = \bm{b}
-$$&lt;/p>
-&lt;p>其中 $\mathcal{A}\colon\mathbb{R}^{m\times n}\to\mathbb{R}^p$ 是一个线性映射，向量 $\bm{b}\in\mathbb{R}^p$ 是给定的。这个问题被称为 &lt;em>仿射秩最小化 (affine rank minimization)&lt;/em>。&lt;/p>
-&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
-&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice note" >
-&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>矩阵空间上的线性变换本质上还是向量空间上的线性变换，$\mathcal{A}(\bm{X})$ 可以表述为
-$$
-\mathcal{A}(\bm{X}) := \begin{bmatrix}
-\langle\bm{A}_1,\bm{X}\rangle_{\mathrm{F}} \\ \vdots \\ \langle\bm{A}_p,\bm{X}\rangle_{\mathrm{F}}
-\end{bmatrix}
-$$
-其中 $\langle\bm{A},\bm{B}\rangle_{\mathrm{F}} = \text{trace}(\bm{A}'\bm{B})$ 是矩阵的 Frobenius 内积。见 &lt;a href="https://math.stackexchange.com/questions/2592633/">Stack Exchange&lt;/a>。&lt;/p>&lt;/div>
-&lt;p>不难证明，$\mathcal{P}_{\Omega}$ 是一个线性变换，因而 $\mathcal{P}_{\Omega}(\bm{X}) = \mathcal{P}_{\Omega}(\bm{M})$ 构成仿射约束的一个特例。&lt;/p>
-&lt;h3 id="convex-relaxation">Convex relaxation&lt;/h3>
-&lt;p>遗憾的是，秩最小化问题不是一个凸优化问题，这不是我们所乐见的。原因是，秩函数（关于矩阵所有元素的函数）是非凸的。这无疑使得直接求解上述问题非常困难。我们希望找到作为替代的一个凸优化问题，它正是核范数最小化。&lt;/p>
-&lt;p>那么，什么是核范数呢？我们首先得了解 &lt;em>奇异值分解 (singular value decomposition, SVD)&lt;/em>。任何一个矩阵 $\bm{X}\in\mathbb{R}^{m\times n}$，都可以作如下分解：&lt;/p>
-&lt;p>$$
-\underset{(m\times n)}{\bm{X}} = \underset{(m\times r)}{\bm{U}}\,\underset{(r\times r)}{\bm{\Sigma}}\,\underset{(r\times n)}{\bm{V}&amp;rsquo;}
-$$&lt;/p>
-&lt;p>其中 $\bm{U}$ 和 $\bm{V}$ 各自的列是正交的：$\bm{U}'\bm{U}=\bm{I}_r=\bm{V}'\bm{V}$；$\bm{\Sigma}$ 是一个对角矩阵，对角线元素是从大到小排列的 &lt;em>奇异值&lt;/em>：$\sigma_1\geq\sigma_2\geq\dots\geq\sigma_r\geq 0$，它们都是非负的；$r = \min\{m,n\}$。&lt;/p>
-&lt;p>矩阵的奇异值和秩紧密相关，事实上，一个矩阵的秩等于它所有非零（因而严格正）奇异值的个数，即&lt;/p>
-&lt;p>$$
-\text{rank}(\bm{X}) = \sum_{i=1}^r\mathbb{1}\{\sigma_i\ne 0\}
-$$&lt;/p>
-&lt;p>如果我们用 $\bm{\sigma}$ 来代表所有奇异值构成的向量，那么上式就是 $\bm{\sigma}$ 的 $\ell_0$ 范数。这里离题一下，向量 $\ell_0$ 范数并不是一个真正的范数，而是 pseudo norm，因为它没有齐次性，但实际应用中仍普遍称之为「范数」，见 &lt;a href="https://en.wikipedia.org/wiki/Norm_(mathematics)#Hamming_distance_of_a_vector_from_zero">Wiki&lt;/a>。&lt;/p>
-&lt;p>现在，我们可以正式定义矩阵核范数：&lt;/p>
-&lt;div class="thm">
-&lt;p id="thm:nuclear" class="thm-title thm-definition">Definition 1.&lt;/p>
-&lt;div class="thm-inner thm-definition">
-矩阵 $\bm{X}$ 的核范数 $\lVert\bm{X}\rVert_* := \sum_{i=1}^r \sigma_i(\bm{X})$，即所有奇异值之和。
-&lt;/div>
-&lt;/div>
-&lt;p>可以看到，矩阵的核范数等于其奇异值向量的 $\ell_1$ 范数。核范数是一个真正的范数（要证明这一点，特别是要证明它满足三角不等式，见 &lt;a href="https://math.stackexchange.com/questions/1142540">Stack Exchange 上的回答&lt;/a>）。&lt;/p>
-&lt;p>我们要做的替换就是将目标函数 $\text{rank}(\bm{X})$ 换为 $\lVert\bm{X}\rVert_*$，也就是我们考虑如下问题&lt;/p>
-&lt;p>$$
-\min_{\bm{X}}\ \lVert\bm{X}\rVert_* \quad \text{s.t. } \mathcal{A}(\bm{X}) = \bm{b}
-$$&lt;/p>
-&lt;p>这是一个凸优化问题，因为范数总是一个凸函数。核范数是秩函数的一个 &lt;em>convex relaxation&lt;/em>。&lt;/p>
-&lt;div class="notice note" >
-&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>可以类比 Lasso 的思想，想得到一个稀疏的向量（稀疏性以 $\ell_0$ 度量），用的是 $\ell_1$ 范数。现在是矩阵，度量矩阵列向量线性独立程度的正是秩（奇异值向量的 $\ell_0$ 范数），因而用核范数作为优化目标（奇异值向量的 $\ell_1$ 范数）可以得到低秩矩阵。&lt;/p>&lt;/div>
-&lt;h3 id="两种问题的等价性">两种问题的等价性&lt;/h3>
-&lt;p>现在，我们如愿得到了一个凸优化问题，它比原问题更容易求解。但另一方面，这种替换是否有其正当性？换言之，最小化核范数的解是否就是最小化秩函数的解？如果不是，那显然背离了我们的初衷，我们当然希望两种问题给出的解是相同的。一般意义上，两种最小化当然不同，但在一些正则条件下可以证明它们的局部等价性，有诸多研究进行了论证。&lt;/p>
-&lt;p>Recht &lt;i>et al.&lt;/i>
-(2010) 证明了，在满足特定的 RIP (restricted isometry property) 条件时，仿射秩最小化问题等价于在相同约束下最小化核范数。Candès
-and Recht
-(2012) 则不依赖 RIP，证明了有很大的概率最小化核范数能唯一地复原矩阵，只要已知的元素个数不是太少。&lt;/p>
-&lt;p>在多数矩阵补全问题中，使用核范数最小化问题作为秩最小化问题的替代是恰当的。&lt;/p>
-&lt;h3 id="求解核范数最小化问题的算法">求解核范数最小化问题的算法&lt;/h3>
-&lt;p>尽管核范数最小化问题是一个凸问题（但它仍是不可微分的），可以用一般性的凸优化工具求解，但求解速度可能并不十分理想。对此，有一些更迅速的方法，这里简单提及两种。&lt;/p>
-&lt;p>Recht &lt;i>et al.&lt;/i>
-(2010) 将核范数最小化问题转变为一个 &lt;em>半定规划 (semidefinite programming)&lt;/em>，已有成熟的软件包用于解决这类问题（通常使用 primal-dual interior-point methods）。不过，这类方法在维度很高时速度很慢。&lt;/p>
-&lt;p>Cai &lt;i>et al.&lt;/i>
-(2010) 使用 &lt;em>近端次梯度下降法 (proximal subgradient descent)&lt;/em> 求解，此法特别适用于不可微分的凸优化，而且对于高维情形收敛速度也可令人满意。以普通的矩阵补全为例，此文事实上是求解&lt;/p>
-&lt;p>$$
-\min_{\bm{X}}\ \tau\lVert\bm{X}\rVert_* + \frac12\lVert\bm{X}\rVert_{\bm{F}}^2 \quad \text{s.t. } \mathcal{P}_{\Omega}(\bm{X}) = \mathcal{P}_{\Omega}(\bm{M})
-$$&lt;/p>
-&lt;p>当 $\tau$ 很大时，该问题的解可以作为最小化核范数问题解的近似。求解该问题是通过一个渐进程序实现的，本质上是梯度下降，这里不做介绍。&lt;/p>
-&lt;h2 id="其他">其他&lt;/h2>
-&lt;p>Chandrasekaran &lt;i>et al.&lt;/i>
-(2012) 是一篇很好的文章，从几何角度揭示了范数的选择问题。具体到核范数，简单来说就是核范数是秩函数的凸包 （此概念在 &lt;em>&lt;a href="../bayesian-persuasion">之前的文章&lt;/a>&lt;/em> 中出现过），因而以核范数替代秩函数是 &lt;em>最紧的凸放松 (tightest convex relaxation)&lt;/em>。&lt;/p>
-&lt;p>Gu &lt;i>et al.&lt;/i>
-(2014) 基于 Cai &lt;i>et al.&lt;/i>
-(2010) 的求解程序，研究了 &lt;em>加权核范数最小化问题&lt;/em>，并设计了类似的求解程序。&lt;/p>
-&lt;h2 id="参考">参考&lt;/h2>
-&lt;p>&lt;a href="https://www.zhihu.com/question/26471536">知乎问答&lt;/a>.&lt;/p>
-&lt;p>Yuejie Chi (2018). &lt;em>&lt;a href="https://users.ece.cmu.edu/~yuejiec/ece18898G_notes/ece18898g_lowrank_matrix_recovery.pdf">Lecture Notes&lt;/a>.&lt;/em>&lt;/p>
-&lt;p>Yuxin Chen (2020). &lt;em>&lt;a href="https://yuxinchen2020.github.io/ele520_math_data/lectures/matrix_recovery.pdf">Lecture Notes&lt;/a>.&lt;/em>&lt;/p>
-&lt;div class ="box">
-&lt;p>Cai, Jian-Feng &lt;em>et al.&lt;/em>
-(2010).
-“A Singular Value Thresholding Algorithm for Matrix Completion.”
-&lt;i>SIAM Journal on Optimization&lt;/i>, 20(4), 1956–1982.
-&lt;a href="https://doi.org/10.1137/080738970" title="A Singular Value Thresholding Algorithm for Matrix Completion" target="_blank" style="word-break: break-all;">doi: 10.1137/080738970&lt;/a>.&lt;/p>
-&lt;p>Candès, Emmanuel and Recht, Benjamin
-(2012).
-“Exact matrix completion via convex optimization.”
-&lt;i>Communications of the ACM&lt;/i>, 55(6), 111–119.
-&lt;a href="https://doi.org/10.1145/2184319.2184343" title="Exact matrix completion via convex optimization" target="_blank" style="word-break: break-all;">doi: 10.1145/2184319.2184343&lt;/a>.&lt;/p>
-&lt;p>Chandrasekaran, Venkat &lt;em>et al.&lt;/em>
-(2012).
-“The Convex Geometry of Linear Inverse Problems.”
-&lt;i>Foundations of Computational Mathematics&lt;/i>, 12(6), 805–849.
-&lt;a href="https://doi.org/10.1007/s10208-012-9135-7" title="The Convex Geometry of Linear Inverse Problems" target="_blank" style="word-break: break-all;">doi: 10.1007/s10208-012-9135-7&lt;/a>.&lt;/p>
-&lt;p>Gu, Shuhang &lt;em>et al.&lt;/em>
-(2014).
-“Weighted Nuclear Norm Minimization with Application to Image Denoising.”
-In: &lt;em>2014 IEEE Conference on Computer Vision and Pattern Recognition&lt;/em>, Columbus, OH, USA.
-&lt;a href="https://doi.org/10.1109/CVPR.2014.366" title="Weighted Nuclear Norm Minimization with Application to Image Denoising" target="_blank" style="word-break: break-all;">doi: 10.1109/CVPR.2014.366&lt;/a>.&lt;/p>
-&lt;p>Gu, Shuhang &lt;em>et al.&lt;/em>
-(2017).
-“Weighted Nuclear Norm Minimization and Its Applications to Low Level Vision.”
-&lt;i>International Journal of Computer Vision&lt;/i>, 121(2), 183–208.
-&lt;a href="https://doi.org/10.1007/s11263-016-0930-5" title="Weighted Nuclear Norm Minimization and Its Applications to Low Level Vision" target="_blank" style="word-break: break-all;">doi: 10.1007/s11263-016-0930-5&lt;/a>.&lt;/p>
-&lt;p>Recht, Benjamin &lt;em>et al.&lt;/em>
-(2010).
-“Guaranteed Minimum-Rank Solutions of Linear Matrix Equations via Nuclear Norm Minimization.”
-&lt;i>SIAM Review&lt;/i>, 52(3), 471–501.
-&lt;a href="https://doi.org/10.1137/070697835" title="Guaranteed Minimum-Rank Solutions of Linear Matrix Equations via Nuclear Norm Minimization" target="_blank" style="word-break: break-all;">doi: 10.1137/070697835&lt;/a>.&lt;/p>
-&lt;/div>
-- https://cwleo.github.io/posts/nuclear-norm-min/ - 2023 嘉樹.</description></item></channel></rss>
+- https://cwleo.github.io/posts/ecmt-notes-ergodicity/ - 2023 嘉樹.</description></item></channel></rss>
