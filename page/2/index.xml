@@ -1,4 +1,148 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Tue, 27 Jun 2023 15:08:53 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (I)：严格平稳性</title><link>https://cwleo.github.io/posts/ecmt-notes-stationarity/</link><pubDate>Sat, 22 Apr 2023 00:58:32 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-stationarity/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-stationarity/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Thu, 08 Aug 2024 22:20:20 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (II)：遍历性</title><link>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</link><pubDate>Sat, 22 Apr 2023 20:22:42 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-ergodicity/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
+&lt;h2 id="内容提要">内容提要&lt;/h2>
+&lt;p>引入一个重要概念：&lt;em>遍历性 (ergodicity)&lt;/em>，并证明了（弱版本的）遍历定理，该定理是时间序列版本的大数定律。&lt;/p>
+&lt;h2 id="遍历性">遍历性&lt;/h2>
+&lt;p>上一讲介绍了平稳性，它本质上诱导出一个保测变换。但平稳性仍不足以建立起大数定律，例如，考虑一个平凡的时间序列 $Y_t = Y$，它没有任何时间维度上的变动，很显然，它是平稳的，然而 $\frac1n\sum Y_t = Y$ 并不收敛到 $\mathbb{E}(Y)$。大数定律还需要时间序列是遍历的。顺带一提，遍历性理论已经发展成了一个数学分支，在时间序列中的应用只是其诸多应用之一。&lt;/p>
+&lt;p>在定义遍历性之前我们先介绍一些必要概念。称事件 $A$ 在变换 $T$ 下是 &lt;em>不变的(invariant)&lt;/em> 若 $A$ 在 $T$ 下的原像也是 $A$，即 $T^{-1}A = A$。例如，在时间序列中，我们接触到最多的变换之一就是时间位移变换 $(\delta x)_t = x_{t+1}$，很显然，$\mathbb{R}^{\mathbb{Z}}$ 在 $\delta$ 下就是不变的。称事件 $A$ 是 &lt;em>平凡的(trivial)&lt;/em> 如果 $\mathbb{P}(A)$ 等于 0 或 1。称一个变换 $T$ 是 &lt;em>遍历的&lt;/em> 若所有在 $T$ 下不变的事件 $A\in\mathcal{F}$（$\mathcal{F}$ 是 $\sigma$ 域）都是平凡的，换言之，没有非平凡不变事件。&lt;/p>
+&lt;p>现在给出时间序列遍历性的正式定义：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:ergod" class="thm-title thm-definition">Definition 1.&lt;/p>
+&lt;div class="thm-inner thm-definition">
+设时间序列 $\{Y_t\}_{t\in\mathbb{Z}}$ 的分布为 $\mu$，相应地有概率空间 $(\mathbb{R}^{\mathbb{Z}},\mathcal{B}(\mathbb{R}^{\mathbb{Z}}),\mu)$。若位移变换 $\delta: \mathbb{R}^{\mathbb{Z}}\to\mathbb{R}^{\mathbb{Z}}$ 是遍历的，则称 $\{Y_t\}$ 是遍历的。
+&lt;/div>
+&lt;/div>
+&lt;p>可以看到，数学上，平稳性要求位移变换是一个保测变换（见上一讲对定理 2 的证明，在那里还说明了像测度 $\mu$ 是如何定义的），而遍历性要求位移变换是遍历的。那么，该如何理解遍历性呢？直观来讲，它意味着一个时间序列随着时间的演进将最终到达样本空间内的所有状态，而被吸收到特定状态的概率为零。可以想见，当一个时间序列既是平稳又是遍历的，那么一条样本路径随机而均匀地（此处「均匀」指按照单个 $Y_t$ 分布的均匀）访问了整个样本空间，于是它们的样本均值就能很好地刻画总体均值，这就是遍历定理的基本思想。&lt;/p>
+&lt;h3 id="遍历序列的变换">遍历序列的变换&lt;/h3>
+&lt;p>和平稳性一样，对一个遍历序列的（可测）变换仍保留遍历性：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:trans" class="thm-title thm-Theorem">Theorem 2.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+若 $\{Y_t\}$ 是遍历序列，则对任意可测变换 $\phi\colon\mathbb{R}^{\mathbb{Z}}\to \mathbb{R}$，$X_t := \phi(Y_t,Y_{t-1},\dots)$ 仍是遍历的。
+&lt;/div>
+&lt;/div>
+&lt;div class="thm">
+&lt;button type="button" class="collapsible">&lt;div id="thm-proof-1" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
+&lt;div class="proof-content">
+&lt;div class="thm-inner-proof">
+&lt;p>设 $\{X_t\}$ 的分布为 $\lambda$，它是 $\mu$ 在 $T\colon\mathbb{R}^{\mathbb{Z}}\to\mathbb{R}^{\mathbb{Z}}$ 下的像测度，$T$ 由下式定义：&lt;/p>
+&lt;p>$$
+(Tx)_t = \phi(y_t, y_{t-1},\dots)
+$$&lt;/p>
+&lt;p>我们要证明位移变换在 $\lambda$ 的意义下是遍历的，即任意 $\delta$-invariant 事件 $A$ 都是平凡的。&lt;/p>
+&lt;p>由 $\{Y_t\}$ 的遍历性，对任意 $\delta$-invariant 事件 $A$，有 $\mu(A) = 0$ 或 $\mu(A) = 1$。根据 $\lambda$ 的定义，有&lt;/p>
+&lt;p>$$
+\lambda(A) = \mu(T^{-1}A)
+$$&lt;/p>
+&lt;p>若能证明 $T^{-1}A$ 也是 $\delta$-invariant 事件，则我们就证明了 $\{X_t\}$ 是遍历的。&lt;/p>
+&lt;p>容易推出 $\delta^{-1}(T^{-1}A) = \{x\colon T(\delta x)\in A\}$；由 $T$ 的定义，易见 $T(\delta x) = \delta(Tx)$；再由 $A$ 的不变性有 $\delta x\in A$ 当且仅当 $x\in A$；因此，有 $T(\delta x)\in A$ 当且仅当 $Tx\in A$，这也就证明了 $\delta^{-1}(T^{-1}A) = T^{-1}A$，即 $T^{-1}A$ 是 $\delta$-invariant 事件。&lt;/p>
+&lt;/div>
+&lt;div class="thm-end-proof">
+&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-1">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>特别地，移动平均变换保留遍历性：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:conv" class="thm-title thm-Theorem">Theorem 3.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+若 $\{Y_t\}$ 遍历，$\mathbb{E}|Y|&amp;lt;\infty$，且 $\sum_{j=0}^\infty|a_j| &amp;lt; \infty$，则 $X_t = \sum_{j=0}^\infty a_jY_{t-j}$ 收敛且遍历。
+&lt;/div>
+&lt;/div>
+&lt;h2 id="遍历定理">遍历定理&lt;/h2>
+&lt;p>遍历定理是时间序列版本的大数定律，是我们在非独立世界中实现一致估计的基石。在表述该定理之前，先不加证明地给出一个平稳序列遍历的充要条件：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:mix" class="thm-title thm-Theorem">Theorem 4.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+&lt;p>若 $\{Y_t\}$ 平稳，则其遍历的充要条件是：对任意事件 $A,B\in\mathcal{B}(\mathbb{R}^{\mathbb{Z}})$，有&lt;/p>
+&lt;p>$$
+\lim_{n\to\infty} \frac1n\sum_{k=1}^n\mu(\delta^kA\cap B) = \mu(A)\mu(B)
+$$&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>其严格证明可见 Davidson (1994) 定理 13.13。这里提供一种直觉解释。在保测且遍历的位移变换下，非平凡的事件 $A$ 在位移后和会得到 $A$ 和其补集 $A^c$ 元素的某种混合（因为 $A$ 肯定不是 invariant），随着时间的演进，不停地进行位移变换，我们可以得到不同程度的混合。对于另一个事件 $B$，它和 $\delta^k A$ 的相关程度由 $\mu(\delta^kA\cap B)-\mu(A)\mu(B)$ 刻画，这些相关性平均下来，应该接近零，这是因为：$\delta^kA$ 会是 $A$ 和 $A^c$ 各种程度的混合，也决定了它和 $B$ 的相关性，但平均值应该接近零。&lt;/p>
+&lt;p>从以上定理我们有如下推论：&lt;/p>
+&lt;div class="thm">
+&lt;p id="coro:cov" class="thm-title thm-Corollary">Corollary 5.&lt;/p>
+&lt;div class="thm-inner thm-Corollary">
+&lt;p>若 $\{Y_t\}$ 平稳且遍历，以及 $\mathbb{E}(Y^2)&amp;lt;\infty$，则对任意 $t\in\mathbb{Z}$，有&lt;/p>
+&lt;p>$$
+\frac1n\sum_{k=1}^n\text{cov}(Y_t,Y_{t+k}) \to 0 \quad\text{as } n\to\infty
+$$&lt;/p>
+&lt;p>即平均协方差趋于零。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="thm">
+&lt;button type="button" class="collapsible">&lt;div id="thm-proof-2" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
+&lt;div class="proof-content">
+&lt;div class="thm-inner-proof">
+&lt;p>不失一般性，假设 $\mathbb{E}(Y) = 0$。记 $\gamma_k = \mathbb{E}(Y_tY_{t+k})$。我们要证明 $\frac1n\sum_k\gamma_k \to 0$。&lt;/p>
+&lt;p>以概率测度 $\mu$ 来表述，$\gamma_k = \int \pi_0(x)\pi_k(x)\,\mu(dx)$，其中 $\pi_k(x) = x_{t+k}$ 是坐标投影映射。考虑 $\pi_0$ 为简单函数的情况，即 $\pi_0(x) = \sum_i \alpha_i\mathbb{1}_{A_i}(x)$，其中 $\{A_i\}$ 构成对 $\mathbb{R}^{\mathbb{Z}}$ 的分割。于是 $\pi_1(x) = \pi_0(\delta^{-1} x) = \sum_i\alpha_i\mathbb{1}_{\delta^{-1}A_i}(x)$。不难证明 $\{\delta^{-1}A_i\}$ 两两互斥，且它们的概率和为 1（利用 $\delta$ 的保测性），因此我们就可以把它视作对 $\mathbb{R}^{\mathbb{Z}}$ 的分割。这可以自然地推广到 $\pi_k$。因此&lt;/p>
+&lt;p>$$
+\begin{align*}
+\gamma_k &amp;amp;= \int \sum_i\sum_j\alpha_i\alpha_j\mathbb{1}_{A_i\cap\delta^{-k}A_j}(x)\,\mu(dx) \\
+&amp;amp;= \sum_i\sum_j\alpha_i\alpha_j\mu(A_i\cap\delta^{-k}A_j)
+\end{align*}
+$$&lt;/p>
+&lt;p>根据前述定理，就有&lt;/p>
+&lt;p>$$
+\begin{align*}
+\lim_{n\to\infty}\frac1n\sum_k\gamma_k &amp;amp;= \sum_i\sum_j\alpha_i\alpha_j\left(\lim_{n\to\infty}\frac1n\sum_k\mu(A_i\cap\delta^{-k}A_j)\right) \\
+&amp;amp;= \sum_i\sum_j\alpha_i\alpha_j\mu(A_i)\mu(A_j) \\
+&amp;amp;= [\mathbb{E}_{\mu}(\pi_0)]^2 = 0
+\end{align*}
+$$&lt;/p>
+&lt;p>最后，根据测度论中任意可测函数可由简单函数的递增序列逼近的性质，以及单调收敛定理，便可将上述结论拓展到一般情形。&lt;/p>
+&lt;/div>
+&lt;div class="thm-end-proof">
+&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-2">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>值得一提，平均协方差趋于零并不意味着单项协方差也趋于零，换言之，遍历不意味着序列无关（即便是渐进意义上）；反过来，序列无关也不意味着遍历（一个反例可见 &lt;a href="https://math.stackexchange.com/a/526387/693430">这里&lt;/a>）。&lt;/p>
+&lt;div class="notice note" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>在数学分析中，我们知道，若数列 $a_n$ 有极限 $a$，那么算数平均 $\frac1n\sum a_i$ 收敛且有相同极限 $a$，但反过来并不成立，例如 $a_n = (-1)^n$ 不收敛，但 $\frac1n\sum a_i$ 收敛到零。这个结论常被称作 &lt;a href="https://en.wikipedia.org/wiki/Ces%C3%A0ro_summation">Cesàro summation&lt;/a>。&lt;/p>&lt;/div>
+&lt;p>下面，我们利用上述推论证明一个弱版本的遍历定理。在强版本里，不需要二阶矩存在，而且得到的是几乎确定收敛（和强大数定律一样），其证明可见 Billingsley (1995) 定理 24.1 或者 Davidson (1994) 定理 13.12，有时间我会专门写一篇笔记。&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:ergo" class="thm-title thm-Theorem">Theorem 6.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+若 $\{Y_t\}$ 平稳且遍历，以及 $\mathbb{E}(Y^2)&amp;lt;\infty$，则 $\frac1n\sum Y_t\to_p\mathbb{E}(Y)$。
+&lt;/div>
+&lt;/div>
+&lt;div class="thm">
+&lt;button type="button" class="collapsible">&lt;div id="thm-proof-3" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
+&lt;div class="proof-content">
+&lt;div class="thm-inner-proof">
+&lt;p>记 $\bar{y}_n = \frac1n\sum Y_t$ 为样本均值。&lt;/p>
+&lt;p>由 Chebyshev 不等式&lt;/p>
+&lt;p>$$
+\mathbb{P}(|\bar{y}_n-\mu|\geq\varepsilon) \leq \frac{\text{var}(\bar{y}_n)}{\varepsilon^2}
+$$&lt;/p>
+&lt;p>我们只要证明 $\lim_{n\to\infty}\text{var}(\bar{y}_n)=0$。&lt;/p>
+&lt;p>不失一般性，假设 $\mu = 0$。我们有&lt;/p>
+&lt;p>$$
+\begin{align*}
+\text{var}(\bar{y}_n) &amp;amp;= \frac{1}{n^2}\mathbb{E}[(Y_1+\dots+Y_T)^2] \\
+&amp;amp;= \frac{1}{n^2}[n\gamma_0 + 2(n-1)\gamma_1 + 2(n-2)\gamma_2 +\dots+ 2\gamma_{n-1}] \\
+&amp;amp;= \frac{1}{n^2}\left[n\gamma_0+2\sum_{k=1}^{n-1}(n-k) \gamma_k\right] \\
+&amp;amp;= \frac{1}{n^2}\left[n\gamma_0+2\sum_{k=1}^{n-1}\sum_{\ell=1}^k\gamma_\ell\right] \\
+&amp;amp;= \frac{\gamma_0}{n} + \frac{2}{n}\sum_{k=1}^{n-1}\left(\frac{1}{n}\sum_{\ell=1}^k\gamma_\ell\right)
+\end{align*}
+$$&lt;/p>
+&lt;p>第一项显然收敛到0；由前述推论，第二项括号内趋于0，再由 Cesàro 求和的结论知整个第二项趋于0。&lt;/p>
+&lt;/div>
+&lt;div class="thm-end-proof">
+&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-3">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="参考">参考&lt;/h2>
+&lt;p>Billingsley, Patrick (1995). &lt;em>Probability and Measure&lt;/em>. John Wiley &amp;amp; Sons.&lt;/p>
+&lt;p>Davidson, James (1994). &lt;em>Stochastic Limit Theory: An Introduction for Econometricians&lt;/em>. Oxford University Press.&lt;/p>
+&lt;p>Hansen, Bruce (2022). &lt;em>Econometrics&lt;/em>. Princeton University Press.&lt;/p>
+&lt;p>Petersen, Karl E. (1989). &lt;em>Ergodic Theory.&lt;/em> Cambridge University Press.&lt;/p>
+- https://cwleo.github.io/posts/ecmt-notes-ergodicity/ - 2023 嘉樹.</description></item><item><title>计量复习笔记 (I)：严格平稳性</title><link>https://cwleo.github.io/posts/ecmt-notes-stationarity/</link><pubDate>Sat, 22 Apr 2023 00:58:32 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-stationarity/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-stationarity/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
 &lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
 &lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
 &lt;h2 id="内容提要">内容提要&lt;/h2>
