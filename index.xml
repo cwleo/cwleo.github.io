@@ -600,7 +600,7 @@ $$&lt;/p>
 $$&lt;/p>
 &lt;p>即 scaled 样本均值依分布收敛于布朗运动在时间维度上的平均。这也表明了 $\bar{Y}_n$ 本身是发散的，即一个单位根序列不具有均值回归的性质。&lt;/p>
 &lt;h2 id="带趋势项回归">带趋势项回归&lt;/h2>
-&lt;p>用单位根序列对时间趋势回归会得到不同寻常的结果。我们采用 &lt;a href="./ecmt-notes-time-trends.html">第四讲&lt;/a> 中的 scaling 矩阵 $\bm{D}_n = \text{diag}\{\sqrt{n},n^{3/2}\}$，分母的收敛仍然是&lt;/p>
+&lt;p>用单位根序列对时间趋势回归会得到不同寻常的结果。我们采用 &lt;a href="https://cwleo.github.io/posts/ecmt-notes-time-trends/">第四讲&lt;/a> 中的 scaling 矩阵 $\bm{D}_n = \text{diag}\{\sqrt{n},n^{3/2}\}$，分母的收敛仍然是&lt;/p>
 &lt;p>$$
 \bm{D}_n^{-1}\bm{X}'\bm{X}\bm{D}_n^{-1} \to
 \begin{pmatrix}
