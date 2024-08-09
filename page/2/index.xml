@@ -1,4 +1,106 @@
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Thu, 08 Aug 2024 22:20:20 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (II)：遍历性</title><link>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</link><pubDate>Sat, 22 Apr 2023 20:22:42 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-ergodicity/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>嘉樹的世界</title><link>https://cwleo.github.io/</link><description>Recent content on 嘉樹的世界</description><generator>Hugo -- gohugo.io</generator><language>zh-hant</language><copyright>2023 嘉樹.</copyright><lastBuildDate>Fri, 09 Aug 2024 10:31:47 +0800</lastBuildDate><atom:link href="https://cwleo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>计量复习笔记 (III)：几个话题</title><link>https://cwleo.github.io/posts/ecmt-notes-some-notions/</link><pubDate>Mon, 24 Apr 2023 12:18:41 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-some-notions/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-some-notions/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
+&lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
+&lt;h2 id="内容提要">内容提要&lt;/h2>
+&lt;p>这一讲不是单个概念，而是好几个话题。因为单个的内容都比较少，所以我把它们都放在这里。当然，每一个话题都可以拓展为很丰富的内容，但由于课上也是选择性介绍的，这里我也就没有再去探索（留待以后），因为往后的重心是非平稳时间序列。&lt;/p>
+&lt;p>介绍了鞅差分中心极限定理、线性投影和 Wold 分解定理。&lt;/p>
+&lt;h2 id="鞅差分中心极限定理">鞅差分中心极限定理&lt;/h2>
+&lt;p>&lt;em>鞅 (martingale)&lt;/em> 是一类非常重要的随机过程，&lt;em>鞅差分 (martingale difference sequence, m.d.s.)&lt;/em> 顾名思义就是鞅的差分。这里我们不通过鞅来定义鞅差分，而是直接给出鞅差分的定义：&lt;/p>
+&lt;div class="thm">
+&lt;p id="def:mds" class="thm-title thm-definition">Definition 1.&lt;/p>
+&lt;div class="thm-inner thm-definition">
+&lt;p>随机过程 $\{e_t\}$ 若适应于滤流 (filtration) $\{\mathcal{F}_t\}$ 且满足&lt;/p>
+&lt;p>$$
+\mathbb{E}(e_t|\mathcal{F_{t-1}}) = 0 \quad\text{almost surely}
+$$&lt;/p>
+&lt;p>则称之为鞅差分序列。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>容易验证一个 m.d.s. 是零均值、序列不相关的。&lt;/p>
+&lt;p>不加证明地给出鞅差分中心极限定理：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:mds" class="thm-title thm-Theorem">Theorem 2.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+&lt;p>若 $\{e_t\}$ 是平稳遍历的 m.d.s.，且 $\mathbb{E}(e_t^2) = \sigma^2 &amp;lt;\infty$，则有&lt;/p>
+&lt;p>$$
+\sqrt{n}\bar{e}_n = \frac{1}{\sqrt{n}}\sum_{t=1}^ne_t \to_d N(0,\sigma^2)
+$$&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>此定理特别适合我们的需要，因为之前已经介绍了平稳和遍历，为了得到一个中心极限定理，只需额外要求序列是一个鞅差分。此定理的严格证明可参考 Davidson (1994) 定理 24.3，它事实上是 McLeish (1974) 鞅差分 CLT 的一个较弱的推论，平稳遍历将保证那个定理中的各项条件得到满足。&lt;/p>
+&lt;p>课本中还介绍了 &lt;em>混合 (mixing)&lt;/em> 的概念，它是比遍历更强的要求，但思想是相同的，就是渐进独立性（见上一讲定理 4 下面的讨论）。这里不作更多介绍。&lt;/p>
+&lt;h2 id="线性投影">线性投影&lt;/h2>
+&lt;p>设 $(Y,\bm{X})$ 服从联合分布。$Y$ 可表示为两个部分，第一个部分是 $\bm{X}$ 的一个线性组合，第二个部分 $e$ 是正交于（即不相关）第一部分的误差；两者可分别称为 &lt;em>线性投影 (linear projection)&lt;/em> 和 &lt;em>投影误差 (projection error)&lt;/em>。&lt;/p>
+&lt;p>那么，这个线性组合 $\bm{X}'\bm{\beta}$ 应该如何选取呢？或者说，以什么标准来确定最优的线性投影？这个问题的答案是，使得投影误差的 $L^2$ 范数最小化。也就是说，最好的 $\bm{\beta}^*$ 是&lt;/p>
+&lt;p>$$
+\bm{\beta}^* = \arg\min_{\bm{\beta}} \mathbb{E}[(Y-\bm{X}&amp;rsquo;\bm{\beta})^2]
+$$&lt;/p>
+&lt;p>解为 $\bm{\beta}^* = [\mathbb{E}(\bm{XX}')]^{-1}\mathbb{E}(\bm{X}Y)$。&lt;/p>
+&lt;p>事实上，选择 $L^2$ 范数最小化来自于一个事实：条件期望 $\mathbb{E}(Y|\bm{X})$ 是 $Y$ 在 $L^2(\Omega,\sigma(\bm{X}),\mathbb{P})$ 空间上的投影，因此&lt;/p>
+&lt;p>$$
+\mathbb{E}(Y|\bm{X}) \in \arg\min_g \mathbb{E}[(Y-g(\bm{X}))^2]
+$$&lt;/p>
+&lt;p>当条件期望为线性时，正好有 $\bm{X}'\bm{\beta}^* = \mathbb{E}(Y|\bm{X})$。&lt;/p>
+&lt;p>在时间序列中，线性投影特别有用，尤其在（平稳时间序列）预测中。这是因为当我们对时间序列施加平稳性假设时，线性投影和相应的投影误差将是正交的。这一结论导出自著名的 &lt;em>&lt;a href="https://en.wikipedia.org/wiki/Hilbert_projection_theorem">Hilbert 投影定理&lt;/a>&lt;/em>，陈述如下：（注：Hibert 空间，即完备内积空间）&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:hilbert" class="thm-title thm-Theorem">Theorem 3.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+&lt;p>设 $\mathcal{H}_0$ 是 Hilbert 空间 $\mathcal{H}$ 的一个闭的子空间。对任意 $f\in\mathcal{H}$，存在唯一的 $f_0\in\mathcal{H}_0$，使得&lt;/p>
+&lt;ol>
+&lt;li>$f_0 = \min_{h\in\mathcal{H}_0} \|f-h\|$；&lt;/li>
+&lt;li>$f-f_0$ 和 $\mathcal{H_0}$ 正交。&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;p>回到时间序列，我们有如下定理：&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:proj" class="thm-title thm-Theorem">Theorem 4.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+&lt;p>若 $\{Y_t\}$ 协方差平稳，则它有投影方程&lt;/p>
+&lt;p>$$
+Y_t = \mathcal{P}_{t-1}[Y_t] + e_t
+$$&lt;/p>
+&lt;p>其中 $\mathcal{P}_{t-1}[Y_t]$ 是 $Y_t$ 到 $(\dots,Y_{t-2},Y_{t-1})$ 上的最优线性投影（最小化误差的 $L^2$ 范数），且投影误差序列不相关，方差有限。&lt;/p>
+&lt;p>若 $\{Y_t\}$ 严格平稳，除上述结果外，还有 $\{e_t\}$ 也是严格平稳的。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="thm">
+&lt;button type="button" class="collapsible">&lt;div id="thm-proof-1" class="thm-title-proof">Proof.&lt;/div>&lt;/button>
+&lt;div class="proof-content">
+&lt;div class="thm-inner-proof">
+&lt;p>需要首先指出，投影方程取决于有多少期的数据可得。假设有 $n$ 期的历史 $(Y_{t-n},\dots,Y_{t-2},Y_{t-1})$，那么线性子空间&lt;/p>
+&lt;p>$$
+\text{span}(\{Y_{t-n},\dots,Y_{t-2},Y_{t-1}\}) = \left\{\sum_{j=1}^na_jY_{t-j}\colon a_j\in\mathbb{R},Y_{t-j}\in L^2(\mathbb{P})\right\}
+$$&lt;/p>
+&lt;p>一定是闭的（对极限封闭），容易证明由有限集张成的线性空间一定是闭的。&lt;/p>
+&lt;p>根据 Hilbert 投影定理，我们就可以确定投影方程。此外，投影误差序列不相关，且是平稳的（严格平稳的），这可由 $\{Y_t\}$ 平稳性（严格平稳性）得到。&lt;/p>
+&lt;p>需要指出，将 $Y_t$ 投影到无穷维线性空间 $\text{span}(\{\dots,Y_{t-2},Y_{t-1}\})$ 不一定可行，因为无穷维线性子空间不一定是闭的。当然，我们可以取其闭包得到一个闭的子空间，但这个空间内并不是所有元素都一定可表为 $\{\dots,Y_{t-2},Y_{t-1}\}$ 的线性组合，相应地我们需要修改 $\mathcal{P}_{t-1}$ 的定义，使之不限于线性投影。&lt;/p>
+&lt;/div>
+&lt;div class="thm-end-proof">
+&lt;i class="fas fa-square">&lt;/i> &lt;a href="#thm-proof-1">&lt;i class="fas fa-arrow-circle-up">&lt;/i>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="notice note" >
+&lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#note-notice">&lt;/use>&lt;/svg>&lt;/span>Note&lt;/p>&lt;p>书中认为 $\{e_t\}$ 均值为0，这无法得到，除非 $\{Y_t\}$ 本身零均值，或者在投影中包含常数项。本质上，我们还是在用线性组合去逼近真正的条件期望 $\mathbb{E}_{t-1}(Y_t)$。&lt;/p>&lt;/div>
+&lt;h2 id="wold-分解">Wold 分解&lt;/h2>
+&lt;p>Wold 分解表明，一个协方差平稳的时间序列可被分解为一个 $\text{MA}(\infty)$ 过程和一个确定性过程（确定是指完全由历史决定），两部分互不相关。以下的定理是不太严格的表述，严格表述及证明可见于 Brockwell and Davis (1991) 定理 5.7.1。Hansen 书中依然遗漏了「零均值」条件，没有这个条件 $e_t$ 的均值不必然为 0；当然这也不是什么问题，对于平稳序列，我们总是可以先除均值，然后将均值归入以下的确定性部分 $\mu_t$。&lt;/p>
+&lt;div class="thm">
+&lt;p id="thm:wold" class="thm-title thm-Theorem">Theorem 5.&lt;/p>
+&lt;div class="thm-inner thm-Theorem">
+&lt;p>若 &lt;em>零均值&lt;/em> 时间序列 $\{Y_t\}$ 协方差平稳且投影误差的方差 $\sigma^2 &amp;gt; 0$，则 $Y_t$ 可分解为&lt;/p>
+&lt;p>$$
+Y_t = \sum_{j=0}^\infty b_je_{t-j} + \mu_t
+$$&lt;/p>
+&lt;p>其中 $b_0 = 1$，$\sum_{j=0}^\infty b_j^2 &amp;lt; \infty$；$e_t$ 是方差为 $\sigma^2$ 的白噪声序列，且和 $\mu_t$ 无关；$\mu_t$ 是由 $Y_t$ 的历史决定的确定性过程。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>可以看到 Wold 分解和 ARMA 模型的深刻联系，它事实上为后者提供了理论基础。&lt;/p>
+&lt;h2 id="参考">参考&lt;/h2>
+&lt;p>Brockwell, Peter J., and Richard A. Davis (1991). &lt;em>Time Series: Theory and Methods&lt;/em>. Springer Science &amp;amp; Business Media.&lt;/p>
+&lt;p>Davidson, James (1994). &lt;em>Stochastic Limit Theory: An Introduction for Econometricians&lt;/em>. Oxford University Press.&lt;/p>
+&lt;p>Hansen, Bruce (2022). &lt;em>Econometrics&lt;/em>. Princeton University Press.&lt;/p>
+- https://cwleo.github.io/posts/ecmt-notes-some-notions/ - 2023 嘉樹.</description></item><item><title>计量复习笔记 (II)：遍历性</title><link>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</link><pubDate>Sat, 22 Apr 2023 20:22:42 +0800</pubDate><guid>https://cwleo.github.io/posts/ecmt-notes-ergodicity/</guid><description>嘉樹的世界 https://cwleo.github.io/posts/ecmt-notes-ergodicity/ -&lt;style type="text/css">.notice{--root-color:#444;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#c33;--warning-content:#fee;--info-title:#fb7;--info-content:#fec;--note-title:#6be;--note-content:#e7f2fa;--tip-title:#5a5;--tip-content:#efe}@media (prefers-color-scheme:dark){.notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}}body.night .notice{--root-color:#ddd;--root-background:#eff;--title-color:#fff;--title-background:#7bd;--warning-title:#800;--warning-content:#400;--info-title:#a50;--info-content:#420;--note-title:#069;--note-content:#023;--tip-title:#363;--tip-content:#121}.notice{padding:0 18px 18px;line-height:24px;margin-bottom:20px;border-radius:4px;color:var(--root-color);background:var(--root-background)}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:var(--title-color);background:var(--title-background)}.notice.warning .notice-title{background:var(--warning-title)}.notice.warning{background:var(--warning-content)}.notice.info .notice-title{background:var(--info-title)}.notice.info{background:var(--info-content)}.notice.note .notice-title{background:var(--note-title)}.notice.note{background:var(--note-content)}.notice.tip .notice-title{background:var(--tip-title)}.notice.tip{background:var(--tip-content)}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:var(--title-color)}.icon-notice img,.icon-notice.baseline svg{top:.125em;position:relative}&lt;/style>
 &lt;div>&lt;svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">&lt;symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>&lt;/symbol>&lt;symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>&lt;/symbol>&lt;symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">&lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>&lt;/symbol>&lt;/svg>&lt;/div>&lt;div class="notice info" >
 &lt;p class="first notice-title">&lt;span class="icon-notice baseline">&lt;svg>&lt;use href="#info-notice">&lt;/use>&lt;/svg>&lt;/span>Info&lt;/p>&lt;p>本系列是2023年春季学期《应用计量经济学》期末复习笔记，仅涵盖时间序列部分，对应 Hansen (2022) &lt;em>Econometrics&lt;/em> 第14和16章的内容。&lt;/p>&lt;/div>
 &lt;h2 id="内容提要">内容提要&lt;/h2>
