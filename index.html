@@ -124,9 +124,7 @@
 
         <footer class="site-footer">
           © 2026 Chengwang Liao. Powered by Modern Artificial Intelligence
-          <img class="visitor-counter"
-               src="https://cwleo.goatcounter.com/counter/TOTAL.svg?no_branding=1"
-               alt="Total visitor count">
+          <span class="visitor-counter">Number of visitors: <span id="stats">...</span></span>
         </footer>
       </main>
     </div>
@@ -148,5 +146,22 @@
     </script>
     <script data-goatcounter="https://cwleo.goatcounter.com/count"
             async src="https://gc.zgo.at/count.js"></script>
+    <script>
+      var statsCounter = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.get_data) {
+          clearInterval(statsCounter);
+
+          var request = new XMLHttpRequest();
+          request.addEventListener("load", function() {
+            if (this.status >= 200 && this.status < 300) {
+              document.querySelector("#stats").innerText = JSON.parse(this.responseText).count;
+            }
+          });
+
+          request.open("GET", "https://cwleo.goatcounter.com/counter/TOTAL.json");
+          request.send();
+        }
+      }, 100);
+    </script>
   </body>
 </html>
