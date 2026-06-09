@@ -180,6 +180,15 @@ section:last-child {
   text-align: center;
 }
 
+.visitor-counter {
+  display: block;
+  margin-top: 6px;
+  width: 150px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .news-list {
   list-style: none;
   padding-left: 0;
