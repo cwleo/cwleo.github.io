@@ -12,7 +12,7 @@
       <header class="profile">
         <div class="avatar" aria-hidden="true">LCW</div>
         <h1>LIAO Chengwang</h1>
-        <p class="role">Ph.D. Student</p>
+        <p class="role">Ph.D. Candidate</p>
         <p class="affiliation">
           Department of Economics<br>
           The Chinese University of Hong Kong
@@ -32,7 +32,7 @@
         <section id="about">
           <h2>About</h2>
           <p>
-            I am a Ph.D. student in the Department of Economics at The Chinese University of Hong Kong. My research interests lie in the high-dimensional econometrics, panel data models, and their applications in various economic fields. My advisor is <a href="https://zhentaoshi.github.io">Prof. SHI Zhentao</a>.
+            I am a Ph.D. candidate in the Department of Economics at The Chinese University of Hong Kong. My research interests lie in the high-dimensional econometrics, panel data models, and their applications in various economic fields.
           </p>
           <p>
             The best way to reach me is by email at
@@ -40,17 +40,10 @@
           </p>
         </section>
 
-        <section id="news">
-          <h2>News</h2>
-          <ul class="news-list">
-            <li><time datetime="2026-06">Jun 2026</time> My academic homepage is launched.</li>
-          </ul>
-        </section>
-
         <section id="Education">
           <h2>Education</h2>
           <ul>
-            <li>Ph.D. in Economics, The Chinese University of Hong Kong, 2022-present</li>
+            <li>Ph.D. in Economics, The Chinese University of Hong Kong, 2022-2027 (expected)</li>
             <li>M.A. in Economics, Shanghai Jiao Tong University, 2019-2022</li>
             <li>B.A. in Economics, Huazhong University of Science and Technology, 2015-2019</li>
           </ul>
@@ -60,32 +53,55 @@
           <h2>Working Papers</h2>
 
           <article class="publication">
-            <p class="venue">R&R at Econometric Theory, 2026</p>
             <h3>A Relaxation Approach to Synthetic Control</h3>
+            <p class="venue">R&R at Econometric Theory, 2026</p>
             <p class="authors">
               <strong>Chengwang Liao</strong>, Zhentao Shi, Yapeng Zheng
             </p>
-            <p class="description">
-              We develop a relaxation approach to synthetic control, which allows for consistent estimation of the weights and average treatment effects on the treated unit when the donor pool is large.
-            </p>
+            <div class="abstract">
+              <p class="abstract-summary">
+                We develop a relaxation approach to synthetic control for large donor pools.
+                <button class="abstract-action" type="button" aria-expanded="false">[click here to expand]</button>
+              </p>
+              <p class="abstract-full" hidden>
+                We develop a relaxation approach to synthetic control, which allows for consistent estimation of the weights and average treatment effects on the treated unit when the donor pool is large.
+                <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
+              </p>
+            </div>
             <p class="paper-links">
               <a href="https://arxiv.org/abs/2508.01793">arXiv</a>
             </p>
           </article>
 
           <article class="publication">
-            <p class="venue">R&R at Journal of Econometrics, 2026</p>
             <h3>Nickell Meets Stambaugh: A Tale of Two Biases in Panel Predictive Regressions</h3>
+            <p class="venue">R&R at Journal of Econometrics, 2026</p>
             <p class="authors">
               <strong>Chengwang Liao</strong>, Ziwei Mei, Zhentao Shi
             </p>
-            <p class="description">
-              This paper describes the coexistence of the Nickell bias and the Stambaugh bias in panel predictive regressions when the predictor is highly persistent, and introduces an innovative estimator to effectively remove this composite bias and reinstate standard inferential procedures.
-            </p>
+            <div class="abstract">
+              <p class="abstract-summary">
+                We study the coexistence of Nickell and Stambaugh biases in panel predictive regressions.
+                <button class="abstract-action" type="button" aria-expanded="false">[click here to expand]</button>
+              </p>
+              <p class="abstract-full" hidden>
+                This paper describes the coexistence of the Nickell bias and the Stambaugh bias in panel predictive regressions when the predictor is highly persistent, and introduces an innovative estimator to effectively remove this composite bias and reinstate standard inferential procedures.
+                <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
+              </p>
+            </div>
             <p class="paper-links">
               <a href="https://arxiv.org/abs/2410.09825">arXiv</a>
             </p>
           </article>
+        </section>
+
+        <section id="presentations">
+          <h2>Conference Presentations</h2>
+          <ul>
+            <li>2026: 人工智能与金融计量学术研讨会 (Xiamen)</li>
+            <li>2025: SETA (Macao); ICES (Harbin); ESWC (Seoul); 第六届“大数据计量经济学理论与应用”研讨会 (Wuhan)</li>
+            <li>2024: CUHK Brownbag Seminar; 2nd CUHK(SZ)-CUHK Joint Workshop on Chinese Economy</li>
+          </ul>
         </section>
 
         <section id="teaching">
@@ -104,5 +120,21 @@
         </footer>
       </main>
     </div>
+    <script>
+      document.querySelectorAll(".abstract").forEach((abstract) => {
+        abstract.querySelectorAll(".abstract-action").forEach((button) => {
+          button.addEventListener("click", () => {
+            const summary = abstract.querySelector(".abstract-summary");
+            const full = abstract.querySelector(".abstract-full");
+            const expanded = !full.hidden;
+            summary.hidden = !expanded;
+            full.hidden = expanded;
+            abstract.querySelectorAll(".abstract-action").forEach((action) => {
+              action.setAttribute("aria-expanded", String(!expanded));
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>
