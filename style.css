@@ -64,7 +64,8 @@ a:focus {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: var(--heading);
   line-height: 1.2;
 }
@@ -81,7 +82,8 @@ h2 {
   font-weight: 500;
 }
 
-h3 {
+h3,
+h4 {
   margin: 2px 0 6px;
   font-size: 17px;
   font-weight: 600;
@@ -199,6 +201,16 @@ section:last-child {
   color: var(--muted);
 }
 
+.research-group + .research-group {
+  margin-top: 28px;
+}
+
+.research-group > h3 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .publication {
   margin-bottom: 24px;
 }
@@ -211,6 +223,10 @@ section:last-child {
   margin-bottom: 2px;
   color: var(--muted);
   font-size: 14px;
+}
+
+.teaching-role {
+  margin-bottom: 6px;
 }
 
 .authors,
@@ -268,6 +284,35 @@ section:last-child {
 .arxiv-link img {
   width: 44px;
   height: auto;
+}
+
+.presentation-list {
+  margin: 0;
+}
+
+.presentation-year {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  column-gap: 16px;
+  margin-bottom: 14px;
+}
+
+.presentation-year:last-child {
+  margin-bottom: 0;
+}
+
+.presentation-year dd {
+  margin: 0;
+}
+
+.presentation-year ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.presentation-year li:last-child {
+  margin-bottom: 0;
 }
 
 @media (prefers-color-scheme: dark) {

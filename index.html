@@ -70,73 +70,131 @@
           </ul>
         </section>
 
-        <section id="publications">
-          <h2>Working Papers</h2>
+        <section id="research">
+          <h2>Research</h2>
 
-          <article class="publication">
-            <h3>A Relaxation Approach to Synthetic Control</h3>
-            <p class="venue">R&R at Econometric Theory, 2026</p>
-            <p class="authors">
-              <strong>Chengwang Liao</strong>, Zhentao Shi, Yapeng Zheng
-            </p>
-            <div class="abstract">
-              <p class="abstract-summary">
-                We develop a relaxation approach to synthetic control when there are many control units.
-                <button class="abstract-action" type="button" aria-expanded="false">[click here to expand]</button>
-              </p>
-              <p class="abstract-full" hidden>
-                The synthetic control method (SCM) is widely used for constructing the counterfactual of a treated unit based on data from control units in a donor pool. Allowing the donor pool contains more control units than time periods, we propose a novel machine learning algorithm, named SCM-relaxation, for counterfactual prediction. Our relaxation approach minimizes an information-theoretic measure of the weights subject to a set of relaxed linear inequality constraints in addition to the simplex constraint. When the donor pool exhibits a group structure, SCM-relaxation approximates the equal weights within each group to diversify the prediction risk. Asymptotically, the proposed estimator achieves oracle performance in terms of out-of-sample prediction accuracy. We demonstrate our method by Monte Carlo simulations and by an empirical application that assesses the economic impact of Brexit on the United Kingdom's real GDP.
-                <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
-              </p>
-            </div>
-            <p class="paper-links">
-              <a class="icon-link arxiv-link" href="https://arxiv.org/abs/2508.01793" aria-label="arXiv">
-                <img src="arxiv-logo.svg" alt="" aria-hidden="true">
-              </a>
-            </p>
-          </article>
+          <div class="research-group" id="publications">
+            <h3>Publications</h3>
 
-          <article class="publication">
-            <h3>Nickell Meets Stambaugh: A Tale of Two Biases in Panel Predictive Regressions</h3>
-            <p class="venue">R&R at Journal of Econometrics, 2026</p>
-            <p class="authors">
-              <strong>Chengwang Liao</strong>, Ziwei Mei, Zhentao Shi
-            </p>
-            <div class="abstract">
-              <p class="abstract-summary">
-                We study the coexistence of Nickell and Stambaugh biases in panel predictive regressions and develop a novel estimator to effectively remove this composite bias.
-                <button class="abstract-action" type="button" aria-expanded="false">[click here to expand]</button>
+            <article class="publication">
+              <h4>Nickell Meets Stambaugh: A Tale of Two Biases in Panel Predictive Regressions</h4>
+              <p class="authors">
+                with Ziwei Mei and Zhentao Shi
               </p>
-              <p class="abstract-full" hidden>
-                In panel predictive regressions with persistent covariates, coexistence of the Nickell bias and the Stambaugh bias imposes challenges for estimation and hypothesis testing. This paper introduces an innovative estimator, the Double IVX (DIVX), inspired by the IVX technique in time series. DIVX effectively removes this composite Nickell-Stambaugh bias and reinstates standard inferential procedures based on the t-statistic. This new procedure achieves unified inference across a wide range of modes of persistence in panel predictive regressions when the cross-sectional dimension and the time dimension are comparably large. Such desirable properties were unattainable by existing methods, including the popular within-group estimator. Extensive Monte Carlo simulations demonstrate the robustness of DIVX under a variety of settings. We apply DIVX to panel data of financial markets in developed economies to examine the predictability of stock returns.
-                <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
+              <p class="venue">Accepted at Journal of Econometrics, 2026</p>
+              <div class="abstract">
+                <p class="abstract-summary">
+                  We study the coexistence of Nickell and Stambaugh biases in panel predictive regressions and develop a novel estimator to effectively remove this composite bias.
+                  <button class="abstract-action" type="button" aria-expanded="false">[click here to expand]</button>
+                </p>
+                <p class="abstract-full" hidden>
+                  In panel predictive regressions with persistent covariates, coexistence of the Nickell bias and the Stambaugh bias imposes challenges for estimation and hypothesis testing. This paper introduces an innovative estimator, the Double IVX (DIVX), inspired by the IVX technique in time series. DIVX effectively removes this composite Nickell-Stambaugh bias and reinstates standard inferential procedures based on the t-statistic. This new procedure achieves unified inference across a wide range of modes of persistence in panel predictive regressions when the cross-sectional dimension and the time dimension are comparably large. Such desirable properties were unattainable by existing methods, including the popular within-group estimator. Extensive Monte Carlo simulations demonstrate the robustness of DIVX under a variety of settings. We apply DIVX to panel data of financial markets in developed economies to examine the predictability of stock returns.
+                  <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
+                </p>
+              </div>
+              <p class="paper-links">
+                <a class="icon-link arxiv-link" href="https://arxiv.org/abs/2410.09825" aria-label="arXiv">
+                  <img src="arxiv-logo.svg" alt="" aria-hidden="true">
+                </a>
               </p>
-            </div>
-            <p class="paper-links">
-              <a class="icon-link arxiv-link" href="https://arxiv.org/abs/2410.09825" aria-label="arXiv">
-                <img src="arxiv-logo.svg" alt="" aria-hidden="true">
-              </a>
-            </p>
-          </article>
+            </article>
+          </div>
+
+          <div class="research-group" id="working-papers">
+            <h3>Working Papers</h3>
+
+            <article class="publication">
+              <h4>A Relaxation Approach to Synthetic Control</h4>
+              <p class="authors">
+                with Zhentao Shi and Yapeng Zheng
+              </p>
+              <p class="venue">R&R at Econometric Theory, 2026</p>
+              <div class="abstract">
+                <p class="abstract-summary">
+                  We develop a relaxation approach to synthetic control when there are many control units.
+                  <button class="abstract-action" type="button" aria-expanded="false">[click here to expand]</button>
+                </p>
+                <p class="abstract-full" hidden>
+                  The synthetic control method (SCM) is widely used for constructing the counterfactual of a treated unit based on data from control units in a donor pool. Allowing the donor pool contains more control units than time periods, we propose a novel machine learning algorithm, named SCM-relaxation, for counterfactual prediction. Our relaxation approach minimizes an information-theoretic measure of the weights subject to a set of relaxed linear inequality constraints in addition to the simplex constraint. When the donor pool exhibits a group structure, SCM-relaxation approximates the equal weights within each group to diversify the prediction risk. Asymptotically, the proposed estimator achieves oracle performance in terms of out-of-sample prediction accuracy. We demonstrate our method by Monte Carlo simulations and by an empirical application that assesses the economic impact of Brexit on the United Kingdom's real GDP.
+                  <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
+                </p>
+              </div>
+              <p class="paper-links">
+                <a class="icon-link arxiv-link" href="https://arxiv.org/abs/2508.01793" aria-label="arXiv">
+                  <img src="arxiv-logo.svg" alt="" aria-hidden="true">
+                </a>
+              </p>
+            </article>
+
+            <article class="publication">
+              <h4>Cointegrated Regressors: Where Folded Concave Penalties Go Beyond LASSO</h4>
+              <p class="authors">
+                with Hongqi Chen, Ziwei Mei, and Zhentao Shi
+              </p>
+              <p class="venue">Working paper, 2026</p>
+              <div class="abstract">
+                <p class="abstract-summary">
+                  We use folded concave penalties to improve variable selection and prediction in high-dimensional regressions with cointegrated regressors.
+                  <button class="abstract-action" type="button" aria-expanded="false">[click here to expand]</button>
+                </p>
+                <p class="abstract-full" hidden>
+                  In high-dimensional predictive regressions, LASSO can shrink the coefficients of cointegrated regressors too aggressively to estimate them consistently. We study folded concave penalties, including SCAD and MCP, as an alternative. We establish a local oracle property for penalized regression and a global oracle property when the regression is subject to a penalty-level constraint. The constrained formulation yields a global solution with consistent coefficient estimates and oracle prediction performance. Simulations and an application forecasting euro area unemployment show improvements over LASSO in variable selection and out-of-sample prediction.
+                  <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
+                </p>
+              </div>
+              <p class="paper-links">
+                <a class="icon-link arxiv-link" href="https://arxiv.org/abs/2610.14617" aria-label="arXiv">
+                  <img src="arxiv-logo.svg" alt="" aria-hidden="true">
+                </a>
+              </p>
+            </article>
+          </div>
         </section>
 
         <section id="presentations">
           <h2>Conference Presentations</h2>
-          <ul>
-            <li>2026: 人工智能与金融计量学术研讨会 (Xiamen)</li>
-            <li>2025: SETA (Macau); ICES (Harbin); ESWC (Seoul); 第六届“大数据计量经济学理论与应用”研讨会 (Wuhan)</li>
-            <li>2024: CUHK Brownbag Seminar; 2nd CUHK(SZ)-CUHK Joint Workshop on Chinese Economy</li>
-          </ul>
+          <dl class="presentation-list">
+            <div class="presentation-year">
+              <dt>2026</dt>
+              <dd>
+                <ul>
+                  <li>Symposium on Artificial Intelligence and Financial Econometrics (Xiamen)</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="presentation-year">
+              <dt>2025</dt>
+              <dd>
+                <ul>
+                  <li>19th International Symposium on Econometric Theory and Applications (Macau)</li>
+                  <li>Harbin International Conference on Econometrics and Statistics (Harbin)</li>
+                  <li>13th World Congress of the Econometric Society (Seoul)</li>
+                  <li>6th Workshop on Big Data Econometrics: Theory and Applications (Wuhan)</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="presentation-year">
+              <dt>2024</dt>
+              <dd>
+                <ul>
+                  <li>Brownbag Seminar, The Chinese University of Hong Kong</li>
+                  <li>2nd CUHK(SZ)-CUHK Joint Workshop on Chinese Economy</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
         </section>
 
         <section id="teaching">
-          <h2>Teaching Assistant</h2>
+          <h2>Teaching Experience</h2>
+          <p class="teaching-role">Teaching Assistant, CUHK</p>
           <ul>
             <li>Introductory Econometrics, Fall 2022</li>
             <li>Mathematical Methods in Economics, Spring 2023, Spring 2024</li>
             <li>International Monetary Systems, Fall 2024</li>
             <li>Basic Microeconomics, Spring 2025</li>
             <li>Intermediate Macroeconomics, Fall 2025, Spring 2026</li>
+            <li>Econometric Theory and Applications, Fall 2026</li>
           </ul>
         </section>
 
