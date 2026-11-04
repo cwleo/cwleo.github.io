@@ -215,6 +215,10 @@ section:last-child {
   margin-bottom: 24px;
 }
 
+.publication h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .publication:last-child {
   margin-bottom: 0;
 }
@@ -279,11 +283,6 @@ section:last-child {
   flex-wrap: wrap;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-}
-
-.arxiv-link img {
-  width: 44px;
-  height: auto;
 }
 
 .presentation-list {
