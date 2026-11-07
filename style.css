@@ -50,16 +50,27 @@ a:focus {
 }
 
 .avatar {
-  display: grid;
-  place-items: center;
-  width: 120px;
-  height: 120px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
   margin: 0 auto 20px;
   border: 1px solid var(--rule);
   border-radius: 50%;
   background: var(--panel);
-  color: var(--heading);
-  font: 500 34px/1 Arial, Helvetica, sans-serif;
+  cursor: default;
+}
+
+.avatar img {
+  /* Frame a 390px circle at (35, 20), showing a little more of both shoulders. */
+  position: absolute;
+  display: block;
+  width: 117.9487%;
+  max-width: none;
+  height: auto;
+  left: -8.9744%;
+  top: -5.1282%;
 }
 
 h1,
@@ -108,8 +119,7 @@ strong {
 }
 
 .role,
-.affiliation,
-.email {
+.affiliation {
   margin-bottom: 12px;
 }
 
@@ -183,11 +193,6 @@ section:last-child {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   text-align: center;
-}
-
-.visitor-counter {
-  display: block;
-  margin-top: 6px;
 }
 
 .news-list {
@@ -362,9 +367,8 @@ section:last-child {
   }
 
   .avatar {
-    width: 96px;
-    height: 96px;
-    font-size: 28px;
+    width: 120px;
+    height: 120px;
   }
 
   h1 {

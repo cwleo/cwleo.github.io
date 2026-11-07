@@ -29,15 +29,14 @@
   <body>
     <div class="wrapper">
       <header class="profile">
-        <div class="avatar" aria-hidden="true">LCW</div>
+        <div class="avatar">
+          <img src="portrait.png" alt="Portrait of Chengwang Liao" width="460" height="450" draggable="false">
+        </div>
         <h1>LIAO Chengwang</h1>
         <p class="role">Ph.D. Candidate</p>
         <p class="affiliation">
           Department of Economics<br>
           The Chinese University of Hong Kong
-        </p>
-        <p class="email">
-          <a href="mailto:lchw@link.cuhk.edu.hk">lchw@link.cuhk.edu.hk</a>
         </p>
 
         <nav class="links" aria-label="Profile links">
@@ -98,11 +97,14 @@
             <h3>Publications</h3>
 
             <article class="publication">
-              <h4>Nickell Meets Stambaugh: A Tale of Two Biases in Panel Predictive Regressions</h4>
+              <h4><a href="https://doi.org/10.1016/j.jeconom.2026.106347">Nickell Meets Stambaugh: A Tale of Two Biases in Panel Predictive Regressions</a></h4>
               <p class="authors">
                 with Ziwei Mei and Zhentao Shi
               </p>
-              <p class="venue">Journal of Econometrics, 2026. Published online.</p>
+              <p class="venue">Journal of Econometrics, Volume 258, Article 106347, November 2026.</p>
+              <p class="paper-links">
+                <a href="https://arxiv.org/abs/2410.09825">[arXiv version]</a>
+              </p>
               <div class="abstract">
                 <p class="abstract-summary">
                   We study the coexistence of Nickell and Stambaugh biases in panel predictive regressions and develop a novel estimator to effectively remove this composite bias.
@@ -113,10 +115,6 @@
                   <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
                 </p>
               </div>
-              <p class="paper-links">
-                <a href="https://doi.org/10.1016/j.jeconom.2026.106347">[published version]</a>
-                <a href="https://arxiv.org/abs/2410.09825">[arXiv version]</a>
-              </p>
             </article>
           </div>
 
@@ -124,7 +122,7 @@
             <h3>Working Papers</h3>
 
             <article class="publication">
-              <h4>A Relaxation Approach to Synthetic Control</h4>
+              <h4><a href="https://arxiv.org/abs/2508.01793">A Relaxation Approach to Synthetic Control</a></h4>
               <p class="authors">
                 with Zhentao Shi and Yapeng Zheng
               </p>
@@ -139,13 +137,10 @@
                   <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
                 </p>
               </div>
-              <p class="paper-links">
-                <a href="https://arxiv.org/abs/2508.01793">[arXiv version]</a>
-              </p>
             </article>
 
             <article class="publication">
-              <h4>Cointegrated Regressors: Where Folded Concave Penalties Go Beyond LASSO</h4>
+              <h4><a href="https://arxiv.org/abs/2610.14617">Cointegrated Regressors: Where Folded Concave Penalties Go Beyond LASSO</a></h4>
               <p class="authors">
                 with Hongqi Chen, Ziwei Mei, and Zhentao Shi
               </p>
@@ -160,9 +155,6 @@
                   <button class="abstract-action" type="button" aria-expanded="true">[click here to collapse]</button>
                 </p>
               </div>
-              <p class="paper-links">
-                <a href="https://arxiv.org/abs/2610.14617">[arXiv version]</a>
-              </p>
             </article>
           </div>
         </section>
@@ -217,8 +209,7 @@
         </section>
 
         <footer class="site-footer">
-          © 2026 Chengwang Liao. Powered by Modern Artificial Intelligence
-          <span class="visitor-counter">Number of visitors: <span id="stats">...</span></span>
+          © 2026 Chengwang Liao.
         </footer>
       </main>
     </div>
@@ -240,22 +231,5 @@
     </script>
     <script data-goatcounter="https://cwleo.goatcounter.com/count"
             async src="https://gc.zgo.at/count.js"></script>
-    <script>
-      var statsCounter = setInterval(function() {
-        if (window.goatcounter && window.goatcounter.get_data) {
-          clearInterval(statsCounter);
-
-          var request = new XMLHttpRequest();
-          request.addEventListener("load", function() {
-            if (this.status >= 200 && this.status < 300) {
-              document.querySelector("#stats").innerText = JSON.parse(this.responseText).count;
-            }
-          });
-
-          request.open("GET", "https://cwleo.goatcounter.com/counter/%2F.json");
-          request.send();
-        }
-      }, 100);
-    </script>
   </body>
 </html>
